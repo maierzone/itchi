@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KAOD 4K preview</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #e9e0cc; overflow: hidden; }
+  canvas { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+  #gate, #hud { position: fixed; font: 14px/1.4 ui-monospace, monospace; color: #2b2a26; }
+  #gate { inset: 0; display: grid; place-items: center; cursor: pointer; text-align: center; }
+  #hud { z-index: 1; left: 8px; bottom: 8px; background: #e9e0ccd0; padding: 2px 6px; white-space: pre; }
+</style>
+</head>
+<body>
+<div id="gate">press any key<br><small id="info"></small></div>
+<div id="hud" hidden></div>
+<script type="module">
+// Reference host for 4K sequences. The game host (game/src/sequences/) must offer the
+// same context `$`; see README.md for the contract.
+//   preview.html?s=dist/name.js[&m=manifest.json][&hud=1][&auto=1][&p=<url-encoded JSON params>]
+// auto=1 starts without a key press (for headless tests, needs an autoplay policy flag).
+addEventListener('error', (e) => (document.title = 'error: ' + e.message));
+addEventListener('unhandledrejection', (e) => (document.title = 'error: ' + e.reason));
+const q = new URLSearchParams(location.search);
+const seqUrl = q.get('s');
+const gate = document.getElementById('gate');
+const hud = document.getElementById('hud');
+const info = document.getElementById('info');
+
+async function loadSequence(url) {
+  const buf = await (await fetch(url, { cache: 'no-store' })).arrayBuffer();
+  // One char per byte, code = byte. The stub only needs each char's low byte.
+  const bytes = new Uint8Array(buf);
+  let text = '';
+  for (let i = 0; i < bytes.length; i += 4096) text += String.fromCharCode(...bytes.subarray(i, i + 4096));
+  return { size: bytes.length, run: Function('$', text) };
+}
+
+async function loadManifest(url, ac) {
+  const m = url ? await (await fetch(url)).json() : {};
+  const base = new URL(url || '.', location.href);
+  const img = async (u) => {
+    const i = new Image();
+    i.src = new URL(u, base);
+    await i.decode();
+    return createImageBitmap(i);
+  };
+  const snd = async (u) => ac.decodeAudioData(await (await fetch(new URL(u, base))).arrayBuffer());
+  const all = async (o, f) => Object.fromEntries(await Promise.all(Object.entries(o || {}).map(async ([k, u]) => [k, await f(u)])));
+  return { d: await all(m.d, img), v: await all(m.v, snd), m: await all(m.m, snd), p: m.p || {} };
+}
+
+const seq = await loadSequence(seqUrl);
+info.textContent = `${seqUrl} · ${seq.size} bytes`;
+
+async function start() {
+  removeEventListener('keydown', start);
+  gate.removeEventListener('click', start);
+  gate.remove();
+  const c = document.body.appendChild(document.createElement('canvas'));
+  const fit = () => {
+    c.width = Math.round(innerWidth * devicePixelRatio);
+    c.height = Math.round(innerHeight * devicePixelRatio);
+  };
+  fit();
+  addEventListener('resize', fit);
+  const a = new AudioContext();
+  await a.resume();
+  const o = a.createGain();
+  o.connect(a.destination);
+  const assets = await loadManifest(q.get('m'), a);
+  const $ = { c, a, o, ...assets, q: 0 };
+  if (q.get('p')) Object.assign($.p, JSON.parse(q.get('p')));
+  addEventListener('keydown', (e) => e.key === 'Escape' && ($.q = 1));
+
+  if (q.get('hud')) {
+    hud.hidden = false;
+    let n = 0, t0 = performance.now(), worst = 0, last = t0;
+    const tick = (t) => {
+      worst = Math.max(worst, t - last); last = t; n++;
+      if (t - t0 > 1000) {
+        hud.textContent = `${seq.size} B · ${(n * 1000 / (t - t0)).toFixed(1)} fps · worst ${worst.toFixed(1)} ms · ${c.width}x${c.height}`;
+        n = 0; t0 = t; worst = 0;
+      }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+  const t = performance.now();
+  await seq.run($);
+  document.title = `done ${((performance.now() - t) / 1000).toFixed(1)} s`;
+  console.log(document.title);
+}
+if (q.get('auto')) start();
+else {
+  addEventListener('keydown', start);
+  gate.addEventListener('click', start);
+}
+</script>
+</body>
+</html>

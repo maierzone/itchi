@@ -1,0 +1,16 @@
+{
+  "name": "kaod-4k",
+  "private": true,
+  "type": "module",
+  "description": "Packer and size gate for 4096-byte sequences",
+  "scripts": {
+    "pack": "node pack.mjs",
+    "check": "node pack.mjs --check",
+    "test": "node test.mjs",
+    "run": "node headless.mjs"
+  },
+  "devDependencies": {
+    "@gfx/zopfli": "^1.0.15",
+    "terser": "^5.51.2"
+  }
+}
