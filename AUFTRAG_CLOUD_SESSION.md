@@ -1,5 +1,7 @@
 # Auftrag an die Cloud-Session: D-16 „4K-Sequenzen“ in die Spec einarbeiten
 
+> **Status 03.10.2026: erledigt** (Commit `b65becb`, Abgleich mit `tools/4k/` in Tech-Spec § 5a). Rückmeldung der Cloud-Session: [`RUECKMELDUNG_CLOUD_SESSION.md`](RUECKMELDUNG_CLOUD_SESSION.md).
+
 Kontext: mzone hat mit einer lokalen Claude-Code-Session (Opus 5.5) Echtzeit-Sequenzen für
 ORCHESTRATE & DOMINATE ausgearbeitet. Die Entscheidungen unten sind von mzone bestätigt.
 Bitte arbeite sie in die Spec ein. Die lokale Session schreibt nicht in `docs/`. Sie baut die

@@ -45,6 +45,7 @@ Erst wenn deine Agenten es erkunden, **zeichnet sich die Karte mit Tusche**. All
 | [`art/ASSET_REGISTER.csv`](art/ASSET_REGISTER.csv) | Maschinenlesbare Asset-Liste (ID, Priorität, Maße, Status) – das Tracking-Board fürs Zeichnen |
 | [`art/vorlagen/skizzenbogen_einheiten_A4.svg`](art/vorlagen/skizzenbogen_einheiten_A4.svg) | Druckvorlage A4 für Einheiten (12 Felder, Passermarken, Hilfslinien in „Non-Photo-Blue“) |
 | [`art/vorlagen/skizzenbogen_gebaeude_A4.svg`](art/vorlagen/skizzenbogen_gebaeude_A4.svg) | Druckvorlage A4 für Gebäude (Grundflächen 3×3, 2×2, 1×1 mit Höhenzugabe) |
+| [`art/SKIZZEN_UEBERSICHT.html`](art/SKIZZEN_UEBERSICHT.html) | **Alle 120 Elemente als Karten mit Platzhalter** für deine Skizzen, Filter nach Priorität, Batch und Status. Neu erzeugen: `python3 art/uebersicht.py` |
 
 ---
 
@@ -66,6 +67,14 @@ Erst wenn deine Agenten es erkunden, **zeichnet sich die Karte mit Tusche**. All
 | **Team** | mzone (Vision, Art, Audio, Leitmotiv, Entscheidungen) + Claude Code in der Cloud (Code, Tests, `docs/`) + Claude Code lokal (`tools/4k/`, Sequenzen) + MZP + Claude Design |
 
 ---
+
+## Wie wir zu dritt arbeiten
+
+[![Trio-Flow: Aufgabenverteilung zwischen Claude Cloud, Claude lokal und mzone](docs/img/trio_flow.svg)](https://publisher.maierzone.de/published/itchi-trio-flow/)
+
+**mzone** entscheidet, zeichnet, spricht und komponiert. **Claude lokal** (Omarchy) baut `tools/4k/` und ab 01.11. die Sequenzen und
+schreibt Aufträge als `AUFTRAG_*.md`. **Claude in der Cloud** pflegt `docs/`, antwortet mit `RUECKMELDUNG_*.md` und liefert Draft-PRs,
+die mzone freigibt. Interaktive Fassung: [publisher.maierzone.de/published/itchi-trio-flow](https://publisher.maierzone.de/published/itchi-trio-flow/) · PNG: [`docs/img/trio_flow.png`](docs/img/trio_flow.png)
 
 ## Die drei wichtigsten Termine
 
