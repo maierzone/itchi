@@ -207,13 +207,16 @@ Reines Datenmodell aus `waves.ts` und `monolith.ts` (siehe [GDD § 10.6](02_GAME
 | **Größenregel** | `npm run build` packt die Sequenzen mit `tools/4k/` und prüft jede Datei. **Ab 4097 B bricht der Build ab.** Die CI führt dieselbe Prüfung aus und gibt die Bytes pro Sequenz im Größenbericht aus |
 | **Was zählt** | nur das gepackte Programm. Zeichnungen, Stimmaufnahmen und Musik kommen aus dem Asset-Pool und zählen nicht |
 | **Host-Vertrag** | `playSequence(id, params) → Promise<void>` (typisiert in `sequences/host.ts`). Der Host liefert **nur Daten**: Canvas (Vollbild-Ebene oder Bild-im-Bild-Bereich), `AudioContext`, geladene Zeichnungen (nach Asset-ID), dekodierte Audio-Buffer, Parameter (z. B. Statistik, Monolith-Stufe, Seed) sowie ein `AbortSignal` fürs Überspringen. **Keine Logik im Host** |
+| **Ladeformat** | Der Host lädt die Datei als Bytes, macht daraus einen String mit **einem Zeichen pro Byte** (Zeichencode = Byte, weder UTF-8 noch windows-1252) und ruft `Function('$', text)($)` auf. Die Sequenz liefert ein Promise zurück. Der Stub entpackt per `DecompressionStream('deflate-raw')` (Stand `tools/4k/`: 166 B) |
+| **Felder von `$`** | `c` Canvas (Gerätepixel, Größe jeden Frame neu lesen) · `a` `AudioContext` (läuft schon) · `o` Audio-Ausgang (`GainNode`, Host kann ducken) · `d` Zeichnungen `{Asset-ID: ImageBitmap}` · `v` Stimmen `{V…: AudioBuffer}` · `m` Musik `{MU…: AudioBuffer}` · `p` Parameter · `q` `AbortSignal`. Quelle der Wahrheit: [`tools/4k/README.md`](../tools/4k/README.md), ab November `game/src/sequences/API.md` |
+| **Browser-Mindeststand** | WebGL2, WebAudio und `DecompressionStream('deflate-raw')`: Chrome 80+, Firefox 113+, Safari 16.4+. Fehlt etwas, gilt der Rückfall (GDD § 14) |
 | **Wann sie laufen** | **vor dem Spiel** (SQ-INTRO), **am Ende** (SQ-DOMINATED/-SINGULARITY/-DISCONNECTED), **Bild im Bild** (SQ-RADIO) bei laufender Simulation. Keine Vollbild-Unterbrechung im Spiel |
 | **Überspringen** | Der Host bricht über das `AbortSignal` ab, die Sequenz stoppt ihre Audioquellen, und das Promise wird erfüllt |
 | **Rückfall** | Fehlt die Sequenz, wirft sie einen Fehler oder ist sie nach **Maximallänge + 2 s** nicht fertig, beendet der Host sie und zeigt die Darstellung aus GDD § 14 |
 | **Budget SQ-RADIO** | ≤ 2 ms pro Frame, damit das Spiel weiter flüssig läuft |
 | **Konventionen** | Sequenzen sind bewusst handoptimiertes Size-Coding-JavaScript, deshalb gelten Lint- und Strict-Regeln dort nicht. Der Host-Vertrag in `host.ts` bleibt `strict` |
 
-**Zu prüfen beim Release-Probelauf (15.11.):** Selbst entpackende Programme brauchen in der Regel Code-Auswertung zur Laufzeit (z. B. `new Function` oder Import über eine Blob-URL). Ob das im itch.io-iframe funktioniert, wird mit einer Test-Sequenz auf der privaten itch-Seite geprüft. **Rückfall:** dieselbe Sequenz ungepackt ausliefern. Die 4096-B-Regel bleibt dann als Build-Disziplin erhalten.
+**Zu prüfen beim Release-Probelauf (15.11.):** Selbst entpackende Programme brauchen Code-Auswertung zur Laufzeit (`tools/4k/` nutzt `Function('$', code)`, also CSP `unsafe-eval`). Ob das im itch.io-iframe funktioniert, wird mit einer Test-Sequenz auf der privaten itch-Seite geprüft. **Rückfall:** dieselbe Sequenz ungepackt ausliefern. Die 4096-B-Regel bleibt dann als Build-Disziplin erhalten.
 
 ---
 
