@@ -86,6 +86,7 @@
 
 - **Entscheidung:** Code: MIT (`LICENSE`). Kunst & Audio von mzone: CC BY-NC-ND 4.0 (`art/LICENSE`, `audio/LICENSE`). Fonts: SIL OFL 1.1. Fremd-Assets: laut `CREDITS.md`.
 - **Hinweis:** Die Lizenzdateien werden mit dem ersten Spielcode am 01.11. angelegt, nachdem die Entscheidung bestätigt ist.
+- **Ergänzung 03.10.2026:** Auf Wunsch von mzone schon jetzt vorbereitet (`LICENSE`, `art/LICENSE`, `audio/LICENSE`, `CREDITS.md`), weil Zeichnungen und Vorlagen bereits im Repo liegen. Ändert sich D-10 bei der Bestätigung, werden die Dateien angepasst.
 - **Status:** 🟡 · Bestätigt am: ______
 
 ## D-11 · Handmade-Versprechen & KI-Offenlegung
@@ -144,3 +145,4 @@
 | 03.10.2026 | D-01 … D-15 | angelegt (vorgeschlagen) | Spec v0.1 |
 | 03.10.2026 | D-16 | neu, bestätigt | Auftrag mzone (4K-Sequenzen aus der lokalen Session) |
 | 03.10.2026 | D-09, D-11, D-14, D-15 | ergänzt (nicht überschrieben) | Folgen von D-16 |
+| 03.10.2026 | D-10 | ergänzt (nicht überschrieben) | Lizenzdateien vorbereitet |
