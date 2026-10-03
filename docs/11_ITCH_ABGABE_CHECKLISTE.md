@@ -55,7 +55,7 @@
 - [ ] **Sequenzen (D-16) in der Offenlegung richtig einordnen:** Die Sequenzen sind **Code (KI-unterstützt)**. Die Grafik darin sind **mzones Zeichnungen**, der Ton ist **mzones Stimme und Komposition** (Leitmotiv, gespielt von einem prozeduralen Synth, kein generatives Modell)
 - [ ] Links: GitHub-Repo `https://github.com/maierzone/itchi`
 
-**Beschreibungstext** (Vorlage unten, § F)
+**Beschreibungstext** (fertig zum Einfügen: [`docs/itch/SEITENTEXT_EN.md`](itch/SEITENTEXT_EN.md), Vorlage unten, § F)
 - [ ] Pitch, Steuerung, Theme-Bezug, Credits, Repo-Link, Handmade-Hinweis
 - [ ] Rechtschreibung geprüft (EN)
 - [ ] Keine Nennung von EA-Marken außer „inspired by classic early-2000s RTS“
