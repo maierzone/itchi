@@ -1,0 +1,118 @@
+ID,Kategorie,Name,Zeichen-Briefing,Prio,Bogen,Papiermass_mm,Bildschirm_1x_px,Zeichnungen,Quelle,Pipeline,Status
+U01,Einheit ORCHESTRA,CRAWLER (Frame A),"Käfer-/Spinnenmaschine mit 6 Beinen, Sammelschaufel vorn, Datentank-Röhre auf dem Rücken (Füllstand leer lassen – kommt per Code)",M,Einheiten,Feld ø40 (Figur max 30 hoch),56,1,Hand,Trace,offen
+U01b,Einheit ORCHESTRA,CRAWLER (Frame B / Line Boil),"Dieselbe Figur frei nachgezeichnet (nicht durchgepaust) – kleine Abweichungen sind gewollt",S,Einheiten,Feld ø40,56,1,Hand,Trace,offen
+U02,Einheit ORCHESTRA,EXECUTOR (Frame A),"Kleine aufrechte Figur, Kopf = Funken-Glyphe ✦, Werkzeugarm mit kurzem Blaster, Rucksack mit Antenne",M,Einheiten,Feld ø40,48,1,Hand,Trace,offen
+U02b,Einheit ORCHESTRA,EXECUTOR (Frame B),"Line-Boil-Variante",S,Einheiten,Feld ø40,48,1,Hand,Trace,offen
+U03,Einheit ORCHESTRA,SCOUT (Frame A),"Schlanke Figur mit übergroßem Fernrohr-Auge, lange Antenne, Schrittstellung (Tempo)",M,Einheiten,Feld ø40,48,1,Hand,Trace,offen
+U03b,Einheit ORCHESTRA,SCOUT (Frame B),"Line-Boil-Variante",S,Einheiten,Feld ø40,48,1,Hand,Trace,offen
+U04,Einheit ORCHESTRA,CRITIC (Frame A),"Figur mit runder Brille, großer Lupe in der Hand, Rotstift hinterm Ohr, Notizblock",M,Einheiten,Feld ø40,48,1,Hand,Trace,offen
+U04b,Einheit ORCHESTRA,CRITIC (Frame B),"Line-Boil-Variante",S,Einheiten,Feld ø40,48,1,Hand,Trace,offen
+U05,Einheit ORCHESTRA,PLANNER (Frame A),"Figur mit Klemmbrett/Checkliste und Zirkel, Schirmmütze",S,Einheiten,Feld ø40,48,1,Hand,Trace,offen
+U05b,Einheit ORCHESTRA,PLANNER (Frame B),"Line-Boil-Variante",S,Einheiten,Feld ø40,48,1,Hand,Trace,offen
+U06,Einheit ORCHESTRA,TRANSFORMER (Frame A),"Kettenfahrzeug, auf dem Rumpf 3–4 kleine Köpfe/Türmchen (Multi-Head), Spulen statt Kanonenrohr",S,Einheiten,Feld ø40,72,1,Hand,Trace,offen
+U06b,Einheit ORCHESTRA,TRANSFORMER (Frame B),"Line-Boil-Variante",S,Einheiten,Feld ø40,72,1,Hand,Trace,offen
+U07,Einheit ORCHESTRA,INJECTOR,"Figur mit riesiger Spritze, auf dem Kolben geschweifte Klammern { }",C,Einheiten,Feld ø40,48,1,Hand,Trace,offen
+U08,Einheit ORCHESTRA,BATCH,"Artilleriegeschütz, Munition als Stapel Lochkarten/Kisten, langes Rohr schräg nach oben",C,Einheiten,Feld ø40,72,1,Hand,Trace,offen
+E01,Einheit MONOLITH,SHARD (Frame A),"Kantiger Splitter/Kristall auf zwei Stelzbeinen, waagerechter Schlitz als Auge, schwere Schraffur",M,Einheiten,Feld ø40,48,1,Hand,Trace,offen
+E01b,Einheit MONOLITH,SHARD (Frame B),"Line-Boil-Variante",S,Einheiten,Feld ø40,48,1,Hand,Trace,offen
+E02,Einheit MONOLITH,SCRAPER (Frame A),"Kratzmaschine in Blockform mit Harke/Rechen vorn und prallem Beutesack hinten",M,Einheiten,Feld ø40,56,1,Hand,Trace,offen
+E02b,Einheit MONOLITH,SCRAPER (Frame B),"Line-Boil-Variante",S,Einheiten,Feld ø40,56,1,Hand,Trace,offen
+E03,Einheit MONOLITH,BRUTEFORCE,"Massiver Block auf Ketten mit Rammbock und zwei Hämmern",S,Einheiten,Feld ø40,72,1,Hand,Trace,offen
+E04,Einheit MONOLITH,SPAMMER (3 Varianten),"Drei kleine Briefumschläge mit Fledermausflügeln, je leicht anders",C,Einheiten,Feld ø40 (3 im Feld),20,3,Hand,Trace,offen
+B01,Gebäude ORCHESTRA,CONDUCTOR CORE,"Kuppelbau mit Dirigentenpult auf dem Dach, Taktstock als Antenne, Notenlinien als Fries – Vogelschau schräg von vorn",M,Gebäude 3x3,60x90,192x288,1,Hand,Trace,offen
+B02,Gebäude ORCHESTRA,COMPUTE PLANT,"Serverschränke mit zwei Kühltürmen, Dampfwölkchen, Lüftungsgitter",S,Gebäude 2x2,40x60,128x192,1,Hand,Trace,offen
+B03,Gebäude ORCHESTRA,TOKENIZER,"Großer Trichter, in den Datenwürfel fallen; unten Rutsche mit ✦-Münzen; seitliche Andockrampe für CRAWLER",M,Gebäude 3x3,60x90,192x288,1,Hand,Trace,offen
+B04,Gebäude ORCHESTRA,AGENT FORGE,"Werkstatt mit Amboss vor dem Tor, Funkenflug, Schornstein",M,Gebäude 2x2,40x60,128x192,1,Hand,Trace,offen
+B05,Gebäude ORCHESTRA,MODEL FACTORY,"Halle mit Sheddach, Rolltor, Förderband mit Bauteilen",S,Gebäude 3x3,60x90,192x288,1,Hand,Trace,offen
+B06,Gebäude ORCHESTRA,TELEMETRY TOWER,"Gitterturm mit Radarschüssel, Seismographen-Kurve als Wimpel",S,Gebäude 2x2,40x60,128x192,1,Hand,Trace,offen
+B07,Gebäude ORCHESTRA,FIREWALL,"Mauerstück aus Ziegeln mit stilisierten Flammenzinnen",C,Gebäude 1x1,20x30,64x96,1,Hand,Trace,offen
+B08,Gebäude ORCHESTRA,GUARDRAIL,"Turm aus gestapelten Leitplanken-Segmenten, oben Prisma/Spule",M,Gebäude 1x1,20x30,64x96,1,Hand,Trace,offen
+B09,Gebäude ORCHESTRA,RESEARCH LAB,"Labor mit Glaskuppel, darin Gehirn im Glas, Kolben und Rohre",C,Gebäude 2x2,40x60,128x192,1,Hand,Trace,offen
+B10,Gebäude ORCHESTRA,TUNING FORK,"Riesige Stimmgabel auf Sockel, Notenlinien-Ringe drumherum",C,Gebäude 3x3,60x90,192x288,1,Hand,Trace,offen
+M01a,Gebäude MONOLITH,THE MONOLITH Stage I,"Schlanker schwarzer Block (Fläche mit Pinsel gefüllt), ein feiner Riss (Riss frei lassen – leuchtet per Code)",M,frei A4,100x150,320x480,1,Hand,Trace,offen
+M01b,Gebäude MONOLITH,THE MONOLITH Stage II,"Breiter, zweiter Block wächst seitlich an, mehrere Risse",S,frei A4,100x150,320x480,1,Hand,Trace,offen
+M01c,Gebäude MONOLITH,THE MONOLITH Stage III,"Riesig, Schlitz-Auge offen, Risse überall, schwebende Splitter",S,frei A4,100x150,320x480,1,Hand,Trace,offen
+M01d,Gebäude MONOLITH,THE MONOLITH zerstört,"Trümmerhaufen aus gebrochenen Blöcken",S,frei A4,100x150,320x480,1,Hand,Trace,offen
+M02,Gebäude MONOLITH,BROOD NODE,"Kristallhaufen/Brutstätte, aus dem Splitter wachsen, Andeutung einer Schildkuppel",M,Gebäude 2x2,40x60,128x192,1,Hand,Trace,offen
+M03,Gebäude MONOLITH,OVERFITTER,"Turm mit großem Zielscheiben-Auge (konzentrische Ringe)",S,Gebäude 1x1,20x30,64x96,1,Hand,Trace,offen
+N01,Neutral,DATA FIELD voll,"Haufen aus 15–20 kleinen Würfeln mit 0/1-Prägung",M,Gebäude 2x2,40x40,128x128,1,Hand,Trace,offen
+N01b,Neutral,DATA FIELD halb,"Wie voll – 8–10 Würfel",M,Gebäude 2x2,40x40,128x128,1,Hand,Trace,offen
+N01c,Neutral,DATA FIELD fast leer,"3–4 Würfel und Krümel",M,Gebäude 2x2,40x40,128x128,1,Hand,Trace,offen
+N02,Neutral,GOLD DATA voll,"Wie DATA FIELD, größere Würfel mit Sternchen ✶ und Glanz-Strichen",S,Gebäude 2x2,40x40,128x128,1,Hand,Trace,offen
+N02b,Neutral,GOLD DATA halb,"Wie oben, halb so viele",S,Gebäude 2x2,40x40,128x128,1,Hand,Trace,offen
+N03,Neutral,LEGACY SERVER,"Alter Mainframe-Schrank mit Bandspulen, Lochkarten, Spinnweben",C,Gebäude 2x2,40x60,128x192,1,Hand,Trace,offen
+N04,Neutral,WRACK klein,"Umgekippte, zerbrochene Figur – generisch für alle Fußeinheiten",M,Einheiten,Feld ø40,48,1,Hand,Trace,offen
+N04b,Neutral,WRACK groß,"Zerbrochenes Fahrzeug-Wrack – generisch für CRAWLER/SCRAPER/Fahrzeuge",M,Einheiten,Feld ø40,64,1,Hand,Trace,offen
+N05,Neutral,KRATER,"Brandfleck/Krater mit Pinsel, ausgefranster Rand",S,Gebäude 1x1,20x20,64x64,1,Hand,Raster,offen
+N06,Neutral,TRÜMMER 2x2,"Schuttfläche aus Brocken und Balken",M,Gebäude 2x2,40x40,128x128,1,Hand,Trace,offen
+N06b,Neutral,TRÜMMER 3x3,"Größere Schuttfläche",M,Gebäude 3x3,60x60,192x192,1,Hand,Trace,offen
+D01,Overlay,RISSE (3 Varianten),"Drei Zickzack-Riss-Overlays für beschädigte Gebäude",S,Einheiten,Feld ø40,64,3,Hand,Trace,offen
+D02,Overlay,RAUCH (2 Varianten),"Zwei Rauch-Kringel",S,Einheiten,Feld ø40,48,2,Hand,Trace,offen
+K01,Karte,THE DESK Hauptkarte,"Komplette Karte nach GDD § 12.2: Fluss, 2 Brücken, Klippen, Wälder, Sumpf, Straßen. KEINE Einheiten, Gebäude, Datenfelder (das sind Sprites). Bleistift-Vorzeichnung erlaubt, wird beim Scan entfernt",M,A3 quer,410x282 (1 Kachel = 6.4),4096x2816,1,Hand,Raster,offen
+K02,Karte,Tischrand-Deko,"Lineal, Zirkel, Kaffeefleck, Radiergummi, Bleistift – für Rand/Hauptmenü",C,frei A4,frei,frei,5,Hand,Trace,offen
+K03,Karte,Papiertextur,"Ein leeres Blatt deines Zeichenpapiers scannen (Kachelung macht der Code)",M,frei A4,A4,512x512,1,Scan,Raster,offen
+FX01,Effekt,Treffer-Spritzer (3),"Drei kleine Tintenspritzer – Feder über dem Papier schnippen",M,Einheiten,Feld ø40,24,3,Hand,Trace,offen
+FX02,Effekt,Tod-Klecks (2),"Zwei große Kleckse mit Spritzern",M,Einheiten,Feld ø40,64,2,Hand,Trace,offen
+FX03,Effekt,Explosion (4 Frames),"Gebäude-Explosion: Blitz-Kritzel → Wolke → Kleckswolke → Rauchreste",S,Einheiten,Feld ø40,128,4,Hand,Trace,offen
+FX04,Effekt,Halluzination ?!,"Gedankenwolke mit ?! – bewusst wackelig",M,Einheiten,Feld ø40,32,1,Hand,Trace,offen
+FX05,Effekt,Spiralen-Kritzel,"Wirre Spirale (Kreativphase)",S,Einheiten,Feld ø40,32,1,Hand,Trace,offen
+FX06,Effekt,Heil-Plus,"Kleines freundliches Plus mit Strahlen",S,Einheiten,Feld ø40,16,1,Hand,Trace,offen
+FX07,Effekt,Konvertier-Spirale,"Spirale mit { } Klammern",C,Einheiten,Feld ø40,48,1,Hand,Trace,offen
+FX08,Effekt,CONTEXT FLOOD Warnkreis,"Großer Doppelkreis mit Schraffur und Tropfen (wird rost eingefärbt)",S,frei A4,ø150,512,1,Hand,Trace,offen
+FX09,Effekt,Monolith-Puls-Ring,"Ausfransender Ring",S,Einheiten,Feld ø40,256,1,Hand,Trace,offen
+FX10,Effekt,Bau-Staub,"Flache Staubwolke",S,Einheiten,Feld ø40,96,1,Hand,Trace,offen
+FX11,Effekt,Mündungs-Kritzel,"Kleiner Stern-Kritzel",C,Einheiten,Feld ø40,16,1,Hand,Trace,offen
+FX12,Effekt,BATCH-Projektil,"Kleiner Stapel Lochkarten mit Bewegungslinien",C,Einheiten,Feld ø40,24,1,Hand,Trace,offen
+FX13,Effekt,Stimmgabel-Wellen,"Konzentrische Wellenringe",C,Einheiten,Feld ø40,256,1,Hand,Trace,offen
+FX14,Effekt,Notenschlüssel (aligned),"Kleiner Notenschlüssel",C,Einheiten,Feld ø40,20,1,Hand,Trace,offen
+FX15,Effekt,Tusche-Ränder (Fog-Maske),"Ein Blatt mit 6–8 ausfransenden Tuscherändern/Ausblutungen (Pinsel mit viel Wasser)",S,frei A4,A4,frei,1,Hand,Raster,offen
+SM01,Marker,Auswahlkreise (klein + groß),"Zwei Handkreise als flache Ellipsen, nicht ganz geschlossen",M,Einheiten,Feld ø40,48/72,2,Hand,Trace,offen
+SM02,Marker,Bewegungspfeil,"Geschwungener Pfeil",M,Einheiten,Feld ø40,48,1,Hand,Trace,offen
+SM03,Marker,Angriffs-X,"Kräftiges X",M,Einheiten,Feld ø40,32,1,Hand,Trace,offen
+SM04,Marker,Sammelpunkt-Fahne,"Kleine Fahne am Stab",S,Einheiten,Feld ø40,32,1,Hand,Trace,offen
+SM05,Marker,Ungültig-Schraffur,"Schraffurfeld 20x20 mm, an den Rändern kachelbar",M,Gebäude 1x1,20x20,64x64,1,Hand,Raster,offen
+SM06,Marker,Hinweispfeil groß,"Großer, dynamischer Tusche-Pfeil fürs Onboarding",M,frei A4,ca. 120 lang,160,1,Hand,Trace,offen
+UI01,UI,Sidebar-Rahmen,"Hochkant-Rahmen wie ein Karteikasten; Ecken klar, Kanten gleichmäßig (9-Slice)",M,frei A4,70x230,220x720,1,Hand,Trace,offen
+UI02,UI,Tab-Icons (4),"BUILD (Maurerkelle), DEFENSE (Schild), AGENTS (✦-Figur), MODELS (Zahnrad-Kopf)",S,Einheiten,Feld ø40,32,4,Hand,Trace,offen
+UI03,UI,Cameo-Rahmen,"Karteikarten-Rahmen für Bau-Icons (Inhalt = Ausschnitt der Einheiten-/Gebäudezeichnung)",M,Einheiten,Feld ø40,64x48,1,Hand,Trace,offen
+UI04,UI,Ressourcen-Symbole (4),"TOKEN (Münze mit ✦), COMPUTE (Blitz im Zahnrad), CONTEXT ([ ]-Fenster), DATA (Würfel)",M,Einheiten,Feld ø40,24,4,Hand,Trace,offen
+UI05,UI,Monolith-Balken,"Langer Rahmen mit Strichskala, Markierungen bei 33 % und 66 %, kleiner Monolith-Kopf links",M,frei A4,180x20,560x40,1,Hand,Trace,offen
+UI06,UI,Squad-Karte,"Karteikarte quer mit Lochrand und Nummernfeld",M,frei A4,90x30,360x56,1,Hand,Trace,offen
+UI06b,UI,Chip-Form,"Abgerundetes Etikett (Text kommt per Font)",M,Einheiten,Feld ø40,96x28,1,Hand,Trace,offen
+UI06c,UI,Verb-Icons (4),"Fernrohr (EXPLORE), Schild (HOLD), Fadenkreuz (HUNT), Fahne (ASSAULT)",S,Einheiten,Feld ø40,20,4,Hand,Trace,offen
+UI07,UI,Stempel-Rahmen klein,"Rechteckiger Stempelrahmen mit Doppellinie (Text per Font: FLOW, HALLUCINATING, ORCHESTRATED …)",M,Einheiten,Feld ø40,96x28,1,Hand,Trace,offen
+UI08,UI,Button-Rahmen,"Knopf als Papier-Etikett",M,Einheiten,Feld ø40,160x40,1,Hand,Trace,offen
+UI08b,UI,SELL-Icon,"Münze mit Pfeil",M,Einheiten,Feld ø40,24,1,Hand,Trace,offen
+UI08c,UI,REPAIR-Icon,"Schraubenschlüssel",C,Einheiten,Feld ø40,24,1,Hand,Trace,offen
+UI09,UI,Cursor Standard,"Federspitze",M,Einheiten,Feld ø40,32,1,Hand,Trace,offen
+UI09b,UI,Cursor Bewegen,"Kreis mit Pfeil",M,Einheiten,Feld ø40,32,1,Hand,Trace,offen
+UI09c,UI,Cursor Angreifen,"Fadenkreuz",M,Einheiten,Feld ø40,32,1,Hand,Trace,offen
+UI09d,UI,Cursor Nicht möglich,"Durchgestrichener Kreis",M,Einheiten,Feld ø40,32,1,Hand,Trace,offen
+UI09e,UI,Cursor Verkaufen,"Münze",S,Einheiten,Feld ø40,32,1,Hand,Trace,offen
+UI09f,UI,Cursor Reparieren,"Schraubenschlüssel",C,Einheiten,Feld ø40,32,1,Hand,Trace,offen
+UI09g,UI,Cursor Injizieren,"Spritze",C,Einheiten,Feld ø40,32,1,Hand,Trace,offen
+UI10,UI,Minimap-Rahmen + NO SIGNAL,"Rahmen und Kritzel-Rauschen für fehlende Telemetrie",S,frei A4,70x50,220x160,2,Hand,Trace,offen
+UI11,UI,CONDUCTOR-Porträt neutral,"Brustbild: Dirigent mit ✦-Funkenkopf, Frack, Taktstock",M,frei A4,60x60,96x96,1,Hand,Trace,offen
+UI11b,UI,CONDUCTOR-Porträt alarmiert,"Taktstock erhoben, Funken sprühen",S,frei A4,60x60,96x96,1,Hand,Trace,offen
+UI11c,UI,CONDUCTOR-Porträt triumphierend,"Verbeugung",S,frei A4,60x60,96x96,1,Hand,Trace,offen
+UI12,UI,Notizzettel-Rahmen,"Rahmen für Tooltip, Dialog, Pause, Optionen (9-Slice: Ecken klar, Kanten gleichmäßig)",M,frei A4,80x60,frei,1,Hand,Trace,offen
+UI13,UI,Stempel DOMINATED,"Handgeschriebener Stempel in Versalien, Doppelrahmen, leicht schief",M,frei A4,120x40,480x160,1,Hand,Trace,offen
+UI13b,UI,Stempel DISCONNECTED,"wie oben",M,frei A4,120x40,480x160,1,Hand,Trace,offen
+UI13c,UI,Stempel SINGULARITY,"wie oben",M,frei A4,120x40,480x160,1,Hand,Trace,offen
+UI14,UI,Briefing-Blatt,"MZP-analog-Figur: Lagekarte mit Pfeilen + 3 Sätze",S,MZP,–,960x540,0,MZP,MZP,offen
+UI15,UI,Hauptmenü-Komposition,"Schreibtisch mit Karte, Stimmgabel, Taktstock – zusammengesetzt aus K01/K02/B10 + Logo",M,–,–,1280x720,0,Code,Code,offen
+UI16,UI,Logo / Titel-Schriftzug,"Handlettering ORCHESTRATE & DOMINATE, darunter klein KAOD; Taktstock als Unterstreichung",M,frei A4,180x60,720x240,1,Hand,Trace,offen
+UI17,UI,Lade-Kritzel (4 Frames),"Stift zeichnet einen Kreis in 4 Phasen",S,Einheiten,Feld ø40,64,4,Hand,Trace,offen
+MK01,Marketing,itch Cover 630x500,"Komposition: Monolith oben rechts, Squad unten links, Logo – aus Spiel-Assets",M,–,–,630x500,0,Code,Komposition,offen
+MK02,Marketing,itch Banner,"Breites Logo-Banner auf Papier",S,–,–,960x200,0,Code,Komposition,offen
+MK03,Marketing,Screenshots (5),"Aus dem Spiel: Basisbau, Squad-Prompt, Halluzination, Monolith Stage III, Sieg-Stempel",M,–,–,1280x720,0,Capture,Capture,offen
+MK04,Marketing,GIF (5–8 s),"Prompt geben → Squad zieht los → Karte zeichnet sich",M,–,–,640x360,0,Capture,Capture,offen
+MK05,Marketing,itch Seitenhintergrund,"Papiertextur K03 als Kachel",S,–,–,512x512,0,Code,Komposition,offen
+MK06,Marketing,App-Icon 512,"✦ im Kreis vor Monolith-Silhouette",S,Einheiten,Feld ø40,512,1,Hand,Trace,offen
+MK07,Marketing,GitHub Social Preview,"1280x640 Komposition",C,–,–,1280x640,0,Code,Komposition,offen
+MK08,Marketing,How-to-play-Grafik,"MZP-analog: Daten → Tokens → Squads → Prompt → Monolith",S,MZP,–,960x540,0,MZP,MZP,offen
+MK09,Marketing,Tech-Tree-Grafik,"MZP-analog nach GDD § 9",C,MZP,–,960x540,0,MZP,MZP,offen
+MK10,Marketing,Devlog-Header,"Skizze vs. fertige Figur (MZP data-sketch)",C,MZP,–,1200x400,0,MZP,MZP,offen
+F01,Font,IBM Plex Mono,"UI, Zahlen, Prompts (SIL OFL 1.1)",M,–,–,–,0,Font,–,offen
+F02,Font,Spectral,"Überschriften, Briefing, Stempeltexte (SIL OFL 1.1)",M,–,–,–,0,Font,–,offen
+F03,Font,mzone-Handschrift,"Eigene Handschrift als Font (z. B. via Calligraphr) für Notizen/Hinweise",C,Font-Vorlage,–,–,1,Hand,Font,offen
