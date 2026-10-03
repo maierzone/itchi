@@ -15,6 +15,7 @@ npm install
 node pack.mjs <quelle.js> [-o dist/name.js] [--iter 500] [--no-terser]   # packen + Bilanz
 node pack.mjs --check dist/*.js                                         # Größen-Wächter (CI)
 node headless.mjs dist/name.js --shots 1,5,10 [--size 1920x1080] [--gpu] # Lauf + Screenshots
+                                          # Browser: $CHROMIUM, sonst `chromium`
 node test.mjs                                                            # Selbsttest des Packers
 ```
 

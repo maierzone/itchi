@@ -9,6 +9,7 @@
 // Prints console messages, the final page title ("done N s" or "error: ...") and writes
 // screenshots to dist/shots/<name>-<t>.png. Needs a static server for this folder, which
 // it starts itself. Exit code 0 only when the sequence resolved.
+// The browser binary is $CHROMIUM if set (e.g. Playwright's chrome in CI), else `chromium`.
 
 import { spawn } from 'node:child_process';
 import { createServer } from 'node:http';
@@ -52,7 +53,7 @@ const flags = [
   ...(args.includes('--gpu') ? ['--enable-gpu', '--ignore-gpu-blocklist'] : ['--enable-unsafe-swiftshader']),
   'about:blank',
 ];
-const chrome = spawn('chromium', flags, { stdio: ['ignore', 'ignore', 'pipe'] });
+const chrome = spawn(process.env.CHROMIUM ?? 'chromium', flags, { stdio: ['ignore', 'ignore', 'pipe'] });
 const wsUrl = await new Promise((ok) => {
   let buf = '';
   chrome.stderr.on('data', (d) => {
