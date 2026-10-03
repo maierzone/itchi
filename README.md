@@ -37,6 +37,7 @@ Erst wenn deine Agenten es erkunden, **zeichnet sich die Karte mit Tusche**. All
 | 09 | [Theme-Playbook](docs/09_THEME_PLAYBOOK.md) | Was tun am 01.11. um 22:37 MEZ? Theme-Adaption, Vorab-Training mit allen bisherigen Themes | beide |
 | 10 | [Entscheidungslog](docs/10_ENTSCHEIDUNGSLOG.md) | Alle Entscheidungen (ADR-light) mit Status *vorgeschlagen / bestätigt / verworfen*, zuletzt **D-16 4K-Sequenzen** (bestätigt) | **mzone: bestätigen** |
 | 11 | [itch.io-Abgabe-Checkliste](docs/11_ITCH_ABGABE_CHECKLISTE.md) | Von `itch.io/game/new` bis zum Klick auf „Submit“, KI-Offenlegung, Fallbacks | mzone |
+| 12 | [Spickzettel Entscheidungen](docs/12_ENTSCHEIDUNGEN_BIS_0710.md) | Die 15 offenen Entscheidungen und 6 Grill-Fragen zum Abhaken bis Mi 07.10. | **mzone: bis 07.10.** |
 
 **Arbeitsdateien:**
 
@@ -45,6 +46,8 @@ Erst wenn deine Agenten es erkunden, **zeichnet sich die Karte mit Tusche**. All
 | [`art/ASSET_REGISTER.csv`](art/ASSET_REGISTER.csv) | Maschinenlesbare Asset-Liste (ID, Priorität, Maße, Status) – das Tracking-Board fürs Zeichnen |
 | [`art/vorlagen/skizzenbogen_einheiten_A4.svg`](art/vorlagen/skizzenbogen_einheiten_A4.svg) | Druckvorlage A4 für Einheiten (12 Felder, Passermarken, Hilfslinien in „Non-Photo-Blue“) |
 | [`art/vorlagen/skizzenbogen_gebaeude_A4.svg`](art/vorlagen/skizzenbogen_gebaeude_A4.svg) | Druckvorlage A4 für Gebäude (Grundflächen 3×3, 2×2, 1×1 mit Höhenzugabe) |
+| [`art/vorlagen/kartenprobe_A4.svg`](art/vorlagen/kartenprobe_A4.svg) | Druckvorlage A4 für den Kartenausschnitt 100 × 100 mm (Batch 0, Maßstab K01) |
+| [`art/vorlagen/batch0_druckpaket.pdf`](art/vorlagen/batch0_druckpaket.pdf) | **Batch 0 zum Ausdrucken:** [Spickzettel](art/vorlagen/BATCH0_SPICKZETTEL.md) + alle drei Bögen, 4 Seiten A4 |
 | [`art/SKIZZEN_UEBERSICHT.html`](art/SKIZZEN_UEBERSICHT.html) | **Alle 120 Elemente als Karten mit Platzhalter** für deine Skizzen, Filter nach Priorität, Batch und Status. Neu erzeugen: `python3 art/uebersicht.py` |
 
 ---
@@ -101,6 +104,6 @@ werden im Jam neu geschrieben. Der **Spielcode** (inkl. `game/src/sequences/`) e
 ## So arbeitest du mit dieser Spec
 
 1. **[Grill-Protokoll](docs/00_GRILL_PROTOKOLL.md) lesen und beantworten.** Direkt in der Datei, dann committen.
-2. **[Entscheidungslog](docs/10_ENTSCHEIDUNGSLOG.md) bestätigen oder ändern.** Was am 07.10. noch „vorgeschlagen“ ist, gilt als bestätigt.
+2. **[Entscheidungslog](docs/10_ENTSCHEIDUNGSLOG.md) bestätigen oder ändern.** Kurzfassung zum Abhaken: [Spickzettel bis 07.10.](docs/12_ENTSCHEIDUNGEN_BIS_0710.md). Was am 07.10. noch „vorgeschlagen“ ist, gilt als bestätigt.
 3. **Vorlagen drucken** (100 %), **Batch 0** der [Art-Bibel](docs/03_ART_UND_ASSET_BIBEL.md#10-zeichen-reihenfolge-verbindlich) zeichnen: die Stil-Proben bis So 11.10.
 4. Ab da gilt der **[Zeitplan](docs/06_ZEITPLAN.md)**.

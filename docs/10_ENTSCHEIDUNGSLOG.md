@@ -80,12 +80,14 @@
 
 - **Entscheidung:** Szenario B (~92 h): alle Must-Features + Should-Favoriten (F25, F26, F31, F32, F35), sofern Gate M2 grün ist. Die Cut-Liste in [Zeitplan § 7](06_ZEITPLAN.md#7-cut-liste-reihenfolge-ist-verbindlich) ist verbindlich. Plan Z als Rückfallebene.
 - **Ergänzung 03.10.2026 (D-16):** Die 4K-Sequenzen gehen in der Should-Reihenfolge vor. Damit passen von den bisherigen Favoriten in Szenario B voraussichtlich nur noch F31 hinein ([Zeitplan § 4a](06_ZEITPLAN.md#4a-kapazitäts-check-d-16-4k-sequenzen)). Über F35 vs. SQ-INTRO wird bei Gate M2 entschieden.
+- **Ergänzung 03.10.2026 (Auftrag 2):** Die 92 h sind mzones Stunden. Die lokale Session baut die Sequenzen parallel, mzone kosten sie nur ~6–7 h (Host F46 + Review). Damit passen in Szenario B voraussichtlich F31 **und** F35 (F35 mit der ganzen Reserve). Neue Rechnung: [Zeitplan § 4a](06_ZEITPLAN.md#4a-kapazitäts-check-d-16-4k-sequenzen).
 - **Status:** 🟡 · Bestätigt am: ______
 
 ## D-10 · Lizenzen
 
 - **Entscheidung:** Code: MIT (`LICENSE`). Kunst & Audio von mzone: CC BY-NC-ND 4.0 (`art/LICENSE`, `audio/LICENSE`). Fonts: SIL OFL 1.1. Fremd-Assets: laut `CREDITS.md`.
 - **Hinweis:** Die Lizenzdateien werden mit dem ersten Spielcode am 01.11. angelegt, nachdem die Entscheidung bestätigt ist.
+- **Ergänzung 03.10.2026:** Auf Wunsch von mzone schon jetzt vorbereitet (`LICENSE`, `art/LICENSE`, `audio/LICENSE`, `CREDITS.md`), weil Zeichnungen und Vorlagen bereits im Repo liegen. Ändert sich D-10 bei der Bestätigung, werden die Dateien angepasst.
 - **Status:** 🟡 · Bestätigt am: ______
 
 ## D-11 · Handmade-Versprechen & KI-Offenlegung
@@ -144,3 +146,5 @@
 | 03.10.2026 | D-01 … D-15 | angelegt (vorgeschlagen) | Spec v0.1 |
 | 03.10.2026 | D-16 | neu, bestätigt | Auftrag mzone (4K-Sequenzen aus der lokalen Session) |
 | 03.10.2026 | D-09, D-11, D-14, D-15 | ergänzt (nicht überschrieben) | Folgen von D-16 |
+| 03.10.2026 | D-10 | ergänzt (nicht überschrieben) | Lizenzdateien vorbereitet |
+| 03.10.2026 | D-09 | ergänzt (nicht überschrieben) | Auftrag 2: Sequenzen kosten mzone nur Review, § 4a nachgerechnet |

@@ -55,7 +55,7 @@
 | F28 | Gelände-Effekte + Sichtlinien | **S** | 4 | 2 | 1 | · | 1 | · | 1 | M | Block |
 | F29 | BRUTEFORCE + OVERFITTER | **S** | 4 | 2 | 1 | · | 2 | · | 1 | L | Block |
 | F30 | CONTEXT FLOOD | **S** | 3 | 2 | 2 | 2 | 1 | · | 2 | L | Block |
-| F31 | Tinten-Fog („Karte zeichnet sich“) | **S** | 3 | · | 3 | 1 | 3 | · | 2 | M | Reserve, teilt Technik mit F49 |
+| F31 | Tinten-Fog („Karte zeichnet sich“) | **S** | 3 | · | 3 | 1 | 3 | · | 2 | M | Reserve, übernimmt Look und Shader-Idee von F49 (Code neu für Phaser) |
 | F32 | Line Boil + Monolith-Stufen-Optik | **S** | 3 | · | 3 | · | 1 | · | 2 | L | Reserve (§ 4a) |
 | F33 | Musik-Intensitätsschichten | **S** | 2 | · | · | 3 | · | · | 1 | L | Block |
 | F34 | Briefing + Statistik-Endbildschirm | **S** | 2 | 1 | 1 | · | · | 1 | 1 | L | Block |
@@ -102,7 +102,7 @@ Summe der Wirkungspunkte aus § 1, getrennt nach Scope-Stufe:
 | Kategorie | Abdeckung | Wo der eigentliche Hebel liegt | Lücke / Maßnahme |
 |-----------|-----------|--------------------------------|------------------|
 | **Gameplay** | 🟢 stark | Wegfindung, Direktiven, Director, Balancing | RTS-Komplexität bremst Jam-Voter → **Onboarding + STORY-Schwierigkeit** |
-| **Graphics** | 🟡 → 🟢 | Steckt vor allem in den **Zeichnungen** (Oktober), nicht in Features. Die Sequenzen (D-16) inszenieren genau diese Zeichnungen | **Stil-Gate 11.10.** ist kritisch. F31 (Tinten-Fog) und SQ-INTRO (F49) nutzen dieselbe Tusche-Masken-Technik |
+| **Graphics** | 🟡 → 🟢 | Steckt vor allem in den **Zeichnungen** (Oktober), nicht in Features. Die Sequenzen (D-16) inszenieren genau diese Zeichnungen | **Stil-Gate 11.10.** ist kritisch. F31 (Tinten-Fog) übernimmt Look und Shader-Idee von SQ-INTRO (F49), der Code wird für Phaser neu geschrieben |
 | **Audio** | 🔴 → 🟡 | Steckt fast komplett in den **Aufnahmen** (Ansager, Schreibtisch-SFX) und der Musik. **Neu durch D-16:** Leitmotiv von mzone + Sequenz-Lines V31–V36 | **Audio-Session 1 bis 25.10.** (inkl. V31–V36), **Leitmotiv bis 25.10.**, **Musik bis 15.10. anfragen**. F33 nur, wenn Musik als Stems vorliegt |
 | **Innovation** | 🟢 stark | F13 Direktiven, F14 Halluzination, F26 Synergien, F31 „Karte zeichnet sich“ | Die Innovation muss **in den ersten 2 Minuten erlebbar** sein (Onboarding-Schritte 4–6) |
 | **Theme** | 🔴 → ? | **Hängt am 01.11.** F19 + F35 und das [Theme-Playbook](09_THEME_PLAYBOOK.md) | Theme-Abend nach Protokoll. **Achtung:** F35 konkurriert mit den Sequenzen um das Should-Budget ([Zeitplan § 4a](06_ZEITPLAN.md#4a-kapazitäts-check-d-16-4k-sequenzen)). Ersatz für Ebene 1: Theme-Satz im SQ-INTRO |
@@ -232,7 +232,7 @@ Gewichtete Bewertung, Punkte 1–5. **„Vorerfahrung mzone“ steht neutral auf
 | Szenario | Stunden/Woche (Nov.) | Summe Nov. | Erreichbar | Empfohlener Inhalt | Risiko |
 |----------|:--------------------:|:----------:|------------|--------------------|:------:|
 | **A · Knapp** | ~12 h | ~50 h | **Plan Z** | „Defend the Conductor“: feste Basis, 3 Direktiven, Halluzination, Wellen, 1 Karte | 🟡 |
-| **B · Standard (Default)** | ~22 h | **~92 h** | **Tier 0 + ~15 h Should** | alle Must + **Sequenzen F46–F49** (D-16) + ggf. F31. F35 nur, wenn Gate M2 es vorzieht ([Zeitplan § 4a](06_ZEITPLAN.md#4a-kapazitäts-check-d-16-4k-sequenzen)) | 🟠 |
+| **B · Standard (Default)** | ~22 h | **~92 h** | **Tier 0 + ~15 h Should** | alle Must + **Sequenzen F46–F49** (D-16, gebaut von der lokalen Session, mzone nur Review) + F31 + F35 mit der Reserve ([Zeitplan § 4a](06_ZEITPLAN.md#4a-kapazitäts-check-d-16-4k-sequenzen)) | 🟠 |
 | **C · Ambitioniert** | ~35 h | ~145 h | **Tier 1 + ~9 h Could** | alle Should (inkl. aller Sequenzen außer SQ-RADIO) + F40 (Freitext-Prompt) oder F51 (SQ-RADIO) | 🟠 |
 | **D · Urlaub genommen** | ≥ 45 h | ~190 h | **Tier 2** | alles + 2 Zusatzmissionen + mehr Polish | 🔴 (Burnout) |
 

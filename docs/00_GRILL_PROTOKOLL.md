@@ -304,7 +304,7 @@ Siehe [Matrizen → Scope-Szenarien](07_MATRIZEN.md#8-scope-szenario-matrix).
 > D-16 ist bestätigt. Diese Fragen betreffen nur die **Folgen**.
 
 **N1 ❓ Was ist dir wichtiger: das Intro (SQ-INTRO) oder das Theme auf Mechanik-Ebene (F35)?**
-🔥 Im Szenario B (~92 h) ist für Should-Features ~15 h Platz. Die Sequenzen brauchen ~12 h, die bisherigen Should-Favoriten ~19 h. **Beides geht nicht.** SQ-INTRO stärkt den ersten Eindruck (Graphics, Audio, Overall), F35 stärkt eine ganze Kategorie (Theme). Details: [Zeitplan § 4a](06_ZEITPLAN.md#4a-kapazitäts-check-d-16-4k-sequenzen).
+🔥 Im Szenario B (~92 h) ist für Should-Features ~15 h Platz. ~~Die Sequenzen brauchen ~12 h, die bisherigen Should-Favoriten ~19 h. Beides geht nicht.~~ **Nachgerechnet 03.10. (Auftrag 2):** Die 92 h sind deine Stunden. Die lokale Session baut die Sequenzen parallel, dich kosten sie nur ~6–7 h (Host + Review + Feinschliff). Damit passen Ende-Sequenzen, SQ-INTRO, F31 **und** F35, F35 allerdings nur mit der ganzen Reserve. Der Konflikt ist also klein. SQ-INTRO stärkt den ersten Eindruck (Graphics, Audio, Overall), F35 stärkt eine ganze Kategorie (Theme). Details: [Zeitplan § 4a](06_ZEITPLAN.md#4a-kapazitäts-check-d-16-4k-sequenzen).
 🧭 **Default:** Reihenfolge wie von dir vorgeschlagen (Ende-Sequenzen → SQ-INTRO → F31 → F35 …). **Ausnahme:** Ist das Theme bei Gate M2 nur schwach umgesetzt, wird F35 vor SQ-INTRO gezogen. Entschieden wird am **So 15.11.**
 ✍️ Deine Antwort: ______________________
 

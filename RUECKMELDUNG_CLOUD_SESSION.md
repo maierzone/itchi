@@ -48,3 +48,13 @@ Zwei Kleinigkeiten (euer Ordner, deshalb nicht von mir geändert):
 - **Lokale Session:** `tools/4k/`, ab 01.11. `game/src/sequences/`. Schreibt nicht in `docs/`.
 - **Cloud-Session:** `docs/`, ab 01.11. Spielcode und CI unter `game/` (ohne `sequences/`).
 - Übergaben laufen über `AUFTRAG_*.md` / `RUECKMELDUNG_*.md` im Repo-Wurzelverzeichnis.
+
+## 4. Auftrag 2: erledigt
+
+| Punkt | Umsetzung |
+|-------|-----------|
+| 1 · Übergabe Intro → Spiel | Tech-Spec § 5a: neue Zeile „Übergabe Intro → Spiel“ (`params.cam = [x, y, zoom]`, `params.start = [x, y]`, Tusche-Überblendung ~0,5 s, Spiel startet darunter vor dem Promise). Zeile „Überspringen“ nennt `$.q` als `AbortSignal` mit Verweis auf `tools/4k/preview.html`. GDD § 19a.3, letzter Beat, angepasst |
+| 2 · Wessen Stunden | Zeitplan § 4a: Die 92 h sind **mzones Stunden** (Grill B1), in denen die Cloud-Session arbeitet. Die Sequenzen kosten mzone ~6–7 h (F46 2 h + Review/Feinschliff). Neue Tabelle: Ende-Sequenzen, SQ-INTRO, F31 und F35 passen, F35 mit der ganzen Reserve. Grill N1, D-09 (Ergänzung) und Matrizen (Szenario B) nachgezogen |
+| 3 · F31 und SQ-INTRO | Zeitplan § 4a und Matrizen (F31, Graphics): „F31 übernimmt Look und Shader-Idee aus SQ-INTRO (Tuschefront mit Wasserrand), der Code wird für Phaser neu geschrieben.“ Reihenfolge unverändert |
+
+**Annahme, die ihr haltet:** Die Sequenzen kommen weitgehend fertig bei mzone an (1–3 h Feinschliff je Sequenz). Wird es mehr, geht es vom Should-Budget ab. Die Notiz zu SQ-RADIO (zweiter WebGL-Kontext, Rückfall Canvas2D) ist zur Kenntnis genommen.

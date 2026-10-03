@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+  <title>ORCHESTRATE &amp; DOMINATE – Skizzenbogen KARTENPROBE (Batch 0)</title>
+  <desc>Druckvorlage A4, in 100 % / Tatsächliche Größe drucken. 100 × 100 mm Feld im Maßstab der Hauptkarte K01 (1 Kachel = 6,4 mm). Hellblaue Hilfslinien (#86c5e6) werden beim Scannen entfernt, schwarze Passermarken dienen dem Ausrichten. Siehe docs/03_ART_UND_ASSET_BIBEL.md § 4 und § 10.</desc>
+  <rect x="0" y="0" width="210" height="297" fill="#ffffff"/>
+  <g font-family="IBM Plex Mono, Menlo, Consolas, monospace" fill="#86c5e6">
+    <text x="15" y="16" font-size="4.2" font-weight="700">ORCHESTRATE &amp; DOMINATE · SKIZZENBOGEN KARTENPROBE (K01-Probe)</text>
+    <text x="15" y="21.5" font-size="2.6">Feld 100 × 100 mm im Maßstab der Hauptkarte · Raster = 1 Kachel = 6,4 mm · streng von oben</text>
+    <text x="15" y="28" font-size="2.6">Bogen-Nr. ______   Datum ____________   Stifte ______________________</text>
+  </g>
+  <g stroke="#221d17" stroke-width="0.3" fill="none">
+    <circle cx="8" cy="8" r="2.5"/><line x1="4" y1="8" x2="12" y2="8"/><line x1="8" y1="4" x2="8" y2="12"/>
+    <circle cx="202" cy="8" r="2.5"/><line x1="198" y1="8" x2="206" y2="8"/><line x1="202" y1="4" x2="202" y2="12"/>
+    <circle cx="8" cy="289" r="2.5"/><line x1="4" y1="289" x2="12" y2="289"/><line x1="8" y1="285" x2="8" y2="293"/>
+    <circle cx="202" cy="289" r="2.5"/><line x1="198" y1="289" x2="206" y2="289"/><line x1="202" y1="285" x2="202" y2="293"/>
+  </g>
+  <!-- Feld 100 x 100 mm -->
+  <g fill="none" stroke="#86c5e6">
+    <rect x="55" y="40" width="100" height="100" stroke-width="0.4"/>
+    <g stroke-width="0.12" stroke-dasharray="0.8 1.2">
+      <line x1="61.4" y1="40" x2="61.4" y2="140"/><line x1="67.8" y1="40" x2="67.8" y2="140"/><line x1="74.2" y1="40" x2="74.2" y2="140"/><line x1="80.6" y1="40" x2="80.6" y2="140"/><line x1="87" y1="40" x2="87" y2="140"/><line x1="93.4" y1="40" x2="93.4" y2="140"/><line x1="99.8" y1="40" x2="99.8" y2="140"/><line x1="106.2" y1="40" x2="106.2" y2="140"/><line x1="112.6" y1="40" x2="112.6" y2="140"/><line x1="119" y1="40" x2="119" y2="140"/><line x1="125.4" y1="40" x2="125.4" y2="140"/><line x1="131.8" y1="40" x2="131.8" y2="140"/><line x1="138.2" y1="40" x2="138.2" y2="140"/><line x1="144.6" y1="40" x2="144.6" y2="140"/><line x1="151" y1="40" x2="151" y2="140"/>
+      <line x1="55" y1="46.4" x2="155" y2="46.4"/><line x1="55" y1="52.8" x2="155" y2="52.8"/><line x1="55" y1="59.2" x2="155" y2="59.2"/><line x1="55" y1="65.6" x2="155" y2="65.6"/><line x1="55" y1="72" x2="155" y2="72"/><line x1="55" y1="78.4" x2="155" y2="78.4"/><line x1="55" y1="84.8" x2="155" y2="84.8"/><line x1="55" y1="91.2" x2="155" y2="91.2"/><line x1="55" y1="97.6" x2="155" y2="97.6"/><line x1="55" y1="104" x2="155" y2="104"/><line x1="55" y1="110.4" x2="155" y2="110.4"/><line x1="55" y1="116.8" x2="155" y2="116.8"/><line x1="55" y1="123.2" x2="155" y2="123.2"/><line x1="55" y1="129.6" x2="155" y2="129.6"/><line x1="55" y1="136" x2="155" y2="136"/>
+    </g>
+  </g>
+  <!-- Passermarken am Feld -->
+  <g stroke="#221d17" stroke-width="0.3" fill="none">
+    <line x1="50" y1="40" x2="53" y2="40"/><line x1="55" y1="35" x2="55" y2="38"/>
+    <line x1="157" y1="40" x2="160" y2="40"/><line x1="155" y1="35" x2="155" y2="38"/>
+    <line x1="50" y1="140" x2="53" y2="140"/><line x1="55" y1="142" x2="55" y2="145"/>
+    <line x1="157" y1="140" x2="160" y2="140"/><line x1="155" y1="142" x2="155" y2="145"/>
+  </g>
+  <!-- Mini-Vorschlag des Ausschnitts (nur blau, wird entfernt) -->
+  <g font-family="IBM Plex Mono, Menlo, Consolas, monospace" fill="#86c5e6" font-size="2.6">
+    <text x="15" y="154" font-weight="700">VORSCHLAG FÜR DEN AUSSCHNITT (GDD § 12.2, um die Südbrücke)</text>
+    <text x="15" y="160">Ein Stück DATA LAKE (Fluss, diagonal) mit einer Brücke (x), ein Stück BANDWIDTH ROAD (=),</text>
+    <text x="15" y="165">ein Waldrand CACHE FOREST (") und eine Ecke FIREWALL CLIFFS (^). Rest bleibt leeres Papier.</text>
+    <text x="15" y="175" font-weight="700">STIFTE (Art-Bibel § 4.1)</text>
+    <text x="15" y="181">Linien 0,3–0,5 mm · Schraffur 0,1–0,3 mm · Pinselflächen sparsam (Einheiten liegen darüber)</text>
+    <text x="15" y="186">Keine Einheiten, Gebäude oder Datenfelder einzeichnen – das sind eigene Sprites.</text>
+    <text x="15" y="196" font-weight="700">TESTDRUCK</text>
+    <text x="15" y="202">Diese Linie muss genau 10 mm lang sein:</text>
+  </g>
+  <line x1="80" y1="201" x2="90" y2="201" stroke="#221d17" stroke-width="0.4"/>
+  <line x1="80" y1="199.5" x2="80" y2="202.5" stroke="#221d17" stroke-width="0.3"/>
+  <line x1="90" y1="199.5" x2="90" y2="202.5" stroke="#221d17" stroke-width="0.3"/>
+</svg>
