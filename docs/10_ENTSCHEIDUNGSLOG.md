@@ -53,6 +53,7 @@
 ## D-04 · Titel
 
 - **Entscheidung:** Spieltitel **ORCHESTRATE & DOMINATE**, Codename **KAOD** (= KI-Agent-Orchestrate-And-Dominate, gesprochen „Chaos“). itch-URL `orchestrate-and-dominate`. Untertitel theme-variabel.
+- **Ergänzung 03.10.2026:** mzone hat die Spielseite als **https://maierzone.itch.io/orchestrate-dominate** angelegt. Die URL lautet damit `orchestrate-dominate` (ohne „and“). Checkliste und butler-Ziel sind angepasst.
 - **Alternative:** „Ki-Agent-Orchestrate-And-Dominate“ (Original). Verworfen wegen Sprachmix, Länge und Thumbnail-Abschnitt.
 - **Status:** 🟡 · Bestätigt am: ______
 
@@ -144,3 +145,4 @@
 | 03.10.2026 | D-01 … D-15 | angelegt (vorgeschlagen) | Spec v0.1 |
 | 03.10.2026 | D-16 | neu, bestätigt | Auftrag mzone (4K-Sequenzen aus der lokalen Session) |
 | 03.10.2026 | D-09, D-11, D-14, D-15 | ergänzt (nicht überschrieben) | Folgen von D-16 |
+| 03.10.2026 | D-04 | ergänzt (nicht überschrieben) | itch-Seite angelegt: URL `orchestrate-dominate` |

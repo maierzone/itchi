@@ -1,6 +1,7 @@
 # 11 · itch.io-Abgabe-Checkliste
 
 > Von der Anmeldung bis zum Klick auf „Submit“. **Abhaken direkt in dieser Datei.**
+> **Spielseite:** **https://maierzone.itch.io/orchestrate-dominate** (Entwurf, angelegt am 03.10.2026, öffentlich noch nicht sichtbar). Bearbeiten: itch.io → *Dashboard* → Projekt → *Edit game*.
 > Zur Erinnerung: **`itch.io/jam/game-off-2026`** = der Wettbewerb (Einschreibung). **`itch.io/game/new`** = das Formular für deine Spielseite. Du brauchst beides.
 
 ---
@@ -9,16 +10,18 @@
 
 - [ ] itch.io-Konto **maierzone** vorhanden, Profil ausgefüllt (Avatar, Link zu GitHub)
 - [ ] Auf **https://itch.io/jam/game-off-2026** auf **„Join jam“** geklickt (mit GitHub-Login möglich)
-- [ ] Über **https://itch.io/game/new** einen **Entwurf** anlegen:
+- [x] Über **https://itch.io/game/new** einen **Entwurf** angelegt (03.10.2026). Die Felder unten im *Edit game* prüfen und abhaken:
   - [ ] Title: **ORCHESTRATE & DOMINATE**
-  - [ ] Project URL: `orchestrate-and-dominate`
+  - [x] Project URL: `orchestrate-dominate` → https://maierzone.itch.io/orchestrate-dominate
   - [ ] Short description: *Orchestrate a swarm of AI agents on a hand-inked war map. Prompts, not clicks.*
   - [ ] Classification: **Games**
   - [ ] Kind of project: **HTML**
   - [ ] Release status: *In development* (am 30.11. → *Released*)
   - [ ] Pricing: **No payments** (kostenlos)
-  - [ ] Visibility: **Draft** (Tester-Phase: *Restricted* mit geheimem Link)
-- [ ] **butler** installiert und eingeloggt. API-Key als GitHub-Secret `BUTLER_API_KEY` im Repo `maierzone/itchi` hinterlegt
+  - [x] Visibility: **Draft** (Seite ist öffentlich noch 404, Stand 03.10.). Tester-Phase später: *Restricted* mit geheimem Link
+  - [ ] Unter *Edit game* → *Secret URL* den geheimen Link erzeugen und hier notieren: ______
+  - [ ] Seite in der Jam-Einreichung später genau diese URL verwenden (nicht neu anlegen)
+- [ ] **butler** installiert und eingeloggt (`butler login`), Probe: `butler status maierzone/orchestrate-dominate`. API-Key als GitHub-Secret `BUTLER_API_KEY` im Repo `maierzone/itchi` hinterlegt
 - [ ] Discord/itch-Forum des Jams angesehen (Fragen, Ankündigungen)
 
 ## B · Release-Probelauf (So 15.11. – Gate M2)
@@ -37,7 +40,7 @@
 
 ## C · Seite fertig machen (Sa 28.11.)
 
-**Medien**
+**Medien** (Stand aller Zeichnungen: [`art/SKIZZEN_UEBERSICHT.html`](../art/SKIZZEN_UEBERSICHT.html), Kategorie *itch-Seite & Marketing*)
 - [ ] **Cover-Bild 630 × 500 px** (MK01), wirkt auch verkleinert auf 315 × 250
 - [ ] **5 Screenshots** (MK03): Basisbau · Squad mit Prompt · Halluzination · Monolith STAGE III · Sieg-Stempel
 - [ ] **GIF** (MK04, 5–8 s, ≤ 3 MB) **ganz oben** in die Beschreibung

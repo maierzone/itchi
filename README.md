@@ -45,6 +45,7 @@ Erst wenn deine Agenten es erkunden, **zeichnet sich die Karte mit Tusche**. All
 | [`art/ASSET_REGISTER.csv`](art/ASSET_REGISTER.csv) | Maschinenlesbare Asset-Liste (ID, Priorität, Maße, Status) – das Tracking-Board fürs Zeichnen |
 | [`art/vorlagen/skizzenbogen_einheiten_A4.svg`](art/vorlagen/skizzenbogen_einheiten_A4.svg) | Druckvorlage A4 für Einheiten (12 Felder, Passermarken, Hilfslinien in „Non-Photo-Blue“) |
 | [`art/vorlagen/skizzenbogen_gebaeude_A4.svg`](art/vorlagen/skizzenbogen_gebaeude_A4.svg) | Druckvorlage A4 für Gebäude (Grundflächen 3×3, 2×2, 1×1 mit Höhenzugabe) |
+| [`art/SKIZZEN_UEBERSICHT.html`](art/SKIZZEN_UEBERSICHT.html) | **Alle 120 Elemente als Karten mit Platzhalter** für deine Skizzen, Filter nach Priorität, Batch und Status. Neu erzeugen: `python3 art/uebersicht.py` |
 
 ---
 
