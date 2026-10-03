@@ -49,6 +49,7 @@
 - [ ] Inputs: Keyboard, Mouse · Accessibility: *Pause anytime*, *Adjustable difficulty*, *Subtitles* (Ansager als Text)
 - [ ] Average session: *About 15 minutes*
 - [ ] **KI-Offenlegung** (Entscheidung D-11): **Code KI-unterstützt** · **Grafik: keine generative KI** · **Sound: keine generative KI** · Texte: nach Stand ausfüllen
+- [ ] **Sequenzen (D-16) in der Offenlegung richtig einordnen:** Die Sequenzen sind **Code (KI-unterstützt)**. Die Grafik darin sind **mzones Zeichnungen**, der Ton ist **mzones Stimme und Komposition** (Leitmotiv, gespielt von einem prozeduralen Synth, kein generatives Modell)
 - [ ] Links: GitHub-Repo `https://github.com/maierzone/itchi`
 
 **Beschreibungstext** (Vorlage unten, § F)
@@ -64,6 +65,7 @@
 - [ ] Getestet in **Chrome** und **Firefox** (Inkognito), dazu Edge, Safari falls verfügbar
 - [ ] Getestet bei **1366 × 768** (kleiner Laptop) und **2560 × 1440** (HiDPI)
 - [ ] Ganze Partie auf STORY und NORMAL gespielt: Sieg und Niederlage funktionieren
+- [ ] **Sequenzen (D-16):** jede ≤ 4096 B (Build-Check grün) · Intro ≤ 45 s, SKIP sichtbar · Ende-Sequenzen per Klick übersprungen → Statistik · Rückfall (GDD § 14) funktioniert bei deaktivierter Sequenz · selbst entpackende Programme laufen im itch-iframe (Inkognito-Test)
 - [ ] Credits-Bildschirm vollständig (`CREDITS.md`), Lizenzen im Repo (`LICENSE`, `art/LICENSE`, `audio/LICENSE`, Font-OFL)
 - [ ] **README im Repo:** Was ist das Spiel, wie baut man es, was entstand vor/während des Jams, Lizenzen, KI-Offenlegung
 - [ ] Letzter Commit gepusht, **Tag `v1.0.0`**, butler-Upload über CI erfolgreich
@@ -101,6 +103,8 @@ give them prompts, and break the Monolith before it reaches singularity.
 ### Hand-inked
 Every line you see was drawn by hand on paper by mzone – scanned and vectorized, no image generators.
 The voice of the Conductor and most sound effects were recorded at a desk with a pen, a stamp and a microphone.
+Every cinematic is a 4096-byte score conducting hand-drawn ink – the code moves, reveals and lights the drawings, it never invents a line.
+The main theme was composed by mzone; a tiny synth inside each score plays it.
 The code was written together with AI agents (Claude Code) – a game about orchestrating agents, built by orchestrating agents.
 
 ### Credits

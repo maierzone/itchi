@@ -49,17 +49,22 @@
 | F22 | COMPUTE + LOW COMPUTE | **S** | 2 | 2 | · | · | · | · | 1 | L | Block 21./22.11. |
 | F23 | MODEL FACTORY + TRANSFORMER | **S** | 4 | 2 | 1 | · | 1 | · | 1 | L | Block |
 | F24 | TELEMETRY + Minimap | **S** | 4 | 2 | 1 | · | · | · | 1 | M | Block |
-| F25 | PLANNER + Bedingungen | **S** | 4 | 2 | · | · | 2 | · | 2 | M | 21.11. (Vorschlag) |
-| F26 | Synergien/Pipelines + ORCHESTRATED | **S** | 4 | 3 | 1 | 1 | 3 | · | 2 | M | 21.11. (Vorschlag) |
+| F25 | PLANNER + Bedingungen | **S** | 4 | 2 | · | · | 2 | · | 2 | M | Reserve (§ 4a) |
+| F26 | Synergien/Pipelines + ORCHESTRATED | **S** | 4 | 3 | 1 | 1 | 3 | · | 2 | M | Reserve (§ 4a) |
 | F27 | ASSAULT + Zusatzziele | **S** | 2 | 1 | · | · | 1 | · | 1 | L | Block |
 | F28 | Gelände-Effekte + Sichtlinien | **S** | 4 | 2 | 1 | · | 1 | · | 1 | M | Block |
 | F29 | BRUTEFORCE + OVERFITTER | **S** | 4 | 2 | 1 | · | 2 | · | 1 | L | Block |
 | F30 | CONTEXT FLOOD | **S** | 3 | 2 | 2 | 2 | 1 | · | 2 | L | Block |
-| F31 | Tinten-Fog („Karte zeichnet sich“) | **S** | 3 | · | 3 | 1 | 3 | · | 2 | M | 22.11. (Vorschlag) |
-| F32 | Line Boil + Monolith-Stufen-Optik | **S** | 3 | · | 3 | · | 1 | · | 2 | L | 22.11. (Vorschlag) |
+| F31 | Tinten-Fog („Karte zeichnet sich“) | **S** | 3 | · | 3 | 1 | 3 | · | 2 | M | Reserve, teilt Technik mit F49 |
+| F32 | Line Boil + Monolith-Stufen-Optik | **S** | 3 | · | 3 | · | 1 | · | 2 | L | Reserve (§ 4a) |
 | F33 | Musik-Intensitätsschichten | **S** | 2 | · | · | 3 | · | · | 1 | L | Block |
 | F34 | Briefing + Statistik-Endbildschirm | **S** | 2 | 1 | 1 | · | · | 1 | 1 | L | Block |
-| F35 | Theme-Modul Ebene 3 (Mechanik) | **S** | 5 | 2 | 1 | · | 2 | 3 | 2 | H | 21.11. (Vorschlag) |
+| F35 | Theme-Modul Ebene 3 (Mechanik) | **S** | 5 | 2 | 1 | · | 2 | 3 | 2 | H | Gate M2 entscheidet (§ 4a) |
+| F46 | Sequenz-Host (playSequence) + 4K-Größencheck im Build | **S** | 2 | · | · | · | · | · | · | M | 21.11. |
+| F47 | SQ-DOMINATED (Sieg-Sequenz) | **S** | 3 | · | 2 | 2 | 1 | · | 2 | L | 21.11. |
+| F48 | SQ-SINGULARITY (Niederlage B) | **S** | 2 | · | 2 | 2 | 1 | · | 2 | L | 21.11. |
+| F49 | SQ-INTRO (Uplink, Prämisse, Leitmotiv) | **S** | 5 | · | 3 | 3 | 2 | 1 | 3 | M | 22.11. (oder F35) |
+| F50 | SQ-DISCONNECTED (Niederlage A) | **S** | 2 | · | 1 | 1 | · | · | 1 | L | Cut-Liste #2 |
 | | **COULD (Tier 2)** | | | | | | | | | | |
 | F36 | INJECTOR + LEGACY SERVER | **C** | 6 | 2 | 1 | 1 | 2 | · | 1 | M | nach M3 |
 | F37 | RESEARCH LAB + TUNING FORK + EXTENDED CONTEXT | **C** | 6 | 2 | 2 | 1 | 1 | · | 1 | M | nach M3 |
@@ -71,9 +76,10 @@
 | F43 | FIREWALL | **C** | 2 | 1 | · | · | · | · | · | L | nach M3 |
 | F44 | Handschrift-Font + Tischdeko | **C** | 2 | · | 2 | · | · | · | 1 | L | nach M3 |
 | F45 | Tastenbelegung | **C** | 2 | 1 | · | · | · | · | · | L | nach M3 |
+| F51 | SQ-RADIO Funkfenster (parametrisiert) | **C** | 4 | 1 | 2 | 1 | 1 | · | 1 | M | nach M3 / Cut-Liste #1 |
 | | **Σ Tier 0 (M)** | | **76** | **39** | **18** | **5** | **14** | **5** | **43** | | |
-| | **Σ Tier 1 (M+S)** | | **122** | **60** | **33** | **12** | **31** | **9** | **63** | | |
-| | **Σ Tier 2 (alle)** | | **159** | **71** | **40** | **16** | **38** | **11** | **69** | | |
+| | **Σ Tier 1 (M+S)** | | **136** | **60** | **41** | **20** | **35** | **10** | **71** | | |
+| | **Σ Tier 2 (alle)** | | **177** | **72** | **50** | **25** | **43** | **12** | **78** | | |
 <!-- FEATURE_TABLE_END -->
 
 ---
@@ -86,8 +92,9 @@ Summe der Wirkungspunkte aus § 1, getrennt nach Scope-Stufe:
 | Stufe | Stunden | Gameplay | Graphics | Audio | Innovation | Theme | Overall |
 |-------|--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | Tier 0 (M) | 76 | 39 | 18 | 5 | 14 | 5 | 43 |
-| Tier 1 (M+S) | 122 | 60 | 33 | 12 | 31 | 9 | 63 |
-| Tier 2 (alle) | 159 | 71 | 40 | 16 | 38 | 11 | 69 |
+| Tier 1 (M+S) | 136 | 60 | 41 | 20 | 35 | 10 | 71 |
+| Tier 2 (alle) | 177 | 72 | 50 | 25 | 43 | 12 | 78 |
+| *davon Sequenzen (F46–F51)* | 18 | 1 | 10 | 9 | 5 | 1 | 9 |
 <!-- COVERAGE_TABLE_END -->
 
 **Ehrliche Lesart:**
@@ -95,10 +102,10 @@ Summe der Wirkungspunkte aus § 1, getrennt nach Scope-Stufe:
 | Kategorie | Abdeckung | Wo der eigentliche Hebel liegt | Lücke / Maßnahme |
 |-----------|-----------|--------------------------------|------------------|
 | **Gameplay** | 🟢 stark | Wegfindung, Direktiven, Director, Balancing | RTS-Komplexität bremst Jam-Voter → **Onboarding + STORY-Schwierigkeit** |
-| **Graphics** | 🟡 → 🟢 | Steckt vor allem in den **Zeichnungen** (Oktober), nicht in Features | **Stil-Gate 11.10.** ist kritisch. F31 (Tinten-Fog) und F32 (Line Boil) geben großen Graphics-Ertrag für wenig Aufwand → **Should-Favoriten** |
-| **Audio** | 🔴 → 🟡 | Steckt fast komplett in den **Aufnahmen** (Ansager, Schreibtisch-SFX) und der Musik, kaum in Code | **Audio-Session 1 bis 25.10.** und **Musik bis 15.10. anfragen** sind Pflicht. F33 nur, wenn Musik als Stems vorliegt |
+| **Graphics** | 🟡 → 🟢 | Steckt vor allem in den **Zeichnungen** (Oktober), nicht in Features. Die Sequenzen (D-16) inszenieren genau diese Zeichnungen | **Stil-Gate 11.10.** ist kritisch. F31 (Tinten-Fog) und SQ-INTRO (F49) nutzen dieselbe Tusche-Masken-Technik |
+| **Audio** | 🔴 → 🟡 | Steckt fast komplett in den **Aufnahmen** (Ansager, Schreibtisch-SFX) und der Musik. **Neu durch D-16:** Leitmotiv von mzone + Sequenz-Lines V31–V36 | **Audio-Session 1 bis 25.10.** (inkl. V31–V36), **Leitmotiv bis 25.10.**, **Musik bis 15.10. anfragen**. F33 nur, wenn Musik als Stems vorliegt |
 | **Innovation** | 🟢 stark | F13 Direktiven, F14 Halluzination, F26 Synergien, F31 „Karte zeichnet sich“ | Die Innovation muss **in den ersten 2 Minuten erlebbar** sein (Onboarding-Schritte 4–6) |
-| **Theme** | 🔴 → ? | **Hängt am 01.11.** F19 + F35 und das [Theme-Playbook](09_THEME_PLAYBOOK.md) | Theme-Abend nach Protokoll, Ebene 3 (F35) als Should-Favorit |
+| **Theme** | 🔴 → ? | **Hängt am 01.11.** F19 + F35 und das [Theme-Playbook](09_THEME_PLAYBOOK.md) | Theme-Abend nach Protokoll. **Achtung:** F35 konkurriert mit den Sequenzen um das Should-Budget ([Zeitplan § 4a](06_ZEITPLAN.md#4a-kapazitäts-check-d-16-4k-sequenzen)). Ersatz für Ebene 1: Theme-Satz im SQ-INTRO |
 | **Overall** | 🟢 | Summe + **Polish + Fehlerfreiheit + erster Eindruck** | Woche 4 ist reine Polish-Woche, nicht verhandelbar |
 
 ---
@@ -123,6 +130,7 @@ Summe der Wirkungspunkte aus § 1, getrennt nach Scope-Stufe:
 | R08 | **Audio schwach/fehlt** | 3 | 3 | 🟡 9 | Audio-Session im Oktober, CC0-Fallback | Session 1 bis 25.10. nicht erledigt | mzone |
 | R14 | **Performance auf schwachen Geräten** | 3 | 3 | 🟡 9 | Budgets, Masken-Fog, Kartenkacheln | FPS < 45 im Stresstest | Claude Code |
 | R15 | **Halluzination frustriert** | 3 | 3 | 🟡 9 | niedrige Raten, CRITIC, nie tödlich, auf STORY halbiert | Tester flucht statt lacht | beide |
+| R18 | **Sequenzen (D-16) fressen Should-Zeit / sprengen 4096 B** | 3 | 3 | 🟡 9 | erst nach Gate M2, feste Reihenfolge, harter Build-Check, Rückfall GDD § 14 immer gebaut, Cut-Liste #1/#2 | Ende-Sequenzen am 21.11. nicht fertig | beide |
 | R11 | **KI-Gegenwind in der Community** | 2 | 3 | 🟡 6 | Handmade-Versprechen, ehrliche Offenlegung, Meta-Story | negative Kommentare zur KI | mzone |
 | R12 | **Regeländerung 2026** (z. B. KI-Einschränkung) | 1 | 5 | 🟡 5 | Regel-Check 01.11., Code-Herkunft dokumentiert | neue Regeln | mzone |
 | R13 | **Rechtliches** (Marken, Lizenzen) | 1 | 4 | 🟢 4 | keine EA-Namen/-Assets, `CREDITS.md`, Lizenzprüfung | – | mzone |
@@ -133,7 +141,7 @@ Summe der Wirkungspunkte aus § 1, getrennt nach Scope-Stufe:
 |-----------|---|---|---|---|---|
 | **5** | | | | | |
 | **4** | | | R07 | R03 · R10 | **R01** |
-| **3** | | | R05 · R08 · R14 · R15 | R06 · R16 · R17 | R02 · R04 |
+| **3** | | | R05 · R08 · R14 · R15 · R18 | R06 · R16 · R17 | R02 · R04 |
 | **2** | | | R11 | | R09 |
 | **1** | | | | R13 | R12 |
 
@@ -160,6 +168,10 @@ Summe der Wirkungspunkte aus § 1, getrennt nach Scope-Stufe:
 | Ansager- und SFX-Aufnahmen | **A/R** | – | – | – | – |
 | Audio-Bearbeitung (Skript-Kette) | A | **R** | – | – | – |
 | Musik beschaffen, Lizenzen prüfen | **A/R** | C | – | – | – |
+| **Leitmotiv komponieren** (D-16) | **A/R** | C (Synth) | – | – | – |
+| **`tools/4k/`** (Packer, Größen-Check, Vorschau) | A | **R** (lokale Session) | – | – | – |
+| **4K-Sequenzen** in `game/src/sequences/` | A | **R** (lokale Session) | – | – | C |
+| Host-Vertrag `playSequence` im Spiel | I | **R** | – | – | – |
 | Playtests durchführen | **A/R** | C (Protokoll) | – | – | **R** |
 | itch-Seite (Texte, Bilder) | **A/R** | C | C | C | I |
 | KI-Offenlegung, Credits, Lizenzen | **A/R** | C | – | – | – |
@@ -220,11 +232,11 @@ Gewichtete Bewertung, Punkte 1–5. **„Vorerfahrung mzone“ steht neutral auf
 | Szenario | Stunden/Woche (Nov.) | Summe Nov. | Erreichbar | Empfohlener Inhalt | Risiko |
 |----------|:--------------------:|:----------:|------------|--------------------|:------:|
 | **A · Knapp** | ~12 h | ~50 h | **Plan Z** | „Defend the Conductor“: feste Basis, 3 Direktiven, Halluzination, Wellen, 1 Karte | 🟡 |
-| **B · Standard (Default)** | ~22 h | **~92 h** | **Tier 0 + ~15 h Should** | alle Must + F25/F26 (PLANNER, Synergien) + F31/F32 (Tinten-Fog, Line Boil) + F35 (Theme-Mechanik) | 🟠 |
-| **C · Ambitioniert** | ~35 h | ~145 h | **Tier 1 + ~20 h Could** | + alle Should + F40 (Freitext-Prompt) + F36 (INJECTOR) | 🟠 |
+| **B · Standard (Default)** | ~22 h | **~92 h** | **Tier 0 + ~15 h Should** | alle Must + **Sequenzen F46–F49** (D-16) + ggf. F31. F35 nur, wenn Gate M2 es vorzieht ([Zeitplan § 4a](06_ZEITPLAN.md#4a-kapazitäts-check-d-16-4k-sequenzen)) | 🟠 |
+| **C · Ambitioniert** | ~35 h | ~145 h | **Tier 1 + ~9 h Could** | alle Should (inkl. aller Sequenzen außer SQ-RADIO) + F40 (Freitext-Prompt) oder F51 (SQ-RADIO) | 🟠 |
 | **D · Urlaub genommen** | ≥ 45 h | ~190 h | **Tier 2** | alles + 2 Zusatzmissionen + mehr Polish | 🔴 (Burnout) |
 
-**Aufwandsmodell:** Plan Z ≈ 45 h · Tier 0 (Must) ≈ **76 h** · Tier 1 (Must + Should) ≈ **122 h** · Tier 2 (alles) ≈ **159 h**. Pre-Production im Oktober (~35 h) ist **nicht** eingerechnet. Erfahrungsgemäß kommen **+20 % Unvorhergesehenes** dazu, und genau dafür sind Puffer und Cut-Liste da.
+**Aufwandsmodell:** Plan Z ≈ 45 h · Tier 0 (Must) ≈ **76 h** · Tier 1 (Must + Should) ≈ **136 h** (davon 14 h Sequenzen) · Tier 2 (alles) ≈ **177 h** (davon 18 h Sequenzen). Pre-Production im Oktober (~35 h) ist **nicht** eingerechnet. Erfahrungsgemäß kommen **+20 % Unvorhergesehenes** dazu, und genau dafür sind Puffer und Cut-Liste da.
 
 ---
 
@@ -245,3 +257,4 @@ Gewichtete Bewertung, Punkte 1–5. **„Vorerfahrung mzone“ steht neutral auf
 | Ansager, SFX | | | | | | ○ (Kette) | ● | |
 | itch-Seite | ○ | | | ○ | ● (Layout) | ○ | | |
 | Devlog-Grafiken | ○ | | | ● | | | | |
+| 4K-Sequenzen (D-16) | ● (Zeichnungen) | ● | ○ | | | ● (Code, lokal) | ○ (Stimme) | |

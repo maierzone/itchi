@@ -23,6 +23,7 @@
 | D-13 | Farbe: **Tusche schwarz auf Papier**, Farbe digital, Teamfarbe im Sockel | 🟡 | F4 |
 | D-14 | Repository: **`maierzone/itchi`** ist das Spiel-Repo, Spielcode ab 01.11. unter `game/` | 🟡 | – |
 | D-15 | Audio: **eigene Stimme** als CONDUCTOR (EN), Schreibtisch-SFX, Musik von Menschen (CC0/CC-BY oder eigen) | 🟡 | G1, G2 |
+| D-16 | **4K-Sequenzen**: wenige Echtzeit-Sequenzen, je ≤ 4096 B JavaScript, die mzones Zeichnungen dirigieren | 🟢 03.10.2026 | N1–N3 |
 
 ---
 
@@ -78,6 +79,7 @@
 ## D-09 · Scope
 
 - **Entscheidung:** Szenario B (~92 h): alle Must-Features + Should-Favoriten (F25, F26, F31, F32, F35), sofern Gate M2 grün ist. Die Cut-Liste in [Zeitplan § 7](06_ZEITPLAN.md#7-cut-liste-reihenfolge-ist-verbindlich) ist verbindlich. Plan Z als Rückfallebene.
+- **Ergänzung 03.10.2026 (D-16):** Die 4K-Sequenzen gehen in der Should-Reihenfolge vor. Damit passen von den bisherigen Favoriten in Szenario B voraussichtlich nur noch F31 hinein ([Zeitplan § 4a](06_ZEITPLAN.md#4a-kapazitäts-check-d-16-4k-sequenzen)). Über F35 vs. SQ-INTRO wird bei Gate M2 entschieden.
 - **Status:** 🟡 · Bestätigt am: ______
 
 ## D-10 · Lizenzen
@@ -93,6 +95,7 @@
   - **Audio:** eigene Aufnahmen + menschgemachte CC0/CC-BY-Quellen, keine TTS, keine Musik-Generatoren. → itch: **kein KI-Sound**.
   - **Code:** mit Claude Code entwickelt. → itch: **KI-unterstützter Code offen deklariert**.
   - **Texte:** von mzone. Wenn Claude Formulierungen liefert, wird das deklariert.
+  - **Sequenzen (D-16):** Die Sequenzen sind **Code (KI-unterstützt)**. Die Grafik darin sind **mzones Zeichnungen**, der Ton ist **mzones Stimme und Komposition** (Leitmotiv, gespielt von einem prozeduralen Synth, kein generatives Modell).
 - **Begründung:** itch.io-Pflicht, Community-Akzeptanz, Meta-Story.
 - **Status:** 🟡 · Bestätigt am: ______
 
@@ -108,12 +111,29 @@
 ## D-14 · Repository
 
 - **Entscheidung:** `maierzone/itchi` (öffentlich) ist das Spiel-Repo. Spec unter `docs/`, Zeichnungen unter `art/`, Werkzeuge unter `tools/`, Spielcode **ab 01.11.** unter `game/`. Das README legt offen, was vor dem Jam entstanden ist (Spec, Zeichnungen, Audio, Asset-Werkzeuge) und was im Jam (Spielcode).
+- **Ergänzung 03.10.2026 (D-16):** Im Oktober entsteht zusätzlich die Werkzeugkette **`tools/4k/`** (Packer, Größen-Check, Vorschauseite) als Asset-Werkzeug der lokalen Claude-Code-Session. **Wegwerf-Experimente zu Tusche-Shader und Synth** entstehen außerhalb des Repos und werden im README offengelegt. Die Sequenzen selbst entstehen ab 01.11. neu in `game/src/sequences/`. In `docs/` schreibt nur die Cloud-Session.
 - **Status:** 🟡 · Bestätigt am: ______
 
 ## D-15 · Audio
 
 - **Entscheidung:** CONDUCTOR = mzones Stimme (EN, Funkfilter). SFX überwiegend selbst aufgenommen (Schreibtisch-Session). Musik: eigene/befreundete Komposition oder menschgemachte CC0/CC-BY-Tracks.
+- **Ergänzung 03.10.2026 (D-16):** mzone komponiert das **Leitmotiv** (MU0, 4–5 Töne), dazu kommen 6 Sequenz-Lines (V31–V36). Siehe [Audio-Spec](04_AUDIO_SPEC.md).
 - **Status:** 🟡 · Bestätigt am: ______
+
+## D-16 · 4K-Sequenzen
+
+- **Kontext:** mzone hat mit einer lokalen Claude-Code-Session Echtzeit-Sequenzen ausgearbeitet. Die Entscheidung ist von mzone bestätigt.
+- **Entscheidung:** Das Spiel bekommt wenige Echtzeit-Sequenzen. Jede ist ein eigenständiges JavaScript-Programm von **höchstens 4096 Bytes** (selbst entpackend, der Build-Check bricht bei 4097 B ab). Eine Sequenz ist eine **Partitur, die mzones Zeichnungen dirigiert**: Der Code erfindet keine Linien, er bewegt, enthüllt, betuscht und belichtet vorhandene Zeichnungen und setzt Timing, Tinte, Licht und den Synth für das Leitmotiv. Zeichnungen, Stimmaufnahmen und Musik-Tracks kommen aus dem Asset-Pool des Spiels und zählen nicht zu den 4096 B.
+- **Katalog:** SQ-INTRO, SQ-SINGULARITY, SQ-DISCONNECTED, SQ-DOMINATED (S) · SQ-RADIO (C) → [GDD § 19a](02_GAME_DESIGN_SPEC.md#19a-sequenzen-4k-partituren).
+- **Warum:** Disziplin (klare Bilder statt Aufwand) und Story-Gimmick: *“Every cinematic is a 4096-byte score conducting hand-drawn ink.”* Das passt zur Kernmetapher (Orchester/Dirigent) und hält Säule P2 ein.
+- **Konsequenzen:**
+  - „Kampagne mit Zwischensequenzen“ bleibt ein Nicht-Ziel (keine Kampagne, kein FMV). Im Spiel gibt es **keine Vollbild-Unterbrechung**. Die Sequenzen laufen nur vor dem Spiel, am Ende und als kleines Funkfenster.
+  - Host-Vertrag `playSequence(id, params) → Promise`, der Host liefert nur Daten → [Tech-Spec § 5a](05_TECH_SPEC.md#5a-sequenzen-d-16).
+  - Neue Assets SQ01–SQ03 ([Art-Bibel § 11](03_ART_UND_ASSET_BIBEL.md#11-sequenzen-d-16-was-die-4k-partituren-aus-deinen-zeichnungen-machen)), Leitmotiv MU0 und Lines V31–V36 ([Audio-Spec](04_AUDIO_SPEC.md)).
+  - Zeitplan: Ende-Sequenzen nach Gate M2, danach SQ-INTRO. SQ-RADIO und SQ-DISCONNECTED stehen auf der Cut-Liste. **Kapazitätskonflikt mit den bisherigen Should-Favoriten** → [Zeitplan § 4a](06_ZEITPLAN.md#4a-kapazitäts-check-d-16-4k-sequenzen).
+  - Rückfall: Die Darstellung aus GDD § 14 wird immer gebaut.
+  - Arbeitsteilung: Die lokale Session baut `tools/4k/` (Oktober) und `game/src/sequences/` (ab 01.11.). Die Cloud-Session pflegt `docs/`.
+- **Status:** 🟢 bestätigt am 03.10.2026 (mzone)
 
 ---
 
@@ -122,3 +142,5 @@
 | Datum | ID | Änderung | Grund |
 |-------|----|----------|-------|
 | 03.10.2026 | D-01 … D-15 | angelegt (vorgeschlagen) | Spec v0.1 |
+| 03.10.2026 | D-16 | neu, bestätigt | Auftrag mzone (4K-Sequenzen aus der lokalen Session) |
+| 03.10.2026 | D-09, D-11, D-14, D-15 | ergänzt (nicht überschrieben) | Folgen von D-16 |

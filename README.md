@@ -27,7 +27,7 @@ Erst wenn deine Agenten es erkunden, **zeichnet sich die Karte mit Tusche**. All
 |---|----------|--------|-------------------|
 | 00 | [Grill-Protokoll](docs/00_GRILL_PROTOKOLL.md) | **Die harten Fragen an dich.** Red Flags, unbequeme Wahrheiten, Antwortfelder. **Zuerst lesen.** | **mzone: bis Mi 07.10. beantworten** |
 | 01 | [Kontext & Ambition](docs/01_KONTEXT_UND_AMBITION.md) | Wettbewerb (Fakten + Quellen), Hintergrund, deine Ambition, Erfolgsdefinition, Rahmenbedingungen | lesen |
-| 02 | [Game Design Spec (GDD)](docs/02_GAME_DESIGN_SPEC.md) | High Concept, Säulen, Welt, Core Loop, Ökonomie, Einheiten, Gebäude, Direktiven, Monolith-KI, Missionen, UI, Steuerung, Balancing | Review |
+| 02 | [Game Design Spec (GDD)](docs/02_GAME_DESIGN_SPEC.md) | High Concept, Säulen, Welt, Core Loop, Ökonomie, Einheiten, Gebäude, Direktiven, Monolith-KI, Missionen, UI, Steuerung, Balancing, **4K-Sequenzen (§ 19a)** | Review |
 | 03 | [Art- & Asset-Bibel](docs/03_ART_UND_ASSET_BIBEL.md) | Stil, Palette, **vollständige Zeichenliste** mit Zeichen-Briefings, Papiermaßen und Strichstärken, Pipeline Papier → SVG → Spiel | **mzone: zeichnen** |
 | 04 | [Audio-Spec](docs/04_AUDIO_SPEC.md) | Ansager-Lines, Einheiten-Sprüche, SFX-Liste, Musik, Aufnahme-Anleitung | mzone: aufnehmen |
 | 05 | [Tech-Spec](docs/05_TECH_SPEC.md) | Engine-Entscheidung, Architektur, Simulation, Pathfinding, Fog, Build & Deploy, Tests | Claude Code |
@@ -35,7 +35,7 @@ Erst wenn deine Agenten es erkunden, **zeichnet sich die Karte mit Tusche**. All
 | 07 | [Matrizen](docs/07_MATRIZEN.md) | Feature-Priorisierung, Bewertungs-Abdeckung, Risiko, RACI, Entscheidungsmatrizen, Scope-Szenarien | Review |
 | 08 | [Aussichts-Erfolgs-Matrix-Report](docs/08_AUSSICHTS_ERFOLGS_MATRIX_REPORT.md) | Erfolgsprognose, Szenarien, Wahrscheinlichkeiten, Hebel, KPIs | lesen |
 | 09 | [Theme-Playbook](docs/09_THEME_PLAYBOOK.md) | Was tun am 01.11. um 22:37 MEZ? Theme-Adaption, Vorab-Training mit allen bisherigen Themes | beide |
-| 10 | [Entscheidungslog](docs/10_ENTSCHEIDUNGSLOG.md) | Alle Entscheidungen (ADR-light) mit Status *vorgeschlagen / bestätigt / verworfen* | **mzone: bestätigen** |
+| 10 | [Entscheidungslog](docs/10_ENTSCHEIDUNGSLOG.md) | Alle Entscheidungen (ADR-light) mit Status *vorgeschlagen / bestätigt / verworfen*, zuletzt **D-16 4K-Sequenzen** (bestätigt) | **mzone: bestätigen** |
 | 11 | [itch.io-Abgabe-Checkliste](docs/11_ITCH_ABGABE_CHECKLISTE.md) | Von `itch.io/game/new` bis zum Klick auf „Submit“, KI-Offenlegung, Fallbacks | mzone |
 
 **Arbeitsdateien:**
@@ -62,7 +62,8 @@ Erst wenn deine Agenten es erkunden, **zeichnet sich die Karte mit Tusche**. All
 | **Sprache im Spiel** | Englisch (international bewertet), Dokumentation Deutsch |
 | **Engine (vorgeschlagen)** | Phaser 3 + TypeScript + Vite (siehe [Tech-Spec](docs/05_TECH_SPEC.md), Entscheidung D-01) |
 | **Session-Länge** | 10–15 Minuten pro Mission |
-| **Team** | mzone (Vision, Art, Audio, Entscheidungen) + Claude Code (Code, Tests, Doku) + MZP + Claude Design |
+| **Sequenzen** (D-16) | Wenige Echtzeit-Sequenzen (Intro, Sieg, Niederlage, Funkfenster), **jede ≤ 4096 Bytes JavaScript**. *“Every cinematic is a 4096-byte score conducting hand-drawn ink.”* Leitmotiv von mzone |
+| **Team** | mzone (Vision, Art, Audio, Leitmotiv, Entscheidungen) + Claude Code in der Cloud (Code, Tests, `docs/`) + Claude Code lokal (`tools/4k/`, Sequenzen) + MZP + Claude Design |
 
 ---
 
@@ -81,8 +82,10 @@ Erst wenn deine Agenten es erkunden, **zeichnet sich die Karte mit Tusche**. All
 Game Off verlangt ein **öffentliches GitHub-Repository mit dem Quellcode**. Dieses Repo (`maierzone/itchi`) ist öffentlich und
 wird das Spiel-Repo. Die Spec liegt unter `docs/`, Rohzeichnungen unter `art/`, der Spielcode kommt ab dem **01.11.2026** unter `game/`.
 
-**Transparenz (Entscheidung D-14):** Vor dem Jam (Oktober 2026) entstehen nur Spec, Zeichnungen, Audio-Aufnahmen und Asset-Werkzeuge.
-Der **Spielcode** entsteht ausschließlich im Jam-Zeitraum ab dem 01.11.2026.
+**Transparenz (Entscheidung D-14):** Vor dem Jam (Oktober 2026) entstehen nur Spec, Zeichnungen, Audio-Aufnahmen, das Leitmotiv und Asset-Werkzeuge.
+Dazu gehört auch die **Werkzeugkette `tools/4k/`** (Packer, Größen-Check, Vorschauseite) für die 4K-Sequenzen (D-16).
+**Wegwerf-Experimente zu Tusche-Shader und Synth** sind im Oktober **außerhalb dieses Repos** entstanden. Sie werden nicht eingereicht, und die Sequenzen
+werden im Jam neu geschrieben. Der **Spielcode** (inkl. `game/src/sequences/`) entsteht ausschließlich im Jam-Zeitraum ab dem 01.11.2026.
 
 ---
 

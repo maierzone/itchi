@@ -116,3 +116,6 @@ MK10,Marketing,Devlog-Header,"Skizze vs. fertige Figur (MZP data-sketch)",C,MZP,
 F01,Font,IBM Plex Mono,"UI, Zahlen, Prompts (SIL OFL 1.1)",M,–,–,–,0,Font,–,offen
 F02,Font,Spectral,"Überschriften, Briefing, Stempeltexte (SIL OFL 1.1)",M,–,–,–,0,Font,–,offen
 F03,Font,mzone-Handschrift,"Eigene Handschrift als Font (z. B. via Calligraphr) für Notizen/Hinweise",C,Font-Vorlage,–,–,1,Hand,Font,offen
+SQ01,Sequenz,Monolith-Splitter (6–8 einzeln),"Einzelne kantige Bruchstücke des Monolithen in verschiedenen Größen, schwer schraffiert, für die Zerbrech-Animation (SQ-DOMINATED). Direkt nach M01a–d mit denselben Stiften zeichnen; auf einem freien A4-Blatt, Teile mit ≥ 5 mm Abstand",S,frei A4,je 10–60,32–190,8,Hand,Trace,offen
+SQ02,Sequenz,Notenlinien-Blatt,"Fünf freihändig gezogene Notenlinien über eine A4-Breite, Tusche, für Intro/Funkfenster (und als reißende Verbindungslinien in SQ-DISCONNECTED)",C,frei A4,ca. 190 breit,1280 breit,1,Hand,Raster,offen
+SQ03,Sequenz,Uplink-Glyphe (3 Stufen),"Ein ✦-Funke, der aus einem Federklecks entsteht: Stufe 1 Klecks, Stufe 2 Klecks mit Strahlen, Stufe 3 klarer Funke – für den ersten Tastendruck (SQ-INTRO)",C,Einheiten,Feld ø40,64–96,3,Hand,Trace,offen

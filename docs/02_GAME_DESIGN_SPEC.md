@@ -28,6 +28,7 @@
 17. [Onboarding: Die ersten 120 Sekunden](#17-onboarding-die-ersten-120-sekunden)
 18. [Kamera, Fog of War & „Die Karte zeichnet sich“](#18-kamera-fog-of-war--die-karte-zeichnet-sich)
 19. [Feedback & Juice](#19-feedback--juice)
+19a. [Sequenzen: 4K-Partituren](#19a-sequenzen-4k-partituren) *(D-16)*
 20. [Theme-Modul-Slot](#20-theme-modul-slot)
 21. [Barrierefreiheit](#21-barrierefreiheit)
 22. [Bewusst NICHT im Spiel](#22-bewusst-nicht-im-spiel)
@@ -77,6 +78,7 @@ Jede Feature-Entscheidung muss mindestens eine Säule stärken und darf keine ve
 - Deine Superwaffe ist eine **Stimmgabel** (TUNING FORK), die alles „ausrichtet“ (Alignment).
 - Squads mit perfekter Besetzung sind **„ORCHESTRATED“**.
 - Der Monolith ist schwarz, kantig, schweigend und **wächst**.
+- Die wenigen Echtzeit-Sequenzen sind **Partituren**: 4096-Byte-Programme, die mzones Zeichnungen dirigieren (§ 19a). *“Every cinematic is a 4096-byte score conducting hand-drawn ink.”*
 
 **Ton:** RA2-Camp + liebevolle Tech-Satire. Augenzwinkern über KI-Hype, nie Zynismus gegen Menschen.
 
@@ -527,7 +529,8 @@ Bewusst simpel: **3 Waffenklassen × 3 Rüstungsklassen.**
 
 | Zeit | Ereignis | Monolith |
 |------|----------|----------|
-| 0:00 | Briefing (3 Sätze, überspringbar), Spiel startet | 0 % |
+| vor 0:00 | **SQ-INTRO** (S, 30–45 s, überspringbar): Der erste Tastendruck stellt den Uplink her, CONDUCTOR spricht die Prämisse (§ 4.1), die Karte tuscht sich ein. Ohne Intro: Briefing (3 Sätze, überspringbar). Die Spielzeit läuft erst ab Spielstart | – |
+| 0:00 | Spiel startet | 0 % |
 | 0:05 | CONDUCTOR: *“Build a Tokenizer.”*, Tusche-Pfeil zeigt auf die Sidebar | |
 | ≤ 0:45 | **Erstes eigenes Gebäude platziert** (KPI) | |
 | ~0:40 | CRAWLER sammelt | |
@@ -547,11 +550,13 @@ Bewusst simpel: **3 Waffenklassen × 3 Rüstungsklassen.**
 
 ## 14. Sieg, Niederlage, Schwierigkeit
 
-| | Bedingung | Darstellung |
-|---|-----------|-------------|
-| **Sieg** | THE MONOLITH zerstört | Monolith zerbricht in Tusche-Splitter, **Stempel „DOMINATED“** (Petrol) knallt aufs Papier, Statistikblatt |
-| **Niederlage A** | CONDUCTOR CORE zerstört | **Stempel „DISCONNECTED“** (Rost) |
-| **Niederlage B** | Monolith 100 % | Tusche flutet die Karte vom Monolithen aus, **Stempel „SINGULARITY“** |
+| | Bedingung | Sequenz (§ 19a) | Rückfall-Darstellung (ohne Sequenz) |
+|---|-----------|-----------------|-------------------------------------|
+| **Sieg** | THE MONOLITH zerstört | **SQ-DOMINATED** (15–20 s) | Monolith zerbricht in Tusche-Splitter, **Stempel „DOMINATED“** (Petrol) knallt aufs Papier, Statistikblatt |
+| **Niederlage A** | CONDUCTOR CORE zerstört | **SQ-DISCONNECTED** (8–12 s, Cut-Liste) | **Stempel „DISCONNECTED“** (Rost), Statistikblatt |
+| **Niederlage B** | Monolith 100 % | **SQ-SINGULARITY** (8–12 s) | Tusche flutet die Karte vom Monolithen aus, **Stempel „SINGULARITY“**, Statistikblatt |
+
+Die Rückfall-Darstellung ist Must und wird immer gebaut. Sie greift, wenn eine Sequenz fehlt oder abbricht. Wird eine Sequenz übersprungen, geht es direkt zum Stempel mit Statistikblatt.
 
 | Schwierigkeit | Wachstum | Wellenbudget | Monolith-HP | Start-Tokens | Ziel-Siegquote Erstspieler |
 |---------------|:--------:|:------------:|:-----------:|:------------:|:--------------------------:|
@@ -599,7 +604,8 @@ Bewusst simpel: **3 Waffenklassen × 3 Rüstungsklassen.**
 | **Tooltips** | Name, Kosten, Rolle, 1 Satz | M |
 | **Pausemenü** | Fortsetzen, Neustart, Optionen, Steuerung, Beenden | M |
 | **Hauptmenü** | Titel, PLAY (Schwierigkeit), HOW TO PLAY (1 MZP-Grafik), OPTIONS, CREDITS | M |
-| **Endbildschirm** | Stempel + Statistik + „PLAY AGAIN“ | M |
+| **Endbildschirm** | Stempel + Statistik + „PLAY AGAIN“ (nach SQ-DOMINATED/-SINGULARITY/-DISCONNECTED bzw. Rückfall) | M |
+| **Funkfenster** (SQ-RADIO) | 2–4 s Bild im Bild neben der CONDUCTOR-Box bei Monolith-Stufe I→II→III, Schild fällt, ORCHESTRATED, CONTEXT FLOOD. **Das Spiel läuft weiter**, es gibt keine Vollbild-Unterbrechung | C |
 | **Optionen** | Lautstärke (Master/Musik/SFX/Stimme), Scroll-Tempo, Spieltempo (0,75/1/1,25), Hinweise an/aus | M (Spieltempo: S) |
 
 > **Claude Design** liefert Layout-Varianten für Sidebar, ORCHESTRATION BAR und Menüs. Umgesetzt wird mit deinen gezeichneten Rahmen/Icons (siehe [Art-Bibel § 7](03_ART_UND_ASSET_BIBEL.md#7-claude-design-einsatzplan)).
@@ -689,6 +695,56 @@ Kleiner Kamerawackler (max. 4 px) nur bei Gebäudezerstörung und CONTEXT FLOOD.
 
 ---
 
+## 19a. Sequenzen: 4K-Partituren
+
+> **Entscheidung D-16** (von mzone bestätigt am 03.10.2026) · *“Every cinematic is a 4096-byte score conducting hand-drawn ink.”*
+> Gebaut werden die Sequenzen von der lokalen Claude-Code-Session: Werkzeugkette in `tools/4k/` (Oktober), Sequenzen in `game/src/sequences/` (ab 01.11.).
+
+### 19a.1 Regeln
+
+| Regel | Bedeutung |
+|-------|-----------|
+| **≤ 4096 Bytes** | Jede Sequenz ist ein eigenständiges, selbst entpackendes JavaScript-Programm von höchstens 4096 Bytes. Der Build-Check bricht bei 4097 B ab |
+| **Partitur, keine Zeichnung** | Der Code **bewegt, enthüllt, betuscht und belichtet** mzones Zeichnungen und setzt Timing, Tinte, Licht und den Synth fürs Leitmotiv. **Er erfindet keine Linien** (Säule P2) |
+| **Assets zählen nicht mit** | Zeichnungen, Stimmaufnahmen und Musik-Tracks kommen aus dem Asset-Pool des Spiels |
+| **Keine Vollbild-Unterbrechung im Spiel** | Sequenzen laufen **vor dem Spiel**, **am Ende** und als kleines **Funkfenster** (Bild im Bild, das Spiel läuft weiter) |
+| **Überspringbar** | Intro: Esc oder SKIP-Knopf, von Anfang an sichtbar. Ende-Sequenzen: Klick → Statistikblatt |
+| **Rückfall** | Fehlt eine Sequenz oder bricht sie ab, greift die Darstellung aus § 14 |
+| **Leitmotiv** | 4–5 Töne, **von mzone komponiert** ([Audio-Spec § 4](04_AUDIO_SPEC.md#4-musik)). Der 4K-Synth ist nur das Instrument: verstimmt → sauber (Intro), voll (Sieg), zerfallend (Niederlage) |
+| **Host-Vertrag** | `playSequence(id, params) → Promise`. Der Host liefert nur Daten (Canvas, AudioContext, geladene Zeichnungen, Audio-Buffer, Parameter), keine Logik → [Tech-Spec § 5a](05_TECH_SPEC.md#5a-sequenzen-d-16) |
+| **Kein Kampagnen-Ersatz** | „Kampagne mit Zwischensequenzen“ bleibt ein Nicht-Ziel (§ 22): keine Kampagne, kein FMV |
+
+### 19a.2 Katalog
+
+| ID | Sequenz | Länge | Inhalt | Assets | Stimme | Prio |
+|----|---------|-------|--------|--------|--------|:----:|
+| **SQ-INTRO** | Intro | 30–45 s, überspringbar | Leeres Papier. Der erste Tastendruck des Spielers **„stellt den Uplink her“**. CONDUCTOR spricht die drei Prämissen-Sätze (§ 4.1), dabei tuscht sich die Karte ein, der Monolith erscheint, das Leitmotiv baut sich von verstimmt zu sauber auf. Danach direkt Briefing bzw. Spielstart | K03, K01, FX15, M01a, UI16, UI11 · SQ02, SQ03 | V31–V33 | S |
+| **SQ-SINGULARITY** | Niederlage B | 8–12 s | Tusche flutet die Karte vom Monolithen aus, das Motiv zerfällt, Stempel SINGULARITY, Statistik | K01, M01c, FX02, FX15, UI13c | V35 | S |
+| **SQ-DISCONNECTED** | Niederlage A | 8–12 s | Verbindungslinien der Agenten reißen, Stimmen fallen aus, Stempel DISCONNECTED | K01, UI11b, UI13b · **SQ02** als gezeichnete Verbindungslinien | V36 | S *(Cut-Liste)* |
+| **SQ-DOMINATED** | Sieg | 15–20 s | Monolith zerbricht in Tusche-Splitter, das Motiv spielt voll, Stempel DOMINATED, Statistik | K01, M01c → M01d, **SQ01**, FX02, UI13, UI11c | V34 | S |
+| **SQ-RADIO** | Funkfenster | 2–4 s, Bild im Bild | **Ein** parametrisiertes Programm für: Monolith-Stufe I→II→III, Schild fällt, ORCHESTRATED, CONTEXT FLOOD | M01a–c, UI11/11b/11c, UI07, FX08, FX09, SQ02 | vorhandene Lines (V15–V20) | C |
+
+> **Hinweis zu SQ-DISCONNECTED:** Die „Verbindungslinien“ der Agenten zeichnet im Spiel der Code (§ 7.5). Weil eine Sequenz keine Linien erfinden darf, braucht sie dafür **gezeichnete** Linien. Vorschlag: einzelne Notenlinien aus SQ02. Wird SQ-DISCONNECTED gebaut, steigt SQ02 von C auf S.
+
+### 19a.3 Beat-Sheet SQ-INTRO (Vorschlag, die lokale Session verfeinert Timing und Bild)
+
+| Zeit | Bild | Ton |
+|------|------|-----|
+| 0 s | Leeres Papier (K03). In der Mitte pulsiert ein Federklecks (SQ03, Stufe 1). Darunter klein: *PRESS ANY KEY TO ESTABLISH UPLINK* · oben rechts: *SKIP* | **Stille.** Vor der ersten Eingabe darf der Browser keinen Ton abspielen |
+| Tastendruck | Klecks → Strahlen → ✦ (SQ03, Stufen 2–3) | **AudioContext startet** (der Uplink ist zugleich die Audio-Freigabe). Leitmotiv, ein verstimmter Ton |
+| ~2–14 s | V31 *“The world is a map, and the map is on your desk.”* Die Karte K01 tuscht sich von der Mitte aus ein (Maske aus FX15) | Motiv, verstimmt |
+| ~14–26 s | V32 *“A single model – THE MONOLITH – is consuming every data field it can reach, growing toward singularity.”* M01a erscheint im Nordosten, Rost-Licht, die Tusche dunkelt nach | Motiv mit Puls, weniger verstimmt |
+| ~26–38 s | V33 *“You are the Conductor. Orchestrate your agents. Dominate the map. Break the Monolith.”* Logo UI16, Notenlinien SQ02 ziehen sich über das Blatt | Motiv **sauber und voll** |
+| ~38–45 s | Die Tusche zieht sich zurück **bis auf den Startbereich im Südwesten** und wird zum Fog-Zustand des Spiels (§ 18). Kamera auf Startposition → **nahtlos ins Spiel**, denn es ist dieselbe Karte | Motiv endet, MU2 übernimmt |
+
+> **Lesbarkeit (P4):** Die KPI „erstes eigenes Gebäude ≤ 45 s“ zählt ab Spielstart. Das Intro darf **nicht länger als 45 s** sein, und SKIP ist ab der ersten Sekunde sichtbar.
+
+### 19a.4 Weitere Sequenz-Ideen
+
+Die Events, die mzone außerdem vorgeschlagen hat (Agenten lernen eine Spawn-Fähigkeit, Angriff auf ein Regierungssystem, Cyber-Defense-Skills), brauchen **neue Mechaniken** und stehen deshalb als Kandidaten im [Theme-Playbook § 3a](09_THEME_PLAYBOOK.md#3a-kandidaten-aus-der-sequenz-arbeit-mzone-0310) (Theme-Slot, § 20).
+
+---
+
 ## 20. Theme-Modul-Slot
 
 Das Theme kommt am **01.11.** Damit es mehr ist als ein Etikett, reservieren wir **einen Slot auf vier Ebenen**:
@@ -721,7 +777,7 @@ Das Theme kommt am **01.11.** Damit es mehr ist als ein Etikett, reservieren wir
 
 ## 22. Bewusst NICHT im Spiel
 
-Multiplayer · zweite spielbare Fraktion · Marine/Luft · Isometrie · echte LLM-Aufrufe · Speichern/Laden (Partien sind kurz) · Kampagne mit Zwischensequenzen · Mobile/Touch · Erfahrungsstufen · Formationen · Mauer-Autotiling · prozedurale Karten · Mod-Support.
+Multiplayer · zweite spielbare Fraktion · Marine/Luft · Isometrie · echte LLM-Aufrufe · Speichern/Laden (Partien sind kurz) · Kampagne mit Zwischensequenzen oder FMV (die 4K-Sequenzen aus § 19a sind keine Kampagne: Sie laufen nur vor dem Spiel, am Ende oder als kleines Funkfenster und unterbrechen das Spiel nie im Vollbild) · Mobile/Touch · Erfahrungsstufen · Formationen · Mauer-Autotiling · prozedurale Karten · Mod-Support.
 
 ---
 
@@ -749,3 +805,7 @@ Multiplayer · zweite spielbare Fraktion · Marine/Luft · Isometrie · echte LL
 | **TUNING FORK** | Superwaffe des Spielers (Alignment) |
 | **Director** | Steuer-KI des Monolithen (Wellen, Reaktionen) |
 | **Line Boil** | Wackel-Animation durch wechselnde Zeichnungsvarianten |
+| **4K-Sequenz** | Echtzeit-Sequenz als JS-Programm ≤ 4096 B, das Zeichnungen dirigiert (D-16, § 19a) |
+| **Leitmotiv** | 4–5-Ton-Motiv von mzone, Keimzelle der Musik, in Sequenzen vom 4K-Synth gespielt |
+| **Uplink** | Der erste Tastendruck im Intro: startet Sequenz und Ton |
+| **Funkfenster** | SQ-RADIO: 2–4-s-Bild-im-Bild bei Schlüsselereignissen, das Spiel läuft weiter |

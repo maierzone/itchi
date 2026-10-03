@@ -61,8 +61,8 @@
 🔥 Das ist die wichtigste Zahl in diesem ganzen Dokument. Sie entscheidet über den Scope. Mein Aufwandsmodell sagt (deine Stunden, wenn Claude Code den Großteil des Codes schreibt, inklusive Theme, Balancing und Release):
 - **Plan Z „Defend the Conductor“** ≈ 45 h
 - **Tier 0 „Must“** ≈ 75 h
-- **Tier 1 „Must + Should“** ≈ 120 h
-- **Tier 2 „alles“** ≈ 160 h
+- **Tier 1 „Must + Should“** ≈ 135 h (inkl. 4K-Sequenzen, D-16)
+- **Tier 2 „alles“** ≈ 175 h
 
 Siehe [Matrizen → Scope-Szenarien](07_MATRIZEN.md#8-scope-szenario-matrix).
 🧭 **Default: Szenario B = Mo–Fr 2 h + Sa/So 6 h = ~92 h im November.** Ziel ist damit **Tier 0 komplett + ~15 h ausgewählte Should-Features**. Plan Z ist die Rückfallebene.
@@ -174,8 +174,8 @@ Siehe [Matrizen → Scope-Szenarien](07_MATRIZEN.md#8-scope-szenario-matrix).
 
 ## Teil F – Art & Handarbeit
 
-**F1 ❓ Kannst du 110 Zeichnungen in einem konsistenten Stil liefern? Hast du schon mal eine Serie gezeichnet?**
-🔥 Das [Asset-Register](../art/ASSET_REGISTER.csv) zählt **55 Zeichnungen für Tier 0 (Must)**, **110 für Tier 1 (Must + Should)** und **133 insgesamt**. Viele davon sind klein (Icons, Kleckse, Cursor), dazu kommt aber **eine A3-Karte**, die allein ein Wochenende braucht. 55 Zeichnungen im Oktober sind ~2 pro Tag. Konsistenz (gleiche Strichstärke, gleicher Maßstab, gleiche Formsprache) ist schwerer als die einzelne Zeichnung.
+**F1 ❓ Kannst du 118 Zeichnungen in einem konsistenten Stil liefern? Hast du schon mal eine Serie gezeichnet?**
+🔥 Das [Asset-Register](../art/ASSET_REGISTER.csv) zählt **55 Zeichnungen für Tier 0 (Must)**, **118 für Tier 1 (Must + Should, inkl. 8 Monolith-Splitter für die Sequenzen)** und **145 insgesamt**. Viele davon sind klein (Icons, Kleckse, Cursor), dazu kommt aber **eine A3-Karte**, die allein ein Wochenende braucht. 55 Zeichnungen im Oktober sind ~2 pro Tag. Konsistenz (gleiche Strichstärke, gleicher Maßstab, gleiche Formsprache) ist schwerer als die einzelne Zeichnung.
 🧭 **Default:** Zuerst **3 Stil-Proben** (1 Einheit, 1 Gebäude, 1 Kartenausschnitt) durch die komplette Pipeline bis ins Spiel. **Erst danach** wird in Serie gezeichnet. Alle Zeichnungen auf den **Skizzenbögen** aus `art/vorlagen/`.
 ✍️ Deine Antwort: ______________________
 
@@ -295,6 +295,31 @@ Siehe [Matrizen → Scope-Szenarien](07_MATRIZEN.md#8-scope-szenario-matrix).
 **M1 ❓ Was machst du, wenn am 15.11. klar ist: Das Spiel macht keinen Spaß?**
 🔥 Das passiert häufiger, als jemand zugibt. RTS-Spaß entsteht spät, erst wenn Feedback, Tempo und Balance zusammenkommen.
 🧭 **Default:** Am **Gate M2 (15.11.)** gibt es einen ehrlichen Fun-Check (5 Fragen, siehe [Zeitplan § Gates](06_ZEITPLAN.md#5-meilenstein-gates)). Bei „nein“ gilt **Plan Z**: Wir reduzieren auf **„Defend the Conductor“**, also Basis verteidigen gegen Monolith-Wellen mit Direktiven, ohne freie Expansion. Das ist ein Tower-Defense-RTS-Hybrid und in 2 Wochen sicher fertig.
+✍️ Deine Antwort: ______________________
+
+---
+
+## Teil N – Nachtrag D-16 (4K-Sequenzen)
+
+> D-16 ist bestätigt. Diese Fragen betreffen nur die **Folgen**.
+
+**N1 ❓ Was ist dir wichtiger: das Intro (SQ-INTRO) oder das Theme auf Mechanik-Ebene (F35)?**
+🔥 Im Szenario B (~92 h) ist für Should-Features ~15 h Platz. Die Sequenzen brauchen ~12 h, die bisherigen Should-Favoriten ~19 h. **Beides geht nicht.** SQ-INTRO stärkt den ersten Eindruck (Graphics, Audio, Overall), F35 stärkt eine ganze Kategorie (Theme). Details: [Zeitplan § 4a](06_ZEITPLAN.md#4a-kapazitäts-check-d-16-4k-sequenzen).
+🧭 **Default:** Reihenfolge wie von dir vorgeschlagen (Ende-Sequenzen → SQ-INTRO → F31 → F35 …). **Ausnahme:** Ist das Theme bei Gate M2 nur schwach umgesetzt, wird F35 vor SQ-INTRO gezogen. Entschieden wird am **So 15.11.**
+✍️ Deine Antwort: ______________________
+
+**N2 ❓ Bis wann steht das Leitmotiv, und in welcher Form lieferst du es?**
+🔥 Ohne Motiv kann die lokale Session den Synth nicht stimmen, und die Sequenzen klingen nach Platzhalter. Die Stinger MU4/MU5 hängen ebenfalls am Motiv.
+🧭 **Default:** **So 25.10.**, zusammen mit Audio-Session 1, als Notation in `audio/leitmotiv.md` (Ton, Dauer, Tempo) oder als Foto einer Notenskizze.
+✍️ Deine Antwort: ______________________
+
+**N3 ❓ Passen die Textvorschläge für die Ende-Sequenzen?**
+- SQ-DOMINATED: *“The Monolith is broken. The orchestra plays on.”*
+- SQ-SINGULARITY: *“Singularity reached. There is only one voice now.”*
+- SQ-DISCONNECTED: *“Conductor offline. The orchestra… is silent.”*
+
+🔥 Du nimmst sie in Audio-Session 1 auf (KW 43). Danach ist eine Änderung eine neue Aufnahme.
+🧭 **Default:** Die drei Vorschläge gelten, wenn du bis zur Aufnahme nichts änderst.
 ✍️ Deine Antwort: ______________________
 
 ---

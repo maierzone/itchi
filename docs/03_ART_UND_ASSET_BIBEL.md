@@ -18,6 +18,7 @@
 | **Spielsteine** | Figuren stehen **aufrecht auf Sockeln** (Kreis = ORCHESTRA, Sechseck = MONOLITH). Sockel macht der Code. |
 | **Form vor Farbe** | Jede Einheit ist allein an ihrer **Silhouette** erkennbar. Farbe ist nur Zusatz. |
 | **Zwei Formsprachen** | ORCHESTRA: **rund, offen, Funken ✦, Antennen**. MONOLITH: **kantig, geschlossen, Blöcke, Schraffur, Schlitz-Auge**. |
+| **Partitur** | Die 4K-Sequenzen (D-16) **dirigieren** deine Zeichnungen: Sie bewegen, enthüllen, betuschen und belichten sie. **Der Code erfindet keine Linien.** (§ 11) |
 
 **Stimmungs-Referenzen** (anschauen, nicht kopieren): historische Generalstabs- und Wanderkarten, Fantasy-Buchkarten, Feldskizzenbücher, Brettspiel-Spielsteine, Stempel und Karteikarten, Tintenklecks-Illustration.
 
@@ -140,7 +141,7 @@ flowchart LR
 | 7 · Rendern & Packen | Claude Code | `resvg` + Atlas-Packer (Node) | `game/public/assets/atlas@1x.png`, `@2x.png`, `.json` | 2x für HiDPI und Zoom |
 | 8 · Abnahme | mzone | Spiel im Browser | Register-Status → `im Spiel` | Checkliste § 9 |
 
-**Raster-Weg** (keine Vektorisierung, Scan bleibt Textur): **K01 Karte**, **K03 Papier**, **FX15 Tusche-Ränder**, **SM05 Schraffur**, **N05 Krater**. Hier zählt die echte Papier- und Tuschestruktur. Die **Bleistift-Version** der Karte (Fog-Zustand „erforscht“) wird **automatisch** aus K01 erzeugt (entsättigen, aufhellen, `--ink-soft`). Du zeichnest sie **nicht** extra.
+**Raster-Weg** (keine Vektorisierung, Scan bleibt Textur): **K01 Karte**, **K03 Papier**, **FX15 Tusche-Ränder**, **SM05 Schraffur**, **N05 Krater**, **SQ02 Notenlinien**. Hier zählt die echte Papier- und Tuschestruktur. Die **Bleistift-Version** der Karte (Fog-Zustand „erforscht“) wird **automatisch** aus K01 erzeugt (entsättigen, aufhellen, `--ink-soft`). Du zeichnest sie **nicht** extra.
 
 **Dateinamen:** `<ID>_<name>[_<frame>].svg`, z. B. `U02_executor_a.svg`, `U02_executor_b.svg`, `B03_tokenizer.svg`.
 
@@ -166,11 +167,11 @@ game/public/assets/         ← Build-Output fürs Spiel
 | Priorität | Zeichnungen | Bedeutung |
 |-----------|:-----------:|-----------|
 | **M** (Tier 0) | **55** | ohne die geht es nicht |
-| **S** (Tier 1) | **55** | macht das Spiel rund |
-| **C** (Tier 2) | **23** | wenn Zeit bleibt |
-| **Gesamt** | **133** | |
+| **S** (Tier 1) | **63** | macht das Spiel rund (davon 8 Monolith-Splitter für Sequenzen) |
+| **C** (Tier 2) | **27** | wenn Zeit bleibt |
+| **Gesamt** | **145** | |
 
-**Bögen** (gerundet): Einheiten-Bogen à 12 Felder: **3 (M) / 6 (M+S) / 7 (alle)** · Gebäude-Bogen: **2 (M) / 3 (alle)** · freie A4-Blätter: **12 (M) / 21 (M+S)** · **1× A3** (Karte).
+**Bögen** (gerundet): Einheiten-Bogen à 12 Felder: **3 (M) / 6 (M+S) / 8 (alle)** · Gebäude-Bogen: **2 (M) / 3 (alle)** · Zeichnungen auf freien A4-Blättern: **12 (M) / 29 (M+S**, davon 8 Splitter auf einem gemeinsamen Blatt**)** · **1× A3** (Karte).
 
 <!-- ASSET_TABLES_START -->
 <!-- generiert aus art/ASSET_REGISTER.csv – bei Änderungen dort pflegen -->
@@ -369,6 +370,16 @@ game/public/assets/         ← Build-Output fürs Spiel
 | F02 | Spectral | **M** | Überschriften, Briefing, Stempeltexte (SIL OFL 1.1) | – | – | – | 0 | Font → – |
 | F03 | mzone-Handschrift | **C** | Eigene Handschrift als Font (z. B. via Calligraphr) für Notizen/Hinweise | Font-Vorlage | – | – | 1 | Hand → Font |
 
+### 6.12 Sequenzen (D-16, nur für 4K-Sequenzen)
+
+*3 Einträge · 12 Zeichnungen*
+
+| ID | Name | Prio | Zeichen-Briefing | Bogen | Papier (mm) | Spiel 1x (px) | # | Quelle → Weg |
+|----|------|:----:|------------------|-------|-------------|---------------|:-:|--------------|
+| SQ01 | Monolith-Splitter (6–8 einzeln) | **S** | Einzelne kantige Bruchstücke des Monolithen in verschiedenen Größen, schwer schraffiert, für die Zerbrech-Animation (SQ-DOMINATED). Direkt nach M01a–d mit denselben Stiften zeichnen; auf einem freien A4-Blatt, Teile mit ≥ 5 mm Abstand | frei A4 | je 10–60 | 32–190 | 8 | Hand → Trace |
+| SQ02 | Notenlinien-Blatt | **C** | Fünf freihändig gezogene Notenlinien über eine A4-Breite, Tusche, für Intro/Funkfenster (und als reißende Verbindungslinien in SQ-DISCONNECTED) | frei A4 | ca. 190 breit | 1280 breit | 1 | Hand → Raster |
+| SQ03 | Uplink-Glyphe (3 Stufen) | **C** | Ein ✦-Funke, der aus einem Federklecks entsteht: Stufe 1 Klecks, Stufe 2 Klecks mit Strahlen, Stufe 3 klarer Funke – für den ersten Tastendruck (SQ-INTRO) | Einheiten | Feld ø40 | 64–96 | 3 | Hand → Trace |
+
 <!-- ASSET_TABLES_END -->
 
 ---
@@ -431,8 +442,28 @@ game/public/assets/         ← Build-Output fürs Spiel
 | 3 · Karte | THE DESK (A3) + Papierscan | K01, K03 | 2 | So 25.10. |
 | 4 · Must-UI | Rahmen, Symbole, Cursor, Stempel, Logo, Porträt | UI01, UI03–UI09d, UI11, UI12, UI13–UI13c, UI16 | 22 | Sa 31.10. |
 | 5 · Must-FX & Marker | Spritzer, Kleckse, ?!, Kreise, Pfeile, X, Schraffur | FX01, FX02, FX04, SM01–SM03, SM05, SM06 | 12 | Sa 31.10. |
-| 6 · Should | Line-Boil-Frames, PLANNER, TRANSFORMER, BRUTEFORCE, Monolith II/III, S-Gebäude, S-FX, S-UI | alle S | 55 | **Theme-abhängig**, 01.–20.11. |
-| 7 · Could | nur nach Gate M3 | alle C | 23 | 22.–27.11. |
+| 6 · Should | Line-Boil-Frames, PLANNER, TRANSFORMER, BRUTEFORCE, Monolith II/III/zerstört **+ Splitter SQ01 (in derselben Sitzung wie M01b–d, gleiche Stifte)**, S-Gebäude, S-FX, S-UI | alle S | 63 | **Theme-abhängig**, 01.–20.11. |
+| 7 · Could | nur nach Gate M3 (inkl. SQ02, SQ03) | alle C | 27 | 22.–27.11. |
 | **Theme** | 2–6 Zeichnungen für das Theme-Modul | neu | 2–6 | 02.–08.11. |
 
 > **Batch 0 ist ein Gate.** Wenn die Stil-Proben im Spiel nicht gut aussehen, ändern wir **zuerst die Regeln (Stifte, Maßstab)** und erst danach zeichnest du in Serie. Lieber am 11.10. eine Woche verlieren als am 15.11. alles neu zeichnen.
+
+---
+
+## 11. Sequenzen (D-16): Was die 4K-Partituren aus deinen Zeichnungen machen
+
+> Jede Sequenz ist ein JavaScript-Programm von **höchstens 4096 Bytes**, eine **Partitur, die deine Zeichnungen dirigiert**. Der Code bewegt, enthüllt, betuscht und belichtet vorhandene Zeichnungen und setzt Timing, Tinte, Licht und den Synth fürs Leitmotiv. **Er erfindet keine Linien.** Zeichnungen, Stimme und Musik kommen aus dem Asset-Pool und zählen nicht zu den 4096 B. Katalog und Ablauf: [GDD § 19a](02_GAME_DESIGN_SPEC.md#19a-sequenzen-4k-partituren).
+
+| Sequenz | Prio | Vorhandene Assets | Neue Assets |
+|---------|:----:|-------------------|-------------|
+| **SQ-INTRO** | S | K03 Papier, K01 Karte, FX15 Tusche-Ränder (Enthüllungsmaske), M01a Monolith, UI16 Logo, UI11 CONDUCTOR | SQ03 Uplink-Glyphe (C, Ersatz: ✦-Kopf des EXECUTOR aus U02), SQ02 Notenlinien (C) |
+| **SQ-SINGULARITY** | S | K01, M01c, FX02 Kleckse, FX15, UI13c Stempel SINGULARITY | – |
+| **SQ-DISCONNECTED** | S (Cut-Liste) | K01, UI11b, UI13b Stempel DISCONNECTED | **SQ02 als reißende Verbindungslinien.** Der Code darf keine Linien erfinden, die „Verbindungen“ müssen also gezeichnet sein. Wird SQ-DISCONNECTED gebaut, steigt **SQ02 auf S** |
+| **SQ-DOMINATED** | S | K01, M01c → M01d, FX02, UI13 Stempel DOMINATED, UI11c | **SQ01 Monolith-Splitter** |
+| **SQ-RADIO** | C | M01a–c, UI11/11b/11c, UI07 Stempelrahmen, FX09 Puls-Ring, FX08 Flood-Kreis | SQ02 (Notenlinien als Funk-Rahmen) |
+
+**Zeichentipps für die Sequenz-Assets:**
+- **SQ01 Splitter** gehören zum Monolithen: **gleiche Stifte, gleiche Pinselfüllung, gleicher Maßstab** wie M01a–d, also in derselben Sitzung zeichnen. Bruchkanten kantig und gerade, keine Rundungen (Formsprache MONOLITH). Varianten von klein (10 mm) bis groß (60 mm). Jede Bruchkante bekommt eine dünne Innenlinie, damit sie im Licht der Sequenz aufblitzen kann.
+- **SQ02 Notenlinien** freihändig, **nicht mit Lineal**: Das Zittern ist das Bild. Fünf Linien, gleichmäßiger Abstand (~4 mm), eine Bewegung pro Linie.
+- **SQ03 Uplink-Glyphe:** drei getrennte Felder. Stufe 1 ein runder Klecks, Stufe 2 derselbe Klecks mit 4–6 Strahlen, Stufe 3 ein klarer ✦ (wie der EXECUTOR-Kopf).
+

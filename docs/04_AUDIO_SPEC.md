@@ -14,6 +14,7 @@
 | **Kampf** | Stilisiert statt realistisch: Feder-Kratzer als Schüsse, Papier-Reißen als Treffer, Zerknüllen als Tod. Für Wucht kommen **CC0-Explosionen** darunter | Aufnahme + CC0 |
 | **Monolith** | Tiefes Brummen, Puls, Glas/Kristall, Rückwärts-Hall | CC0 + Bearbeitung |
 | **Musik** | Treibend-industriell mit Orchester-Motiv (Streicher-Ostinato, Pauken, Synth-Bass), eine Hommage an den RTS-Sound der 2000er, **ohne** etwas zu kopieren | CC0/CC-BY von Menschen **oder** eigene Komposition |
+| **Leitmotiv & Sequenzen** (D-16) | Ein 4–5-Ton-Motiv, industriell und marschartig. In den 4K-Sequenzen spielt es ein kleiner Synth: **verstimmt → sauber** (Intro), **voll** (Sieg), **zerfallend** (Niederlage) | **Komposition mzone**. Der Synth ist Code, also nur das Instrument |
 
 **Kein KI-generierter Ton** (keine TTS-Stimme, keine Musik-Generatoren). So bleibt „Kein KI-Sound“ auf itch.io wahr (Entscheidung D-11).
 
@@ -21,7 +22,7 @@
 
 ## 2. CONDUCTOR – Ansager-Skript
 
-**Prio M = 16 Lines, S = 10 Lines, C = 4 Lines.** Jede Line wird **3× aufgenommen**, die beste kommt ins Spiel.
+**Prio M = 16 Lines, S = 16 Lines (davon 6 nur für die Sequenzen, V31–V36), C = 4 Lines.** Jede Line wird **3× aufgenommen**, die beste kommt ins Spiel.
 
 | ID | Auslöser | Line (EN) | Prio | Hinweis zur Betonung |
 |----|----------|-----------|:----:|----------------------|
@@ -55,6 +56,14 @@
 | V28 | Niederlage (CORE) | *“Connection lost.”* | S | resigniert |
 | V29 | Niederlage (Singularität) | *“Singularity reached.”* | S | leise, düster |
 | V30 | Onboarding 1–8 | siehe [GDD § 17](02_GAME_DESIGN_SPEC.md#17-onboarding-die-ersten-120-sekunden) (8 Lines) | S | freundlich, erklärend |
+| V31 | SQ-INTRO, Satz 1 | *“The world is a map, and the map is on your desk.”* | S | ruhig, wie ein Erzähler über einer Karte |
+| V32 | SQ-INTRO, Satz 2 | *“A single model – THE MONOLITH – is consuming every data field it can reach, growing toward singularity.”* | S | dunkler, „THE MONOLITH“ abgesetzt |
+| V33 | SQ-INTRO, Satz 3 | *“You are the Conductor. Orchestrate your agents. Dominate the map. Break the Monolith.”* | S | steigernd, vier kurze Schläge wie ein Taktstock |
+| V34 | SQ-DOMINATED | *“The Monolith is broken. The orchestra plays on.”* (Vorschlag) | S | warm, getragen |
+| V35 | SQ-SINGULARITY | *“Singularity reached. There is only one voice now.”* (Vorschlag) | S | leise, kalt |
+| V36 | SQ-DISCONNECTED | *“Conductor offline. The orchestra… is silent.”* (Vorschlag) | S | brüchig, die Pause hörbar |
+
+> **Sequenz-Lines (D-16):** V31–V33 sind die Prämissen-Sätze aus [GDD § 4.1](02_GAME_DESIGN_SPEC.md#41-die-prämisse-3-sätze-mehr-story-gibt-es-nicht). **Jeden Satz einzeln aufnehmen**, damit die Sequenz Bild und Satz synchronisieren kann. V34–V36 sind Textvorschläge: Bestätige oder ändere sie vor der Aufnahme (Grill N3). **V27–V29 bleiben** für die Rückfall-Darstellung (GDD § 14). Läuft eine Sequenz, ersetzen V34–V36 sie. SQ-RADIO nutzt die vorhandenen Lines V15–V20.
 
 > **Theme-Lines:** 2–4 zusätzliche Lines nach dem 01.11. für das Theme-Modul. **Plane eine zweite, kurze Aufnahme-Session am 07./08.11. ein.**
 
@@ -109,11 +118,18 @@ Text-Einzeiler stehen in [GDD § 3](02_GAME_DESIGN_SPEC.md#3-spielerfantasie--to
 
 | ID | Track | Länge | Stimmung | Prio |
 |----|-------|-------|----------|:----:|
+| **MU0** | **Leitmotiv** (D-16), **komponiert von mzone** | 4–5 Töne, 2–4 Takte | industriell, marschartig. **Keimzelle** von MU2, MU4 und MU5 | **M** (für Sequenzen) |
 | MU1 | **Hauptmenü** „The Desk“ | 1:30–2:00 Loop | ruhig, Streicher-Pizzicato + Klavier, Spannung angedeutet | M |
 | MU2 | **Kampf** „Orchestrate“ | 2:30–3:30 Loop | treibend, 120–135 BPM, Pauken, Synth-Bass, Streicher-Ostinato | M |
 | MU3 | **Kampf-Intensitätsschicht** | wie MU2, Stems | ab STAGE II Percussion-Layer, ab STAGE III Bläser/Chor-Layer einblenden | S |
 | MU4 | **Sieg-Stinger** | 5–8 s | Dur-Akkord, Orchester | M |
 | MU5 | **Niederlage-Stinger** | 5–8 s | absteigend, tief | M |
+
+**Leitmotiv MU0 (D-16):**
+- **mzone komponiert es.** Abzuliefern sind nur Tonhöhen, Notenwerte und Tempo. Notation reicht, z. B. als Datei `audio/leitmotiv.md` in der Form `Ton Dauer · Ton Dauer · … · Tempo` (etwa `E2 Viertel · G2 Achtel · … · 112 BPM`; **nur ein Format-Beispiel, nicht die Melodie**) oder als Foto einer Notenskizze.
+- **Ziel-Datum: So 25.10.** (zusammen mit Audio-Session 1), damit die lokale Session das Motiv im Synth der 4K-Vorschauseite (`tools/4k/`) ausprobieren kann.
+- **Keimzelle:** MU4 (Sieg-Stinger) = Motiv voll ausgespielt, MU5 (Niederlage-Stinger) = Motiv zerfallend. Damit decken die Sequenzen die Stinger mit ab. MU2 zitiert das Motiv, **wenn** MU2 selbst komponiert wird. Kommt MU2 aus einer CC-BY-Quelle, lebt das Motiv nur in MU4, MU5 und den Sequenzen.
+- Der 4K-Synth ist **prozedurale Klangerzeugung im Code**, kein Musik-Generator. Komposition und Klangidee stammen von mzone.
 
 **Beschaffung, Reihenfolge der Präferenz:**
 1. **Eigene Komposition** oder ein Bekannter (Grill G1). Anfrage **bis 15.10.**
@@ -162,7 +178,8 @@ Material bereitlegen: Kugelschreiber, Füller, Fineliner, Holzstempel (oder Tack
 | Musik | Streams, ≤ 4 MB gesamt (128 kbps), nahtlose Loops (Loop-Punkte prüfen) |
 | Lautheit | Stimme −16 LUFS · SFX Spitzen ≤ −3 dBFS · Musik −20 LUFS (Kampf), −22 LUFS (Menü) |
 | Mixer | Master / Musik / SFX / Stimme in den Optionen. Musik wird bei Ansager-Lines um 6 dB abgesenkt (Ducking) |
-| **Browser-Autoplay** | Audio startet **erst nach der ersten Nutzerinteraktion**. Titelbildschirm: „CLICK TO CONDUCT“ |
+| **Browser-Autoplay** | Audio startet **erst nach der ersten Nutzerinteraktion**. Mit SQ-INTRO ist das der **Uplink-Tastendruck** (oder ein Klick). Ohne Intro übernimmt der Titelbildschirm „CLICK TO CONDUCT“ |
+| **Sequenzen** (D-16) | Der Host übergibt `AudioContext` und dekodierte Buffer (Stimme, Musik). Der Synth erzeugt nur das Leitmotiv. Lautheit Synth wie Musik (−20 LUFS). Während SQ-RADIO wird die Spielmusik um 6 dB abgesenkt |
 | Gleichzeitigkeit | max. 24 Stimmen. Gleiche SFX max. 4× gleichzeitig (Schuss-Spam vermeiden) |
 | Ansager-Warteschlange | Priorität (Angriff > Verlust > Bau), Wiederholsperre je Line 3–30 s |
 
@@ -172,6 +189,8 @@ Material bereitlegen: Kugelschreiber, Füller, Fineliner, Holzstempel (oder Tack
 
 ```
 VOICE OF THE CONDUCTOR ...... mzone
+MAIN THEME .................. composed by mzone
+CINEMATICS .................. 4096-byte scores conducting hand-drawn ink
 SOUND RECORDINGS ............ mzone (a desk, a pen, a stamp)
 MUSIC ....................... <Titel> by <Autor> – <Lizenz> – <URL>
 ADDITIONAL SFX .............. <Titel> by <Autor> – CC0 – <URL>

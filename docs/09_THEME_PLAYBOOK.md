@@ -12,6 +12,7 @@
 3. **Die erste Idee haben hundert andere auch.** Sie wird nur genommen, wenn sie mechanisch klar die beste ist.
 4. **Notfall-Strategie:** Passt gar nichts, beschreibt das Theme **die Natur des Monolithen**, also *wogegen* du kämpfst. Das geht immer.
 5. **Budget:** max. **6 neue Zeichnungen**, **4 neue Ansager-Lines**, **~9 h** Code (F19 + F35). Alles im `theme/themeModule.ts`.
+6. **Theme im Intro (D-16):** Ebene 1 kann auch in **SQ-INTRO** stattfinden. Dafür wird ein Prämissen-Satz theme-spezifisch umformuliert und am 07./08.11. neu aufgenommen. Das ist billig und hilft, falls F35 (Ebene 3) aus Zeitgründen entfällt ([Zeitplan § 4a](06_ZEITPLAN.md#4a-kapazitäts-check-d-16-4k-sequenzen)).
 
 ---
 
@@ -65,6 +66,20 @@
 | **Cozy** *(Stresstest)* | Der Krieg ist ein Schreibtischspiel beim Tee | Den Monolithen **bekehren** statt zerstören | **ALIGN statt ZERSTÖREN**: Monolith-Einheiten werden „aligned“ und laufen über (INJECTOR wird Must) | Teetasse, Herz-Stempel | 11 → Notfall-Strategie |
 
 > **Beobachtung:** Viele Themes docken an der **Halluzination**, am **Monolith-Wachstum** oder an **Direktiven** an. Das spricht dafür, dass das Konzept theme-robust ist.
+
+---
+
+## 3a. Kandidaten aus der Sequenz-Arbeit (mzone, 03.10.)
+
+Bei der Arbeit an den 4K-Sequenzen hat mzone drei weitere Events vorgeschlagen. Sie brauchen **neue Mechaniken** und gehören deshalb in den Theme-Slot (GDD § 20), nicht in den Sequenz-Katalog. Am Theme-Abend gelten sie als fertige Ideen für die Linsen B (Agenten) und C (Karte).
+
+| Event | Ebene 3 · Mechanik (Vorschlag) | Passende Themes (Beispiele) | Neue Zeichnungen | Aufwand | Sequenz-Bezug |
+|-------|-------------------------------|-----------------------------|:----------------:|:-------:|---------------|
+| **Agenten lernen eine Spawn-Fähigkeit** | **SPAWN**: Ein PLANNER erzeugt einmal pro Minute 2 kurzlebige Sub-Agenten (EXECUTOR mit 30 s Lebenszeit, ohne CONTEXT-Kosten). Orchestrieren wird zum Delegieren | Scale, Hybrid, Together, Growth, Multiply, Echo | 1 (Sub-Agent als halbtransparente Variante von U02) | ~5 h | SQ-RADIO-Anlass: *“Agents learned to spawn.”* |
+| **Angriff auf ein Regierungssystem** | **SCHUTZOBJEKT**: Auf der Karte steht ein neutrales, **fiktives** Verwaltungsgebäude („THE REGISTRY“). Der Monolith versucht, es einzunehmen. Gelingt ihm das, wächst er doppelt so schnell. Halten = Zusatzziel (Ebene 2) | Power, Trust, Fragile, Balance, Protect, Secrets | 1–2 (Gebäude 3×3, eingenommene Variante) | ~5 h | Funkfenster bei Angriff/Einnahme |
+| **Cyber-Defense-Skills** | **ABILITIES**: 3 aktive Fähigkeiten für den CONDUCTOR mit Abklingzeit, z. B. PATCH (Gebäude im Radius heilen), HONEYPOT (Köder lockt SCRAPER an), FIREWALL BURST (Wellen 5 s bremsen) | Defense, Shield, Bug, Signal, Secrets, Waves | 3 Icons + 1 Effekt | ~6 h | SQ-RADIO kann den Skill ankündigen |
+
+**Ton-Hinweis (Grill C3):** Das Regierungssystem bleibt **fiktiv und satirisch**. Keine echten Staaten, Parteien oder Institutionen, kein Bezug zu realen Angriffen.
 
 ---
 

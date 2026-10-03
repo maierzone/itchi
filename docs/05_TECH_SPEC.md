@@ -1,7 +1,7 @@
 # 05 · Tech-Spec
 
 > **Leitprinzipien:** (1) **Simulation getrennt von Darstellung.** (2) **Datengetrieben**: Balancing heißt Zahlen ändern, nicht Code. (3) **Testbar ohne Browser.** (4) **Browser-first**: Was nicht im itch.io-iframe läuft, existiert nicht.
-> Spielcode entsteht **ab 01.11.2026** unter `game/` (Jam-Regel „start from scratch, templates allowed“).
+> Spielcode entsteht **ab 01.11.2026** unter `game/` (Jam-Regel „start from scratch, templates allowed“). Das gilt auch für die 4K-Sequenzen (D-16) in `game/src/sequences/`. Nur die **Werkzeugkette `tools/4k/`** (Packer, Größen-Check, Vorschauseite) entsteht schon im Oktober, und zwar als Asset-Werkzeug der lokalen Claude-Code-Session.
 
 ---
 
@@ -87,6 +87,10 @@ game/
 │   ├── audio/       audioManager · conductorQueue
 │   ├── input/       controls · camera · placement
 │   ├── theme/       themeModule.ts   ← THEME-SLOT (GDD § 20)
+│   ├── sequences/   ← 4K-SEQUENZEN (D-16, GDD § 19a), lokale Session
+│   │   ├── host.ts  ← typisierter Host-Vertrag: playSequence(id, params) → Promise
+│   │   └── sq-intro.js · sq-dominated.js · sq-singularity.js · sq-disconnected.js · sq-radio.js
+│   │                ← je ≤ 4096 B gepackt (Build-Check)
 │   └── debug/       overlay · cheats (nur Dev-Build)
 ├── public/
 │   ├── assets/      atlas@1x.png · atlas@2x.png · atlas.json · map/ · fx/
@@ -98,7 +102,8 @@ game/
     └── e2e/         smoke.spec.ts (Playwright)
 tools/
 ├── art/   slice_sheet.py · trace.sh · colorize.py · build_atlas.ts · make_pencil_map.py
-└── audio/ process_voice.sh (ffmpeg/sox-Kette) · build_sfx_sprite.ts
+├── audio/ process_voice.sh (ffmpeg/sox-Kette) · build_sfx_sprite.ts
+└── 4k/    Packer · Größen-Check (Abbruch bei 4097 B) · Vorschauseite   ← Oktober, lokale Session (D-16)
 .github/workflows/  ci.yml · deploy.yml
 ```
 
@@ -192,6 +197,26 @@ Reines Datenmodell aus `waves.ts` und `monolith.ts` (siehe [GDD § 10.6](02_GAME
 
 ---
 
+## 5a. Sequenzen (D-16)
+
+> Spezifiziert werden hier nur **Vertrag und Grenzen**. Packer, Entpack-Technik, Tusche-Shader und Synth gestaltet die lokale Claude-Code-Session in `tools/4k/` und `game/src/sequences/`.
+
+| Thema | Festlegung |
+|-------|-----------|
+| **Programmformat** | Jede Sequenz ist ein eigenständiges JavaScript-Programm, **selbst entpackend**, als ausgelieferte Datei **≤ 4096 Bytes** |
+| **Größenregel** | `npm run build` packt die Sequenzen mit `tools/4k/` und prüft jede Datei. **Ab 4097 B bricht der Build ab.** Die CI führt dieselbe Prüfung aus und gibt die Bytes pro Sequenz im Größenbericht aus |
+| **Was zählt** | nur das gepackte Programm. Zeichnungen, Stimmaufnahmen und Musik kommen aus dem Asset-Pool und zählen nicht |
+| **Host-Vertrag** | `playSequence(id, params) → Promise<void>` (typisiert in `sequences/host.ts`). Der Host liefert **nur Daten**: Canvas (Vollbild-Ebene oder Bild-im-Bild-Bereich), `AudioContext`, geladene Zeichnungen (nach Asset-ID), dekodierte Audio-Buffer, Parameter (z. B. Statistik, Monolith-Stufe, Seed) sowie ein `AbortSignal` fürs Überspringen. **Keine Logik im Host** |
+| **Wann sie laufen** | **vor dem Spiel** (SQ-INTRO), **am Ende** (SQ-DOMINATED/-SINGULARITY/-DISCONNECTED), **Bild im Bild** (SQ-RADIO) bei laufender Simulation. Keine Vollbild-Unterbrechung im Spiel |
+| **Überspringen** | Der Host bricht über das `AbortSignal` ab, die Sequenz stoppt ihre Audioquellen, und das Promise wird erfüllt |
+| **Rückfall** | Fehlt die Sequenz, wirft sie einen Fehler oder ist sie nach **Maximallänge + 2 s** nicht fertig, beendet der Host sie und zeigt die Darstellung aus GDD § 14 |
+| **Budget SQ-RADIO** | ≤ 2 ms pro Frame, damit das Spiel weiter flüssig läuft |
+| **Konventionen** | Sequenzen sind bewusst handoptimiertes Size-Coding-JavaScript, deshalb gelten Lint- und Strict-Regeln dort nicht. Der Host-Vertrag in `host.ts` bleibt `strict` |
+
+**Zu prüfen beim Release-Probelauf (15.11.):** Selbst entpackende Programme brauchen in der Regel Code-Auswertung zur Laufzeit (z. B. `new Function` oder Import über eine Blob-URL). Ob das im itch.io-iframe funktioniert, wird mit einer Test-Sequenz auf der privaten itch-Seite geprüft. **Rückfall:** dieselbe Sequenz ungepackt ausliefern. Die 4096-B-Regel bleibt dann als Build-Disziplin erhalten.
+
+---
+
 ## 6. Performance-Budgets
 
 | Messgröße | Budget | Messung |
@@ -203,6 +228,8 @@ Reines Datenmodell aus `waves.ts` und `monolith.ts` (siehe [GDD § 10.6](02_GAME
 | Download gesamt | **≤ 15 MB** Ziel, ≤ 30 MB hart | `dist/` Größe in CI ausgeben |
 | Ladezeit bis Titelbild | ≤ 5 s auf 20 Mbit/s | manuell |
 | Speicher | ≤ 400 MB JS-Heap | DevTools |
+| **Sequenz-Programm** | **≤ 4096 B je Datei (hart)** | Build-Check `tools/4k/` + CI |
+| SQ-RADIO | ≤ 2 ms pro Frame | Debug-Overlay |
 
 ---
 
@@ -212,8 +239,8 @@ Reines Datenmodell aus `waves.ts` und `monolith.ts` (siehe [GDD § 10.6](02_GAME
 |---------|----------|---------|
 | Lokal | `npm run dev` | Vite Dev-Server, Hot Reload |
 | Prüfen | `npm run check` | `tsc --noEmit` + ESLint + Prettier + Vitest |
-| Bauen | `npm run build` | `vite build` mit **`base: './'`** (relative Pfade – Pflicht für itch.io!) → `dist/` |
-| CI | GitHub Actions `ci.yml` | bei jedem Push: check + build + Playwright-Smoke + Größenbericht |
+| Bauen | `npm run build` | `vite build` mit **`base: './'`** (relative Pfade – Pflicht für itch.io!) → `dist/`. Davor: Sequenzen packen und **4K-Größencheck** (Abbruch bei 4097 B) |
+| CI | GitHub Actions `ci.yml` | bei jedem Push: check + build (inkl. 4K-Check) + Playwright-Smoke + Größenbericht (gesamt und Bytes pro Sequenz) |
 | Vorschau | GitHub Pages (`deploy.yml`, Branch `main`) | Spielbare Vorschau für Tester ohne itch.io |
 | itch.io | **butler** (`butler push dist maierzone/orchestrate-and-dominate:html5`) | bei Tag `v*`. Secret `BUTLER_API_KEY` in den Repo-Secrets (**mzone legt an**) |
 | Jam-Einreichung | **manuell** auf der Jam-Seite | siehe [Abgabe-Checkliste](11_ITCH_ABGABE_CHECKLISTE.md) |
@@ -230,6 +257,7 @@ Reines Datenmodell aus `waves.ts` und `monolith.ts` (siehe [GDD § 10.6](02_GAME
 | **Szenario (headless)** | Komplette Partie mit Skript-Bot (baut, sammelt, schickt Squads mit HUNT SCRAPER), 20 min Sim-Zeit in < 10 s: keine Exceptions, Monolith-Kurve im erwarteten Korridor, Sieg auf STORY möglich | Vitest | täglich + vor jedem Gate |
 | **Balancing-Regression** | Gleiche Seeds, Kennzahlen (Siegzeit, Monolith-% bei Minute 5/10) gegen Vorwerte, Warnung bei > 15 % Abweichung | Vitest-Snapshot | ab Woche 3 |
 | **E2E-Smoke** | Build laden, „CLICK TO CONDUCT“, Spiel starten, 10 s laufen lassen: keine Konsolenfehler, Canvas nicht leer | Playwright (Chromium) | CI |
+| **Sequenzen** | Größencheck ≤ 4096 B · jede Sequenz mit Test-Parametern abspielen: Promise wird innerhalb Maximallänge + 2 s erfüllt, keine Konsolenfehler · Überspringen per `AbortSignal` · Rückfall bei absichtlich fehlerhafter Sequenz | `tools/4k/` + Playwright | CI |
 | **Mensch** | Playtest-Protokoll (siehe [Zeitplan](06_ZEITPLAN.md#6-playtest-protokoll)) | – | 15.11., 22.11., 27.11. |
 
 **Debug-Werkzeuge (nur Dev-Build):** `F1` Overlay (FPS, Entities, Pfad-Queue, Tick-Zeit) · `F2` Pfade/Ziele zeichnen · `F3` Karte aufdecken · `F4` +1000 Tokens · `F5` Monolith +10 % · `F6` Zeitraffer ×4.
@@ -252,6 +280,9 @@ TypeScript `strict`, kein `any` · ESLint + Prettier · kleine Module (< 300 Zei
 | Audio startet nicht (Autoplay-Sperre) | Klick-Startbildschirm, Audio-Kontext erst danach |
 | Safari-Eigenheiten | MP3-Fallback, WebGL-Kontextverlust abfangen, Test auf Safari am 22.11. (falls Gerät vorhanden) |
 | Build läuft lokal, auf itch nicht | **Release-Probelauf am 15.11.** auf einer privaten itch-Seite |
+| Selbst entpackende Sequenz wird im itch-iframe blockiert | Test-Sequenz im Probelauf am 15.11. Rückfall: ungepackt ausliefern (Größenregel bleibt Build-Disziplin) |
+| Sequenz hängt oder wirft Fehler | Host-Timeout (Maximallänge + 2 s) → Rückfall-Darstellung GDD § 14 |
+| Sequenzen fressen Zeit | erst nach Gate M2, feste Reihenfolge, Cut-Liste ([Zeitplan § 7](06_ZEITPLAN.md#7-cut-liste-reihenfolge-ist-verbindlich)) |
 
 ---
 

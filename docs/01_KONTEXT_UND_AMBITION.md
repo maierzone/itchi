@@ -87,9 +87,9 @@ itch.io verlangt seit Ende 2024 eine **Angabe, ob und wofür generative KI genut
 | Bereich | Unser Plan | Angabe auf itch.io |
 |---------|-----------|--------------------|
 | Grafik | 100 % von mzone gezeichnet, deterministisch vektorisiert (potrace/vtracer, kein Generator) | **Keine KI-Grafik** |
-| Sound | Eigene Aufnahmen (Stimme, Papier, Stift) + CC0/CC-BY von Menschen | **Kein KI-Sound** |
+| Sound | Eigene Aufnahmen (Stimme, Papier, Stift) + CC0/CC-BY von Menschen + **Leitmotiv von mzone** (in den Sequenzen von einem prozeduralen Synth gespielt, D-16) | **Kein KI-Sound** |
 | Text | Von mzone geschrieben, Claude als Lektor [A] | ehrlich angeben, falls Claude Texte formuliert |
-| Code | Mit Claude Code entwickelt | **KI-unterstützter Code: ja** |
+| Code | Mit Claude Code entwickelt, **inkl. der 4K-Sequenzen** (D-16) | **KI-unterstützter Code: ja** |
 
 ---
 
@@ -148,7 +148,8 @@ Was RA2 bis heute ikonisch macht, und was davon wir übernehmen:
 | **Papier + Tusche** (du) | Alles, was handgemacht aussehen soll | **Sämtliche sichtbare Spielgrafik** |
 | **MZP (Mzone-Publisher)** | Stil `analog@1.1.0`: Kartografie-/Figurenstil mit 31 Bausteinen (u. a. „KI-Agent“ mit Funken-Glyphe, Akteur, Person, Kanten, Zeitachse, Warnstempel, Handkreis), Tusche-Strich (`data-tusche`: schwell/filter), Skizzen-Overlay (`data-sketch`), Export als PNG (transparent/mit Hintergrund) und `figure.svg`, Prüfung auf Textpassung/Kollision; Design-Tokens (Papier `#ded4bf`, Tusche `#221d17`, Rost `#a85c3c`, Petrol `#3f7186` …), Fonts IBM Plex Mono + Spectral | **Design-Token-Quelle** (Palette, Fonts, Strichcharakter), **Diagramme**: Tech-Tree, Synergie-Pipeline, How-to-play, Missions-Briefings, Devlog. **Kein Sprite-Tracer.** |
 | **Claude Design** | Canvas-Workspace für Prototypen, Layouts, Präsentationen; Export laut Recherche als ZIP, PDF, PPTX, Standalone-HTML, nach Canva; Übergabe an Claude Code. **Kein dokumentierter SVG/PNG-Export** | **Layout-Mockups**: HUD, Sidebar, Orchestrierungsleiste, Menüs, itch-Seite, Pressekit |
-| **Claude Code** | Code, Tests, Build-Pipeline, Doku, Asset-Automatisierung | **Engineering** + Bild-Pipeline-Skripte |
+| **Claude Code** (Cloud-Session) | Code, Tests, Build-Pipeline, Doku, Asset-Automatisierung | **Engineering** + Bild-Pipeline-Skripte + **Pflege von `docs/`** |
+| **Claude Code** (lokale Session) | 4K-Size-Coding, Tusche-Shader, Synth | **4K-Sequenzen** (D-16): Werkzeugkette `tools/4k/` im Oktober, Sequenzen in `game/src/sequences/` ab 01.11. |
 | **potrace / vtracer** (Open Source, lokal) | Rastergrafik → Vektor, deterministisch, kein KI-Generator | **Sprite-Vektorisierung** deiner Scans |
 | **Tiled** (Open Source) | Karteneditor | Kollisions-/Gelände-Layer über deiner handgezeichneten Karte |
 
@@ -203,7 +204,8 @@ Aus deinem Prosa-Text lese ich vier Ambitionen heraus. Bestätige oder korrigier
 | Rolle | Wer | Interesse |
 |-------|-----|-----------|
 | Vision, Art, Audio, Entscheidungen | **mzone** | eigenes Spiel, Handschrift, Erfolg |
-| Engineering, Doku, Tests | **Claude Code** | sauberer, testbarer Code, pünktliche Lieferung |
+| Engineering, Doku, Tests | **Claude Code** (Cloud-Session) | sauberer, testbarer Code, pünktliche Lieferung |
+| 4K-Sequenzen, `tools/4k/` | **Claude Code** (lokale Session) | Sequenzen ≤ 4096 B, die mzones Zeichnungen dirigieren |
 | Diagramme, Design-Tokens | **MZP** | konsistenter `analog`-Stil |
 | Layout-Mockups | **Claude Design** | schnelle Iteration an HUD und Seite |
 | Playtester | 5+ Personen [A] | ehrliches Feedback |

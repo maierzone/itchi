@@ -13,7 +13,7 @@
 | **Urteil** | **Die Idee ist stark, der ursprüngliche Anspruch („RA2-artig“) ist das größte Risiko.** Mit einem verdichteten Micro-RTS und hohem Polish-Anteil ist eine Platzierung in den **Top 25 %** realistisch, die **Top 100** sind gut erreichbar und die **Top 10** möglich, aber nicht planbar. |
 | **Die 3 größten Hebel** | (1) **Die ersten 60 Sekunden** (Onboarding, klares Ziel) · (2) **Visuelle Identität** (Handzeichnung + „Karte zeichnet sich“) · (3) **Rating-Anzahl** (aktiv bewerten, starke itch-Seite) |
 | **Die 3 größten Risiken** | (1) Scope-Explosion · (2) RTS-Lernkurve für Jam-Voter · (3) Wegfindung/Technik in Woche 1 |
-| **Empfohlenes Szenario** | **B: Tier 0 + ausgewählte Should-Features + volle Polish-Woche** (~92 h) |
+| **Empfohlenes Szenario** | **B: Tier 0 + ausgewählte Should-Features + volle Polish-Woche** (~92 h). Mit D-16 gehen die 4K-Sequenzen im Should-Budget vor ([Zeitplan § 4a](06_ZEITPLAN.md#4a-kapazitäts-check-d-16-4k-sequenzen)) |
 | **Prognose Szenario B** | Abgabe spielbar **~85 %** · Top 25 % **~50 %** · Top 100 **~30 %** · Top 25 **~8 %** · Top 10 **~3 %** |
 
 ---
@@ -66,6 +66,8 @@ Erwarteter Durchschnitt der Community-Sterne (1–5) bei guter Umsetzung, mit Sp
 | **Theme** | 3,5 | 2,8–4,2 | völlig offen bis 01.11. | Theme auf Ebene 3 (Mechanik) |
 
 > Ohne Gewähr. Top-10-Spiele in Community-Jams liegen typischerweise bei **Ø ≥ 4,2–4,4 Overall** (Erfahrungswert, für Game Off nicht verifiziert).
+>
+> **D-16 (4K-Sequenzen):** Gelingen Intro und Sieg-Sequenz, zahlen sie vor allem auf **Graphics, Audio und Overall** ein (erster und letzter Eindruck). Ich verschiebe die Spannen deshalb nicht pauschal. Die Sequenzen erhöhen eher die Chance, das **obere Ende** der Spanne zu erreichen, als den Erwartungswert. Kostet das Intro dagegen die Theme-Mechanik (F35), sinkt die Theme-Erwartung Richtung unteres Ende.
 
 ---
 
@@ -76,8 +78,8 @@ Erwarteter Durchschnitt der Community-Sterne (1–5) bei guter Umsetzung, mit Sp
 | Scope ↓ / Ausführung → | 🔴 **holprig**<br/>Bugs, kein Onboarding, wenig Audio | 🟡 **solide**<br/>fertig, verständlich, ohne Abstürze | 🟢 **poliert**<br/>Juice, Audio, Onboarding, starkes Theme |
 |------------------------|:----------:|:---------:|:----------:|
 | **„RA2-komplett“** (ungebremst) | ❌ nicht abgegeben / untere Hälfte | obere Hälfte | (in 30 Tagen nicht erreichbar) |
-| **Tier 2** (alles, ~160 h) | untere Hälfte | Top 25–50 % | Top 10–15 % |
-| **Tier 1** (Must + Should, ~120 h) | obere Hälfte | Top 25 % | **Top 5–10 %** |
+| **Tier 2** (alles, ~175 h) | untere Hälfte | Top 25–50 % | Top 10–15 % |
+| **Tier 1** (Must + Should inkl. Sequenzen, ~135 h) | obere Hälfte | Top 25 % | **Top 5–10 %** |
 | **Szenario B: Tier 0 + Should-Favoriten** (~92 h) | obere Hälfte | Top 25 % | **Top 5–10 %** ⭐ *Sweet Spot* |
 | **Tier 0** (nur Must, ~76 h) | obere Hälfte | Top 25–35 % | Top 10–15 % |
 | **Plan Z** („Defend the Conductor“, ~45 h) | obere Hälfte | Top 25–35 % | Top 15 % |
@@ -96,7 +98,7 @@ Gesamtwahrscheinlichkeit, **einschließlich** des Risikos, nicht oder unfertig a
 | Plan Z | **95 %** | 70 % | 35 % | 18 % | 3 % | 1 % |
 | Tier 0 (nur Must) | 85 % | 70 % | 40 % | 22 % | 5 % | 1,5 % |
 | **B: Tier 0 + Should-Favoriten + Polish + Community** ⭐ | **85 %** | **75 %** | **50 %** | **30 %** | **8 %** | **3 %** |
-| C: Tier 1 + Could (bei ~145 h) | 75 % | 70 % | 48 % | 30 % | 9 % | 3–4 % |
+| C: Tier 1 inkl. Sequenzen + etwas Could (bei ~145 h) | 75 % | 70 % | 48 % | 30 % | 9 % | 3–4 % |
 
 **Was die Zahlen sagen:**
 1. **Der größte Sprung** liegt zwischen „RA2-komplett“ und jedem disziplinierten Szenario: Die Abgabewahrscheinlichkeit verdreifacht sich fast.
@@ -119,6 +121,7 @@ Gesamtwahrscheinlichkeit, **einschließlich** des Risikos, nicht oder unfertig a
 | 8 | **itch-Seite: GIF ganz oben, 3-Satz-Pitch, Steuerung** | gering | ⬆⬆ | Klickrate → Ratings | Abgabe-Checkliste |
 | 9 | **Keine Abstürze, ≥ 55 FPS** | mittel | ⬆⬆ | Overall | Tech-Spec § 6, § 8 |
 | 10 | **Meta-Story** („mit KI-Agenten gebaut, von Hand gezeichnet“) im Devlog | gering | ⬆ | Innovation, Sichtbarkeit | Zeitplan § 8 |
+| 11 | **SQ-INTRO als erster Eindruck** (D-16): ≤ 45 s, SKIP ab Sekunde 1, Uplink-Taste = Audio-Start, nahtloser Übergang auf dieselbe Karte. Dazu die Story *“Every cinematic is a 4096-byte score”* | mittel (~5 h) | ⬆⬆ | Graphics, Audio, Overall, Sichtbarkeit | GDD § 19a |
 
 ---
 
@@ -134,6 +137,7 @@ Gesamtwahrscheinlichkeit, **einschließlich** des Risikos, nicht oder unfertig a
 | **„Theme? Wo?“** | Theme-Note 2 | Theme nur im Titel | Ebene 2+3 |
 | **„Läuft nicht“** | 0 Ratings | Probe-Upload scheitert | Release-Probelauf 15.11. |
 | **„Stumm“** | Audio-Note 2 | Audio erst am 28.11. | Audio-System am 18.11., Aufnahmen im Oktober |
+| **„Intro zu lang“** | Voter schließt den Tab, bevor er spielt | Playtester sucht den SKIP-Knopf | Intro ≤ 45 s, SKIP von Anfang an sichtbar, erster Tastendruck startet sofort etwas Sichtbares |
 
 ---
 

@@ -3,6 +3,7 @@
 > **Basis-Annahme (Grill B1/B2, Szenario B):** Oktober ~8 h/Woche · November **Mo–Fr 2 h, Sa/So 6 h** = **~92 h** im Jam.
 > Feature-IDs (F01 …) siehe [Matrizen § 1](07_MATRIZEN.md#1-feature-priorisierungsmatrix). Asset-Batches siehe [Art-Bibel § 10](03_ART_UND_ASSET_BIBEL.md#10-zeichen-reihenfolge-verbindlich).
 > Alle Zeiten in **MEZ/MESZ (Deutschland)**. Zeitumstellung am **So 25.10.2026**, danach gilt MEZ = UTC+1.
+> **D-16 (4K-Sequenzen)** ist eingeplant: Werkzeugkette im Oktober, Sequenzen nach Gate M2. Den Kapazitäts-Check dazu enthält § 4a.
 
 ---
 
@@ -19,6 +20,8 @@ gantt
     Batch 0 Stil-Proben + Pipeline-Test   :a2, 2026-10-05, 7d
     Batch 1+2 Einheiten & Gebäude         :a3, 2026-10-12, 7d
     Papier-Prototyp, Tester, Musik        :a4, 2026-10-12, 7d
+    Leitmotiv komponieren (mzone)         :a8, 2026-10-12, 14d
+    tools/4k Werkzeugkette (lokal)        :a9, 2026-10-12, 20d
     Batch 3 Karte A3 + Audio-Session 1    :a5, 2026-10-19, 7d
     Claude Design HUD-Mockups             :a6, 2026-10-19, 10d
     Batch 4+5 UI, FX, Marker              :a7, 2026-10-22, 10d
@@ -30,6 +33,7 @@ gantt
     Woche 2 Kampf, Monolith, Orchestrierung :b2, 2026-11-09, 7d
     Gate M2 First Playable + Probe-Upload :crit, milestone, m2, 2026-11-15, 0d
     Woche 3 Theme, Audio, Onboarding, Should :b3, 2026-11-16, 7d
+    Sequenzen nach M2 (Should-Blöcke)     :b5, 2026-11-21, 2d
     Gate M3 Feature Freeze                :milestone, m3, 2026-11-22, 0d
     Woche 4 Polish, Balancing, itch-Seite :b4, 2026-11-23, 7d
     Gate M4 Release Candidate             :milestone, m4, 2026-11-29, 0d
@@ -41,7 +45,7 @@ gantt
 
 | Phase | Zeitraum | Stunden (Annahme) | Ergebnis |
 |-------|----------|:-----------------:|----------|
-| **Pre-Production** | Sa 03.10. – Sa 31.10. | ~35 h | Entscheidungen, 55 Must-Zeichnungen, Karte, Pipeline, Audio-Session, Mockups, Tester |
+| **Pre-Production** | Sa 03.10. – Sa 31.10. | ~35 h | Entscheidungen, 55 Must-Zeichnungen, Karte, Pipeline, Audio-Session, **Leitmotiv**, Mockups, Tester. Dazu baut die lokale Session `tools/4k/` |
 | **Jam** | So 01.11. – Mo 30.11. | **~92 h** | Spiel, Seite, Abgabe |
 | **Puffer** | Di 01.12. bis 22:37 | 0 h (Notfall) | – |
 | **Voting** | Mi 02.12. – Fr 01.01.2027 | ~1 h/Tag (erste 10 Tage) | ≥ 50 bewertete Spiele, Devlog, Kommentare |
@@ -50,14 +54,14 @@ gantt
 
 ## 2. Oktober – Pre-Production
 
-> **Regel-Hinweis:** Laut Game-Off-Regeln 2025 sind eigene Assets und Werkzeuge erlaubt, aber das Spiel soll „from scratch“ entstehen. Deshalb gilt im Oktober: **Zeichnungen, Audio, Spec, Asset-Werkzeuge: ja. Spielcode: nein.** Das schreiben wir offen ins README. Ein Wegwerf-Prototyp zum **Lernen** der Engine (eigenes, privates Repo, wird nicht eingereicht) ist ok.
+> **Regel-Hinweis:** Laut Game-Off-Regeln 2025 sind eigene Assets und Werkzeuge erlaubt, aber das Spiel soll „from scratch“ entstehen. Deshalb gilt im Oktober: **Zeichnungen, Audio, Leitmotiv, Spec, Asset-Werkzeuge (inkl. `tools/4k/`): ja. Spielcode (inkl. Sequenzen): nein.** Das schreiben wir offen ins README. Ein Wegwerf-Prototyp zum **Lernen** der Engine (eigenes, privates Repo, wird nicht eingereicht) ist ok. Dasselbe gilt für die **Wegwerf-Experimente zu Tusche-Shader und Synth**: Sie entstehen außerhalb des Repos, werden im README offengelegt, und die Sequenzen werden ab 01.11. neu geschrieben.
 
 | KW | Zeitraum | mzone | Claude Code | Ergebnis / Prüfpunkt |
 |----|----------|-------|-------------|----------------------|
 | 40 | Sa 03.10. – So 04.10. | Spec lesen, **Grill beantworten** | Spec-Fragen beantworten | Antworten im Grill-Protokoll |
 | 41 | Mo 05.10. – So 11.10. | **Mi 07.10. Entscheidungen bestätigen** (Entscheidungslog). Vorlagen drucken + Testdruck (10 mm nachmessen). **Batch 0: Stil-Proben** U02, B03, Kartenausschnitt | Pipeline-Werkzeuge (`slice_sheet.py`, `trace.sh`, `colorize.py`, `build_atlas.ts`) bauen. Stil-Proben in ein **Testbild** setzen (statische Seite, die zeigt, wie es im Spiel aussehen würde) | **So 11.10.: Stil-Gate.** Sehen die Proben bei 1x gut aus? Wenn nein: Stifte/Maßstab anpassen, **bevor** die Serie beginnt |
-| 42 | Mo 12.10. – So 18.10. | **Batch 1 + 2** (19 Zeichnungen). **Papier-Prototyp** an einem Abend mit 1–2 Leuten spielen (Brettspiel-Version: Monolith-Würfel, Direktiven-Karten). **Tester rekrutieren (≥ 5) und Musik anfragen bis Do 15.10.** | Batches durch die Pipeline schicken, Register-Status pflegen | 19 Assets im Testbild, Erkenntnisse aus dem Papier-Prototyp im Entscheidungslog |
-| 43 | Mo 19.10. – So 25.10. | **Batch 3: Karte A3** (Wochenende!). **Audio-Session 1**: 16 Must-Ansager-Lines + Schreibtisch-SFX. Batch 4 beginnen | Karte: Raster-Weg + Bleistift-Variante. Audio-Bearbeitungskette als Skript. **Claude Design CD1/CD2** vorbereiten | Karte gescannt, Lines + SFX bearbeitet |
+| 42 | Mo 12.10. – So 18.10. | **Batch 1 + 2** (19 Zeichnungen). **Papier-Prototyp** an einem Abend mit 1–2 Leuten spielen (Brettspiel-Version: Monolith-Würfel, Direktiven-Karten). **Tester rekrutieren (≥ 5) und Musik anfragen bis Do 15.10.** **Leitmotiv** skizzieren (4–5 Töne) | Batches durch die Pipeline schicken, Register-Status pflegen. **Lokale Session:** `tools/4k/` (Packer, Größen-Check, Vorschauseite) | 19 Assets im Testbild, Erkenntnisse aus dem Papier-Prototyp im Entscheidungslog |
+| 43 | Mo 19.10. – So 25.10. | **Batch 3: Karte A3** (Wochenende!). **Audio-Session 1**: 16 Must-Ansager-Lines + **Sequenz-Lines V31–V36** + Schreibtisch-SFX. **Leitmotiv fertig notiert (So 25.10.)**. Batch 4 beginnen | Karte: Raster-Weg + Bleistift-Variante. Audio-Bearbeitungskette als Skript. **Claude Design CD1/CD2** vorbereiten. **Lokale Session:** Leitmotiv im Synth der 4K-Vorschauseite anspielen | Karte gescannt, Lines + SFX bearbeitet, Leitmotiv hörbar |
 | 44 | Mo 26.10. – So 01.11. | **Batch 4 + 5** fertig. Auf itch.io: **„Join jam“** auf der Jam-Seite, privaten Projektentwurf über `itch.io/game/new` anlegen, butler installieren, `BUTLER_API_KEY` als Repo-Secret. **Theme-Training** (1 Abend, [Playbook § 4](09_THEME_PLAYBOOK.md)) | CD3-Mockups, Repo-Struktur vorbereiten (`game/` leer, CI-Vorlage), Theme-Playbook-Übung auswerten | **Sa 31.10.: Gate M0.** So 01.11. tagsüber: **Pause.** |
 
 ---
@@ -101,8 +105,8 @@ gantt
 | 18.11. | Mi | 2 | ⬛🔊 | F16 Audio-System, Must-SFX, CONDUCTOR-Warteschlange, Musik | Spiel klingt |
 | 19.11. | Do | 2 | ⬛ | F15 Onboarding (8 Hinweise) | Erstspieler kommt allein klar |
 | 20.11. | Fr | 2 | ⬛ | F17 Menüs, Pause, Optionen, Schwierigkeit | vollständiger Spielablauf |
-| 21.11. | Sa | 6 | ⬛🎨 | **Should-Block 1** (Auswahl bei Gate M2, Vorschlag: F25 PLANNER + F26 Synergien + F35 Theme Ebene 3) | – |
-| 22.11. | So | 6 | ⬛🧪⭐ | **Should-Block 2** (Vorschlag: F31 Tinten-Fog + F32 Line Boil) · F18 Art-Integration II · **Playtest 2** | **Gate M3 Feature Freeze** |
+| 21.11. | Sa | 6 | ⬛🎬 | **Should-Block 1 (D-16):** F46 Sequenz-Host + F48 **SQ-SINGULARITY** + F47 **SQ-DOMINATED** (Reihenfolge § 4a) | Ende-Sequenzen laufen, Rückfall getestet |
+| 22.11. | So | 6 | ⬛🎬🧪⭐ | **Should-Block 2:** F49 **SQ-INTRO** (*oder* F35 Theme Ebene 3, Entscheidung bei Gate M2. Braucht Reserve, § 4a) · F18 Art-Integration II · **Playtest 2** | **Gate M3 Feature Freeze** |
 | 23.11. | Mo | 2 | 🧪 | Bugfixes Playtest 2 | – |
 | 24.11. | Di | 2 | ⬛ | F20 Balancing (Szenario-Tests + Handtests) | NORMAL getunt |
 | 25.11. | Mi | 2 | ⬛🔊 | Polish: Juice-Liste (GDD § 19), Audio-Mix | – |
@@ -117,15 +121,39 @@ gantt
 
 ---
 
+## 4a. Kapazitäts-Check D-16 (4K-Sequenzen)
+
+**Ehrliche Rechnung:** Im Szenario B ist für Should-Features **~15 h** Platz (92 h − 76 h Must). Davon liegen **~9 h fest** im Tagesplan (21./22.11., der Rest dieser Tage geht an F18 II und Playtest 2). **~6 h sind Reserve**, die nur entsteht, wenn Woche 1–3 im Plan liegen. D-16 kostet für die geplanten Sequenzen **~12 h** (F46 Host 2 h · F48 SQ-SINGULARITY 2 h · F47 SQ-DOMINATED 3 h · F49 SQ-INTRO 5 h). Die bisherigen Should-Favoriten (F31, F35, F26, F32, F25) kosten zusammen **~19 h**. **Beides passt nicht in 92 h.**
+
+**Should-Reihenfolge nach Gate M2** (gemäß mzones Vorschlag, die Sequenzen zuerst):
+
+| # | Feature | h | kumuliert | passt in Szenario B? |
+|:-:|---------|:-:|:---------:|:--------------------:|
+| 1 | F46 Sequenz-Host + F48 SQ-SINGULARITY + F47 SQ-DOMINATED | 7 | 7 | ✅ |
+| 2 | F49 SQ-INTRO | 5 | 12 | ✅ braucht ~3 h Reserve |
+| 3 | F31 Tinten-Fog („Karte zeichnet sich“) | 3 | 15 | ⚠️ Grenze |
+| 4 | F35 Theme-Modul Ebene 3 | 5 | 20 | ❌ nur mit Mehrzeit |
+| 5 | F26 Synergien + ORCHESTRATED | 4 | 24 | ❌ |
+| 6 | F32 Line Boil | 3 | 27 | ❌ |
+| 7 | F25 PLANNER + Bedingungen | 4 | 31 | ❌ |
+
+**Was das bedeutet und was ich empfehle:**
+- **Synergie:** F31 und SQ-INTRO nutzen dieselbe Technik (Tusche-Maske aus FX15). Wer SQ-INTRO baut, hat F31 halb fertig. Platz 3 ist deshalb realistisch.
+- **Der größte Verlust ist F35 (Theme Ebene 3).** Theme ist eine ganze Bewertungskategorie. **Empfehlung:** Ist das Theme beim Gate M2 nur schwach umgesetzt, wird **F35 vor F49 gezogen**, und das Intro rutscht auf Platz 4. Ein Prämissen-Satz im Intro kann ersatzweise Theme-Ebene 1 tragen ([Theme-Playbook § 1](09_THEME_PLAYBOOK.md#1-prinzipien)).
+- **Mehr Zeit = mehr Should:** Jede zusätzliche Stunde pro Woche (~4 h im November) holt einen weiteren Platz der Liste herein. Szenario C (~145 h) deckt alles ab.
+- **Entscheidung bei Gate M2 (So 15.11.)** → [Grill N1](00_GRILL_PROTOKOLL.md#teil-n--nachtrag-d-16-4k-sequenzen).
+
+---
+
 ## 5. Meilenstein-Gates
 
 | Gate | Datum | Muss erfüllt sein | Wenn nicht … |
 |------|-------|-------------------|--------------|
-| **M0 · Pre-Production** | Sa 31.10. | Grill beantwortet, Entscheidungen bestätigt · ≥ 90 % der Must-Zeichnungen gescannt · Pipeline erzeugt Atlas für ≥ 10 Assets · K01 gescannt · Audio-Session 1 erledigt · Jam beigetreten · ≥ 5 Tester · Theme-Training gemacht | Fehlende Zeichnungen wandern auf die November-Wochenenden (je 2 h). **Kein** Engineering-Tag wird dafür geopfert |
+| **M0 · Pre-Production** | Sa 31.10. | Grill beantwortet, Entscheidungen bestätigt · ≥ 90 % der Must-Zeichnungen gescannt · Pipeline erzeugt Atlas für ≥ 10 Assets · K01 gescannt · Audio-Session 1 erledigt (inkl. V31–V36) · **Leitmotiv notiert** · **`tools/4k/` packt und prüft eine Test-Sequenz** · Jam beigetreten · ≥ 5 Tester · Theme-Training gemacht | Fehlende Zeichnungen wandern auf die November-Wochenenden (je 2 h). **Kein** Engineering-Tag wird dafür geopfert |
 | **M1 · Core Loop** | So 08.11. | Karte, Kamera, Auswahl, Wegfindung, CRAWLER-Ökonomie, Bau über Sidebar, Einheiten produzieren · Theme-Entscheidung dokumentiert | > 1 Tag Rückstand: Gruppenbewegung vereinfachen (kein Formations-Offset). > 3 Tage: **Plan Z** prüfen |
 | **M2 · First Playable** | So 15.11. | Ganze Partie von Start bis Sieg/Niederlage · Monolith wächst, Wellen kommen · Squads + 3 Direktiven + Halluzination · **Build läuft auf privater itch-Seite** · **Fun-Check** (unten) | siehe Fun-Check |
-| **M3 · Feature Freeze** | So 22.11. | Alle Must-Features + ausgewählte Should · Theme-Modul drin · alle Must-Assets und -Sounds im Spiel · Onboarding · Menüs | Was nicht fertig ist, fliegt raus (Cut-Liste). **Ab hier keine neuen Features.** |
-| **M4 · Release Candidate** | So 29.11. | Kein bekannter Absturz · 3 Browser getestet · itch-Seite komplett · NORMAL-Siegquote Erstspieler 50–70 % (Playtests) · Performance-Budgets · Credits, Lizenzen, KI-Offenlegung | Abgabe trotzdem am 30.11., denn **ein fertiges Spiel mit Macken schlägt ein perfektes, das nicht ankommt** |
+| **M3 · Feature Freeze** | So 22.11. | Alle Must-Features + ausgewählte Should · Theme-Modul drin · alle Must-Assets und -Sounds im Spiel · Onboarding · Menüs · **fertige Sequenzen eingebunden, unfertige fallen auf GDD § 14 zurück** | Was nicht fertig ist, fliegt raus (Cut-Liste). **Ab hier keine neuen Features.** |
+| **M4 · Release Candidate** | So 29.11. | Kein bekannter Absturz · 3 Browser getestet · itch-Seite komplett · NORMAL-Siegquote Erstspieler 50–70 % (Playtests) · Performance-Budgets · Credits, Lizenzen, KI-Offenlegung · **jede Sequenz ≤ 4096 B (Build-Check grün), überspringbar, Rückfall getestet** | Abgabe trotzdem am 30.11., denn **ein fertiges Spiel mit Macken schlägt ein perfektes, das nicht ankommt** |
 
 ### Fun-Check (Gate M2)
 
@@ -158,19 +186,22 @@ Wenn Zeit fehlt, wird **von oben nach unten** gestrichen. In der Krise wird nich
 
 | # | Streichen | Ersatz |
 |---|-----------|--------|
-| 1 | alle **Could**-Features, die bis 22.11. nicht begonnen sind | – |
-| 2 | F33 Musik-Intensitätsschichten | ein Kampf-Loop |
-| 3 | F32 Line Boil | prozedurales Wackeln oder statisch |
-| 4 | F24 TELEMETRY + Minimap | keine Minimap, dafür Leertaste = zum Ereignis springen |
-| 5 | F30 CONTEXT FLOOD | Stufe III = nur stärkere Wellen |
-| 6 | F28 Gelände-Effekte | nur passierbar/unpassierbar |
-| 7 | F23 MODEL FACTORY + TRANSFORMER | nur Fußeinheiten |
-| 8 | F31 Tinten-Fog-Animation | weicher Fog-Rand ohne Animation |
-| 9 | F22 COMPUTE | kein Strom |
-| 10 | F29 BRUTEFORCE + OVERFITTER | nur SHARD + SCRAPER |
-| 11 | F27 ASSAULT + Zusatzziele | HUNT ANY ersetzt es |
-| 12 | F25 PLANNER + Bedingungen | – |
-| 13 | F26 Synergien | CRITIC senkt Halluzinationen trotzdem (Teil von F14) |
+| 1 | alle **Could**-Features, die bis 22.11. nicht begonnen sind (inkl. **F51 SQ-RADIO**) | CONDUCTOR-Box + Ansager wie gehabt |
+| 2 | **F50 SQ-DISCONNECTED** | Rückfall GDD § 14: Stempel DISCONNECTED |
+| 3 | F33 Musik-Intensitätsschichten | ein Kampf-Loop |
+| 4 | F32 Line Boil | prozedurales Wackeln oder statisch |
+| 5 | F24 TELEMETRY + Minimap | keine Minimap, dafür Leertaste = zum Ereignis springen |
+| 6 | F30 CONTEXT FLOOD | Stufe III = nur stärkere Wellen |
+| 7 | F28 Gelände-Effekte | nur passierbar/unpassierbar |
+| 8 | F23 MODEL FACTORY + TRANSFORMER | nur Fußeinheiten |
+| 9 | F31 Tinten-Fog-Animation | weicher Fog-Rand ohne Animation |
+| 10 | F22 COMPUTE | kein Strom |
+| 11 | F29 BRUTEFORCE + OVERFITTER | nur SHARD + SCRAPER |
+| 12 | F27 ASSAULT + Zusatzziele | HUNT ANY ersetzt es |
+| 13 | F25 PLANNER + Bedingungen | – |
+| 14 | F26 Synergien | CRITIC senkt Halluzinationen trotzdem (Teil von F14) |
+
+**Sequenz-Regel (D-16):** Sequenzen, die bis Gate M3 (22.11.) nicht fertig sind, werden nicht weitergebaut. Dann gilt die Rückfall-Darstellung aus GDD § 14 (SQ-INTRO → Briefing mit 3 Sätzen bzw. „CLICK TO CONDUCT“).
 
 **Niemals gestrichen:** F13 Direktiven (mindestens HOLD + HUNT) · F14 Halluzination · F15 Onboarding · F16 Audio-Grundausstattung · F10 Sieg/Niederlage · F19 Theme (Ebene 1–2) · F21 Release.
 
