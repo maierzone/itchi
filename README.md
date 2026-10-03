@@ -68,6 +68,14 @@ Erst wenn deine Agenten es erkunden, **zeichnet sich die Karte mit Tusche**. All
 
 ---
 
+## Wie wir zu dritt arbeiten
+
+[![Trio-Flow: Aufgabenverteilung zwischen Claude Cloud, Claude lokal und mzone](docs/img/trio_flow.svg)](https://publisher.maierzone.de/published/itchi-trio-flow/)
+
+**mzone** entscheidet, zeichnet, spricht und komponiert. **Claude lokal** (Omarchy) baut `tools/4k/` und ab 01.11. die Sequenzen und
+schreibt Aufträge als `AUFTRAG_*.md`. **Claude in der Cloud** pflegt `docs/`, antwortet mit `RUECKMELDUNG_*.md` und liefert Draft-PRs,
+die mzone freigibt. Interaktive Fassung: [publisher.maierzone.de/published/itchi-trio-flow](https://publisher.maierzone.de/published/itchi-trio-flow/) · PNG: [`docs/img/trio_flow.png`](docs/img/trio_flow.png)
+
 ## Die drei wichtigsten Termine
 
 | Datum | Was |
