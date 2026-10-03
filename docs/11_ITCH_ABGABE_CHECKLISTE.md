@@ -1,7 +1,7 @@
 # 11 · itch.io-Abgabe-Checkliste
 
 > Von der Anmeldung bis zum Klick auf „Submit“. **Abhaken direkt in dieser Datei.**
-> **Spielseite:** **https://maierzone.itch.io/orchestrate-dominate** (Entwurf, angelegt am 03.10.2026, öffentlich noch nicht sichtbar). Bearbeiten: itch.io → *Dashboard* → Projekt → *Edit game*.
+> **Spielseite:** **https://maierzone.itch.io/orchestrate-and-dominate** (Entwurf, angelegt am 03.10.2026, öffentlich noch nicht sichtbar). Bearbeiten: itch.io → *Dashboard* → Projekt → *Edit game*.
 > Zur Erinnerung: **`itch.io/jam/game-off-2026`** = der Wettbewerb (Einschreibung). **`itch.io/game/new`** = das Formular für deine Spielseite. Du brauchst beides.
 
 ---
@@ -12,7 +12,7 @@
 - [ ] Auf **https://itch.io/jam/game-off-2026** auf **„Join jam“** geklickt (mit GitHub-Login möglich)
 - [x] Über **https://itch.io/game/new** einen **Entwurf** angelegt (03.10.2026). Die Felder unten im *Edit game* prüfen und abhaken:
   - [ ] Title: **ORCHESTRATE & DOMINATE**
-  - [x] Project URL: `orchestrate-dominate` → https://maierzone.itch.io/orchestrate-dominate
+  - [x] Project URL: `orchestrate-and-dominate` → https://maierzone.itch.io/orchestrate-and-dominate
   - [ ] Short description: *Orchestrate a swarm of AI agents on a hand-inked war map. Prompts, not clicks.*
   - [ ] Classification: **Games**
   - [ ] Kind of project: **HTML**
@@ -21,7 +21,7 @@
   - [x] Visibility: **Draft** (Seite ist öffentlich noch 404, Stand 03.10.). Tester-Phase später: *Restricted* mit geheimem Link
   - [ ] Unter *Edit game* → *Secret URL* den geheimen Link erzeugen und hier notieren: ______
   - [ ] Seite in der Jam-Einreichung später genau diese URL verwenden (nicht neu anlegen)
-- [ ] **butler** installiert und eingeloggt (`butler login`), Probe: `butler status maierzone/orchestrate-dominate`. API-Key als GitHub-Secret `BUTLER_API_KEY` im Repo `maierzone/itchi` hinterlegt
+- [ ] **butler** installiert und eingeloggt (`butler login`), Probe: `butler status maierzone/orchestrate-and-dominate`. API-Key als GitHub-Secret `BUTLER_API_KEY` im Repo `maierzone/itchi` hinterlegt
 - [ ] Discord/itch-Forum des Jams angesehen (Fragen, Ankündigungen)
 
 ## B · Release-Probelauf (So 15.11. – Gate M2)

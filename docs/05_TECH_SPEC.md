@@ -245,7 +245,7 @@ Reines Datenmodell aus `waves.ts` und `monolith.ts` (siehe [GDD § 10.6](02_GAME
 | Bauen | `npm run build` | `vite build` mit **`base: './'`** (relative Pfade – Pflicht für itch.io!) → `dist/`. Davor: Sequenzen packen und **4K-Größencheck** (Abbruch bei 4097 B) |
 | CI | GitHub Actions `ci.yml` | bei jedem Push: check + build (inkl. 4K-Check) + Playwright-Smoke + Größenbericht (gesamt und Bytes pro Sequenz) |
 | Vorschau | GitHub Pages (`deploy.yml`, Branch `main`) | Spielbare Vorschau für Tester ohne itch.io |
-| itch.io | **butler** (`butler push dist maierzone/orchestrate-dominate:html5`) | bei Tag `v*`. Secret `BUTLER_API_KEY` in den Repo-Secrets (**mzone legt an**) |
+| itch.io | **butler** (`butler push dist maierzone/orchestrate-and-dominate:html5`) | bei Tag `v*`. Secret `BUTLER_API_KEY` in den Repo-Secrets (**mzone legt an**) |
 | Jam-Einreichung | **manuell** auf der Jam-Seite | siehe [Abgabe-Checkliste](11_ITCH_ABGABE_CHECKLISTE.md) |
 
 **itch.io-Eigenheiten:** `index.html` im Wurzelverzeichnis des ZIP · nur relative Pfade · iframe-Größe 1280 × 720 + Fullscreen-Button · „SharedArrayBuffer“-Option **aus** (brauchen wir nicht) · Groß-/Kleinschreibung der Dateinamen exakt (Linux-Server) · Dateianzahl klein halten (Atlanten + Audio-Sprites → < 50 Dateien).
