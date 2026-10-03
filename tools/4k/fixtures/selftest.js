@@ -1,5 +1,5 @@
 // Toolchain self-test, not game content: WebGL2 quad + GLSL block + a short tone.
-// Ends after 3 s or when the host sets $.q.
+// Ends after 3 s or when the host aborts $.q (AbortSignal).
 const c = $.c, g = c.getContext('webgl2'), a = $.a;
 const sh = (type, src) => {
   const s = g.createShader(type);
@@ -42,7 +42,7 @@ return new Promise((done) => {
     g.viewport(0, 0, c.width, c.height);
     g.uniform3f(R, c.width, c.height, t);
     g.drawArrays(g.TRIANGLES, 0, 3);
-    t < 3 && !$.q ? requestAnimationFrame(frame) : done();
+    t < 3 && !$.q.aborted ? requestAnimationFrame(frame) : done();
   };
   requestAnimationFrame(frame);
 });

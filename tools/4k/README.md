@@ -49,7 +49,7 @@ Das Ergebnis ist ein Promise, das sich auflöst, wenn die Sequenz zu Ende ist.
 | `$.v` | Stimmaufnahmen `{id: AudioBuffer}` (CONDUCTOR-Lines) |
 | `$.m` | Musik-Tracks `{id: AudioBuffer}` (MU1 …) |
 | `$.p` | Parameter der Sequenz, z. B. Statistik `{time, hallucinations, scrapers}` |
-| `$.q` | Abbruch-Flag. Der Host setzt es auf `1` (ESC/Skip), dann löst die Sequenz zügig auf. |
+| `$.q` | `AbortSignal` fürs Überspringen (Esc/SKIP). Ist `$.q.aborted` gesetzt, stoppt die Sequenz ihre Audioquellen und löst ihr Promise auf. |
 
 Der Host liefert **nur Daten, keine Logik**. Alles, was man sieht und hört, steuert die
 Sequenz selbst innerhalb ihrer 4096 Bytes.

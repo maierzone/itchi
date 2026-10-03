@@ -70,9 +70,10 @@ async function start() {
   const o = a.createGain();
   o.connect(a.destination);
   const assets = await loadManifest(q.get('m'), a);
-  const $ = { c, a, o, ...assets, q: 0 };
+  const skip = new AbortController();
+  const $ = { c, a, o, ...assets, q: skip.signal };
   if (q.get('p')) Object.assign($.p, JSON.parse(q.get('p')));
-  addEventListener('keydown', (e) => e.key === 'Escape' && ($.q = 1));
+  addEventListener('keydown', (e) => e.key === 'Escape' && skip.abort());
 
   if (q.get('hud')) {
     hud.hidden = false;
