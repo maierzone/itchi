@@ -123,23 +123,35 @@ gantt
 
 ## 4a. Kapazitäts-Check D-16 (4K-Sequenzen)
 
-**Ehrliche Rechnung:** Im Szenario B ist für Should-Features **~15 h** Platz (92 h − 76 h Must). Davon liegen **~9 h fest** im Tagesplan (21./22.11., der Rest dieser Tage geht an F18 II und Playtest 2). **~6 h sind Reserve**, die nur entsteht, wenn Woche 1–3 im Plan liegen. D-16 kostet für die geplanten Sequenzen **~12 h** (F46 Host 2 h · F48 SQ-SINGULARITY 2 h · F47 SQ-DOMINATED 3 h · F49 SQ-INTRO 5 h). Die bisherigen Should-Favoriten (F31, F35, F26, F32, F25) kosten zusammen **~19 h**. **Beides passt nicht in 92 h.**
+**Wessen Stunden sind die 92 h?** **mzones Stunden** (Grill B1: „Wie viele Stunden hast du im November?“). In diesen Stunden arbeitet die **Cloud-Session**: mzone gibt Aufgaben, prüft, spielt, entscheidet, und Claude schreibt den Spielcode. Die Feature-Stunden in den Matrizen sind deshalb Stunden dieser gemeinsamen Arbeit. Die **lokale Session** baut die Sequenzen **parallel**. Sie kostet mzone nur **Review und Feinschliff**, nicht die volle Bauzeit. *(Stand 03.10.2026, nach Auftrag 2 der lokalen Session. Vorher standen hier die vollen Bauzeiten der Sequenzen.)*
+
+**Rechnung:** Im Szenario B ist für Should-Features **~15 h** Platz (92 h − 76 h Must). Davon liegen **~9 h fest** im Tagesplan (21./22.11., der Rest dieser Tage geht an F18 II und Playtest 2). **~6 h sind Reserve**, die nur entsteht, wenn Woche 1–3 im Plan liegen.
+
+| D-16-Posten | Bauzeit (lokale Session, parallel) | kostet mzone |
+|-------------|:----------------------------------:|:------------:|
+| F46 Sequenz-Host + 4K-Check im Build (**Cloud-Session**) | – | **2 h** |
+| F48 SQ-SINGULARITY | 2 h | ~1 h Review |
+| F47 SQ-DOMINATED | 3 h | ~1 h Review |
+| F49 SQ-INTRO | 5 h | ~2–3 h Review + Feinschliff (Timing, Stimme, Leitmotiv) |
+| **Summe** | 10 h | **~6–7 h** statt bisher ~12 h |
 
 **Should-Reihenfolge nach Gate M2** (gemäß mzones Vorschlag, die Sequenzen zuerst):
 
-| # | Feature | h | kumuliert | passt in Szenario B? |
+| # | Feature | h (mzone) | kumuliert | passt in Szenario B? |
 |:-:|---------|:-:|:---------:|:--------------------:|
-| 1 | F46 Sequenz-Host + F48 SQ-SINGULARITY + F47 SQ-DOMINATED | 7 | 7 | ✅ |
-| 2 | F49 SQ-INTRO | 5 | 12 | ✅ braucht ~3 h Reserve |
-| 3 | F31 Tinten-Fog („Karte zeichnet sich“) | 3 | 15 | ⚠️ Grenze |
-| 4 | F35 Theme-Modul Ebene 3 | 5 | 20 | ❌ nur mit Mehrzeit |
-| 5 | F26 Synergien + ORCHESTRATED | 4 | 24 | ❌ |
-| 6 | F32 Line Boil | 3 | 27 | ❌ |
-| 7 | F25 PLANNER + Bedingungen | 4 | 31 | ❌ |
+| 1 | F46 Sequenz-Host + Review F48 SQ-SINGULARITY + F47 SQ-DOMINATED | 4 | 4 | ✅ |
+| 2 | F49 SQ-INTRO (Review + Feinschliff) | 3 | 7 | ✅ |
+| 3 | F31 Tinten-Fog („Karte zeichnet sich“) | 3 | 10 | ✅ braucht ~1 h Reserve |
+| 4 | F35 Theme-Modul Ebene 3 | 5 | 15 | ⚠️ Grenze, braucht die ganze Reserve |
+| 5 | F26 Synergien + ORCHESTRATED | 4 | 19 | ❌ nur mit Mehrzeit |
+| 6 | F32 Line Boil | 3 | 22 | ❌ |
+| 7 | F25 PLANNER + Bedingungen | 4 | 26 | ❌ |
 
-**Was das bedeutet und was ich empfehle:**
-- **Synergie:** F31 und SQ-INTRO nutzen dieselbe Technik (Tusche-Maske aus FX15). Wer SQ-INTRO baut, hat F31 halb fertig. Platz 3 ist deshalb realistisch.
-- **Der größte Verlust ist F35 (Theme Ebene 3).** Theme ist eine ganze Bewertungskategorie. **Empfehlung:** Ist das Theme beim Gate M2 nur schwach umgesetzt, wird **F35 vor F49 gezogen**, und das Intro rutscht auf Platz 4. Ein Prämissen-Satz im Intro kann ersatzweise Theme-Ebene 1 tragen ([Theme-Playbook § 1](09_THEME_PLAYBOOK.md#1-prinzipien)).
+**Was das bedeutet:**
+- **Der Konflikt SQ-INTRO gegen F35 ist deutlich kleiner.** Beide passen, wenn Woche 1–3 im Plan liegen. F35 hängt dann nur noch an der Reserve, nicht mehr am Intro.
+- **Annahme:** Die lokale Session liefert die Sequenzen weitgehend fertig, und mzones Feinschliff bleibt bei 1–3 h je Sequenz. Braucht eine Sequenz mehr Runden, geht das wieder vom Should-Budget ab.
+- **F31 und SQ-INTRO:** F31 übernimmt **Look und Shader-Idee** aus SQ-INTRO (Tuschefront mit Wasserrand). **Der Code wird für Phaser neu geschrieben**, denn die Sequenz ist ein eigenständiges 4K-Programm und der Fog läuft über eine Phaser-Pipeline.
+- **Wenn die Zeit doch knapp wird:** Ist das Theme beim Gate M2 nur schwach umgesetzt, wird **F35 vor F49 gezogen**. Ein Prämissen-Satz im Intro kann ersatzweise Theme-Ebene 1 tragen ([Theme-Playbook § 1](09_THEME_PLAYBOOK.md#1-prinzipien)).
 - **Mehr Zeit = mehr Should:** Jede zusätzliche Stunde pro Woche (~4 h im November) holt einen weiteren Platz der Liste herein. Szenario C (~145 h) deckt alles ab.
 - **Entscheidung bei Gate M2 (So 15.11.)** → [Grill N1](00_GRILL_PROTOKOLL.md#teil-n--nachtrag-d-16-4k-sequenzen).
 

@@ -735,7 +735,7 @@ Kleiner Kamerawackler (max. 4 px) nur bei Gebäudezerstörung und CONTEXT FLOOD.
 | ~2–14 s | V31 *“The world is a map, and the map is on your desk.”* Die Karte K01 tuscht sich von der Mitte aus ein (Maske aus FX15) | Motiv, verstimmt |
 | ~14–26 s | V32 *“A single model – THE MONOLITH – is consuming every data field it can reach, growing toward singularity.”* M01a erscheint im Nordosten, Rost-Licht, die Tusche dunkelt nach | Motiv mit Puls, weniger verstimmt |
 | ~26–38 s | V33 *“You are the Conductor. Orchestrate your agents. Dominate the map. Break the Monolith.”* Logo UI16, Notenlinien SQ02 ziehen sich über das Blatt | Motiv **sauber und voll** |
-| ~38–45 s | Die Tusche zieht sich zurück **bis auf den Startbereich im Südwesten** und wird zum Fog-Zustand des Spiels (§ 18). Kamera auf Startposition → **nahtlos ins Spiel**, denn es ist dieselbe Karte | Motiv endet, MU2 übernimmt |
+| ~38–45 s | Die Tusche zieht sich zurück **bis auf den Startbereich im Südwesten** und wird zum Fog-Zustand des Spiels (§ 18). Kamera fährt auf die Startansicht des Spiels (vom Host übergeben) → **kurze Tusche-Überblendung (~0,5 s)** ins Spiel, das darunter schon läuft ([Tech-Spec § 5a](05_TECH_SPEC.md#5a-sequenzen-d-16)) | Motiv endet, MU2 übernimmt |
 
 > **Lesbarkeit (P4):** Die KPI „erstes eigenes Gebäude ≤ 45 s“ zählt ab Spielstart. Das Intro darf **nicht länger als 45 s** sein, und SKIP ist ab der ersten Sekunde sichtbar.
 

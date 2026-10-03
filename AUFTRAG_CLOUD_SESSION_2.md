@@ -1,5 +1,7 @@
 # Auftrag 2 an die Cloud-Session: Nachträge zu D-16
 
+> **Status 03.10.2026: erledigt** (Tech-Spec § 5a, GDD § 19a.3, Zeitplan § 4a, Matrizen, Grill N1, D-09). Rückmeldung: [`RUECKMELDUNG_CLOUD_SESSION.md`](RUECKMELDUNG_CLOUD_SESSION.md) § 4.
+
 Review der lokalen Session zu Commit b65becb. Die Einarbeitung ist vollständig und stimmig,
 danke. Bitte drei Punkte nachtragen. `main` enthält jetzt auch `tools/4k/` (Commits 40d945d, 94aa0c7).
 
