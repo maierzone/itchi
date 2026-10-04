@@ -37,13 +37,31 @@ async function loadSequence(url) {
   return { size: bytes.length, run: Function('$', text) };
 }
 
-async function loadManifest(url, ac) {
+// SVG drawings are rasterized at height h (the canvas height) so close-ups stay sharp.
+// A fragment picks one group as a layer (`U01_crawler_a.svg#arm`): the bitmap keeps the
+// full viewBox frame with only that group drawn, so all layers of a figure line up.
+async function loadManifest(url, ac, h) {
   const m = url ? await (await fetch(url)).json() : {};
   const base = new URL(url || '.', location.href);
   const img = async (u) => {
+    const src = new URL(u, base);
     const i = new Image();
-    i.src = new URL(u, base);
+    if (/\.svg$/i.test(src.pathname)) {
+      const doc = new DOMParser().parseFromString(await (await fetch(src)).text(), 'image/svg+xml');
+      const svg = doc.documentElement;
+      if (src.hash) {
+        const g = doc.getElementById(src.hash.slice(1));
+        if (!g) throw new Error(`no group ${src.hash} in ${src.pathname}`);
+        for (let e = g; e !== svg; e = e.parentNode)
+          for (const s of [...e.parentNode.children]) if (s !== e && !/^(defs|style|title|metadata)$/.test(s.localName)) s.remove();
+      }
+      const [, , vw, vh] = svg.getAttribute('viewBox').split(/[\s,]+/).map(Number);
+      svg.setAttribute('width', Math.round((h * vw) / vh));
+      svg.setAttribute('height', h);
+      i.src = URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(doc)], { type: 'image/svg+xml' }));
+    } else i.src = src;
     await i.decode();
+    if (i.src.startsWith('blob:')) URL.revokeObjectURL(i.src);
     return createImageBitmap(i);
   };
   const snd = async (u) => ac.decodeAudioData(await (await fetch(new URL(u, base))).arrayBuffer());
@@ -69,7 +87,7 @@ async function start() {
   await a.resume();
   const o = a.createGain();
   o.connect(a.destination);
-  const assets = await loadManifest(q.get('m'), a);
+  const assets = await loadManifest(q.get('m'), a, c.height);
   const skip = new AbortController();
   const $ = { c, a, o, ...assets, q: skip.signal };
   if (q.get('p')) Object.assign($.p, JSON.parse(q.get('p')));

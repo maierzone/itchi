@@ -19,6 +19,13 @@ node headless.mjs dist/name.js --shots 1,5,10 [--size 1920x1080] [--gpu] # Lauf 
 node test.mjs                                                            # Selbsttest des Packers
 ```
 
+Selbsttest der Zeichnungs-Ebenen (aus dem Repo-Wurzelverzeichnis, damit `art/` erreichbar ist):
+
+```sh
+node tools/4k/pack.mjs tools/4k/fixtures/layers.js -o tools/4k/dist/layers.js
+node tools/4k/headless.mjs tools/4k/dist/layers.js --m tools/4k/fixtures/layers.json --shots 1.2,1.9
+```
+
 `pack.mjs` beendet sich mit Exit-Code 1, sobald eine Datei 4097 Bytes oder mehr hat.
 Die Vorschau im Browser: einen statischen Server in diesem Ordner starten und
 `preview.html?s=dist/name.js&hud=1` öffnen (optional `&m=manifest.json`, `&p={...}`).
@@ -46,7 +53,7 @@ Das Ergebnis ist ein Promise, das sich auflöst, wenn die Sequenz zu Ende ist.
 | `$.c` | Canvas, bildschirmfüllend. Der Host setzt `width`/`height` in Gerätepixeln, auch bei Resize. Die Sequenz liest die Größe **jeden Frame** neu. |
 | `$.a` | `AudioContext`, schon gestartet (der Klick des Spielers ist vorher passiert) |
 | `$.o` | Audio-Ausgang der Sequenz (`GainNode`). Der Host kann ihn ducken oder abschalten. |
-| `$.d` | Zeichnungen `{id: ImageBitmap}`, z. B. `K01`, `M01a`, `UI13` (IDs aus `ASSET_REGISTER.csv`) |
+| `$.d` | Zeichnungen `{id: ImageBitmap}`, z. B. `K01`, `M01a`, `UI13` (IDs aus `ASSET_REGISTER.csv`), dazu Ebenen wie `U01a.arm` (siehe unten) |
 | `$.v` | Stimmaufnahmen `{id: AudioBuffer}` (CONDUCTOR-Lines) |
 | `$.m` | Musik-Tracks `{id: AudioBuffer}` (MU1 …) |
 | `$.p` | Parameter der Sequenz, z. B. Statistik `{time, hallucinations, scrapers}` |
@@ -54,6 +61,30 @@ Das Ergebnis ist ein Promise, das sich auflöst, wenn die Sequenz zu Ende ist.
 
 Der Host liefert **nur Daten, keine Logik**. Alles, was man sieht und hört, steuert die
 Sequenz selbst innerhalb ihrer 4096 Bytes.
+
+### Zeichnungen: ganze Bilder und Ebenen (entschieden 04.10.2026, D-17)
+
+Die Hybrid-SVGs aus D-17 sind in benannte Gruppen gegliedert (CRAWLER: `tank`, `tread`, `body`,
+`face`, `sign`, `arm` unter `#base`, dazu `#detail`). Der Host liefert sie **gerastert als
+`ImageBitmap`**, kein `Path2D`: Die Sequenzen zeichnen mit WebGL2, ein `Path2D` bräuchte dort
+eine eigene 2D-Canvas und einen Textur-Upload pro Frame, und beides kostet Bytes in jeder Sequenz.
+
+- **Ganze Figur:** `$.d.U01a` ist die vollständige Zeichnung (Frame A, mit `#detail`).
+- **Ebene:** `$.d['U01a.arm']` enthält nur die Gruppe `#arm`. Jede Ebene hat **denselben Rahmen
+  wie die ganze Figur** (volle viewBox, Rest transparent). Alle Ebenen einer Figur liegen also
+  deckungsgleich auf demselben Quad, die Sequenz bewegt nur die, die sie braucht.
+  `U01a.base` ergibt die Spielform ohne Details.
+- **Malreihenfolge** ist die Reihenfolge im SVG. Wer eine Figur aus Ebenen zusammensetzt,
+  zeichnet sie in dieser Reihenfolge.
+- **Drehpunkte** (Schulter, Achse) liefert der Host nicht. Die Sequenz trägt sie selbst als
+  Anteil der viewBox ein (z. B. Schulter des CRAWLER bei 0,6 / 0,725), das sind wenige Bytes.
+- **Auflösung:** SVGs rastert der Host auf die Höhe der Canvas beim Laden, damit Großaufnahmen
+  scharf bleiben. Welche Ebenen geladen werden, legt das Manifest der Sequenz fest, es gibt
+  keine Ebenen auf Vorrat. Im Manifest steht dafür ein Fragment an der Datei:
+  `"U01a.arm": "…/U01_crawler_a.svg#arm"` (Referenz: `preview.html`, Beispiel: `fixtures/layers.json`).
+- **Grenze:** `#detail` ist bisher eine Gruppe für die ganze Figur. Bewegt die Sequenz den Arm,
+  bleiben seine Nähte stehen. Für bewegliche Teile müssen die Details je Teil gegliedert sein
+  (z. B. `#detail` mit Untergruppen `arm`, `face`), das ist eine Vorgabe an die Art-Pipeline.
 
 ## Browser
 

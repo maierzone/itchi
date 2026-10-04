@@ -1,0 +1,12 @@
+{
+  "d": {
+    "U01a": "../../../art/sonnet/art/svg/U01_crawler_a.svg",
+    "U01a.tank": "../../../art/sonnet/art/svg/U01_crawler_a.svg#tank",
+    "U01a.tread": "../../../art/sonnet/art/svg/U01_crawler_a.svg#tread",
+    "U01a.body": "../../../art/sonnet/art/svg/U01_crawler_a.svg#body",
+    "U01a.face": "../../../art/sonnet/art/svg/U01_crawler_a.svg#face",
+    "U01a.sign": "../../../art/sonnet/art/svg/U01_crawler_a.svg#sign",
+    "U01a.arm": "../../../art/sonnet/art/svg/U01_crawler_a.svg#arm",
+    "U01a.detail": "../../../art/sonnet/art/svg/U01_crawler_a.svg#detail"
+  }
+}

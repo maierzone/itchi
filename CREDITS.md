@@ -11,7 +11,7 @@ GAME DESIGN, ART & DIRECTION  mzone
 AGENT FIGURES ............... sketched by mzone, inked with Claude Design (AI)
 VOICE OF THE CONDUCTOR ...... mzone
 MAIN THEME .................. composed by mzone
-CINEMATICS .................. 4096-byte scores conducting hand-drawn ink
+CINEMATICS .................. 4096-byte scores conducting sketched ink
 SOUND RECORDINGS ............ mzone (a desk, a pen, a stamp)
 CODE ........................ mzone with Claude Code (AI-assisted)
 MUSIC ....................... <title> by <author> – <license> – <url>
