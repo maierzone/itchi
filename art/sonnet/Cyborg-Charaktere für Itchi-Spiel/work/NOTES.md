@@ -16,3 +16,9 @@ Technik:
 - Ausgabe: art/svg/<ID>_<name>_a|b.svg (voll) und art/svg/spielform/ (nur #base)
 - Skizzen-Crops: art/skizzen/
 - Review-Seite: "Cyborg Figuren.dc.html" (Schrift IBM Plex Mono + Spectral, Palette aus der Art-Bibel)
+
+Zweite Lieferung (04.10., aus dem Asset-Register abgeleitet, ohne neue Skizzen):
+- Neu: U03 SCOUT, U05 PLANNER, U06 TRANSFORMER, U07 INJECTOR, U08 BATCH, E01 SHARD, E02 SCRAPER, E03 BRUTEFORCE, E04 SPAMMER (v1-v3), N04 WRACK klein, N04b WRACK gross
+- Regel: ORCHESTRA = Kreuzstich-Naht, MONOLITH = Klammern, schwarz gefuellt, Schlitz-Auge + Menschenauge
+- tools/art/ink_figuren2.js (neue Bausteine, Auto-Skalierung auf 300 Einheiten), Marken fuer die Review-Seite per B.mark()
+- Offen: Trojanisches Pferd aus der Skizze steht nicht im Register

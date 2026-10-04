@@ -200,8 +200,10 @@ BP.shape = function (P, o) {
   return this;
 };
 BP.line = function (P, o) { o = o || {}; const Q = o.smooth ? S.spline(P, false, 6) : P.map(p => [p[0], p[1], o.corners ? 1 : 0]); const t = this._t(Q, false, o, o.w == null ? 7 : o.w); this.out.push('<path' + (o.fill === 'sheet' ? ' fill="' + SHEET + '"' : '') + ' d="' + qpath(t.poly, true) + '"/>'); return this; };
-BP.lines = function (list, o) { o = o || {}; const ds = list.map(P => qpath(this._t(P.map(p => [p[0], p[1], 0]), false, o, o.w == null ? 4 : o.w).poly, true)); this.out.push('<path d="' + ds.join('') + '"/>'); return this; };
+BP.lines = function (list, o) { o = o || {}; const ds = list.map(P => qpath(this._t(P.map(p => [p[0], p[1], 0]), false, o, o.w == null ? 4 : o.w).poly, true)); this.out.push('<path' + (o.fill === 'sheet' ? ' fill="' + SHEET + '"' : '') + ' d="' + ds.join('') + '"/>'); return this; };
 BP.dot = function (x, y, r, o) { return this.shape(S.ell(x, y, r, r * 0.94), Object.assign({ w: 0, fill: 'ink' }, o)); };
+BP.union = function (parts, o) { o = o || {}; const w = o.w == null ? 8 : o.w, T = parts.map(P => this._t(orient(P), true, o, w)); T.forEach(t => this.out.push('<path d="' + qpath(t.outer, true) + '"/>')); if (o.fill !== 'ink') T.forEach(t => this.out.push('<path fill="' + SHEET + '" d="' + qpath(t.inner, true) + '"/>')); return this; };
+BP.mark = function (id, x, y) { const p = this.tfn ? this.tfn([x, y]) : [x, y]; (this.marks = this.marks || {})[id] = [Math.round(p[0] * 10) / 10, Math.round(p[1] * 10) / 10]; return this; };
 BP.stitch = function (P, o) { // Naht mit Kreuzstichen
   o = o || {}; const C = S.spline(P, !!o.closed, P.length > 16 ? 2 : 8), gap = o.gap || 11, len = o.len || 9, rr = this.r(), n = C.length, st = [];
   let acc = 0, next = gap * 0.5;

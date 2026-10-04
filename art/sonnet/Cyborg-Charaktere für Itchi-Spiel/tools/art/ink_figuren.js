@@ -261,4 +261,5 @@ function build(name, frame, detail) {
   return B.svg(f.id + ' ' + f.title + ' (Frame ' + frame.toUpperCase() + ')');
 }
 G.FIG = FIG; G.build = build;
+G.H = { humanEye, lensEye, grin, ear, fist, rivet, cable, lashes, radial };
 })();
