@@ -86,7 +86,7 @@ itch.io verlangt seit Ende 2024 eine **Angabe, ob und wofür generative KI genut
 
 | Bereich | Unser Plan | Angabe auf itch.io |
 |---------|-----------|--------------------|
-| Grafik | 100 % von mzone gezeichnet, deterministisch vektorisiert (potrace/vtracer, kein Generator) | **Keine KI-Grafik** |
+| Grafik | **Hybrid (D-17, 04.10.2026):** Skizze und Auswahl von mzone, Tusche-SVG von Claude Design. Rein handgezeichnete Assets bleiben möglich (Asset-Register, Spalte `Quelle`) | **KI-Grafik: ja, deklariert** |
 | Sound | Eigene Aufnahmen (Stimme, Papier, Stift) + CC0/CC-BY von Menschen + **Leitmotiv von mzone** (in den Sequenzen von einem prozeduralen Synth gespielt, D-16) | **Kein KI-Sound** |
 | Text | Von mzone geschrieben, Claude als Lektor [A] | ehrlich angeben, falls Claude Texte formuliert |
 | Code | Mit Claude Code entwickelt, **inkl. der 4K-Sequenzen** (D-16) | **KI-unterstützter Code: ja** |

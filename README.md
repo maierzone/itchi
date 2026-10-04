@@ -14,7 +14,7 @@ Du **orchestrierst einen Schwarm spezialisierter KI-Agenten** – Crawler, Execu
 gegen **THE MONOLITH**: ein einziges, gigantisches Modell, das die Welt Datenfeld für Datenfeld frisst.
 
 Die Welt ist eine **handgezeichnete Lagekarte auf dem Tisch des Dirigenten**. Unerforschtes Gebiet ist **leeres Papier**.
-Erst wenn deine Agenten es erkunden, **zeichnet sich die Karte mit Tusche**. Alles, was du siehst, hat mzone von Hand gezeichnet.
+Erst wenn deine Agenten es erkunden, **zeichnet sich die Karte mit Tusche**. Die Grafik entsteht **hybrid** (D-17): mzone skizziert von Hand und entscheidet, Claude Design tuscht die Figuren als SVG. Das wird offen als KI-Grafik deklariert.
 
 **Elevator Pitch (EN, für itch.io):**
 *“Command a swarm of specialized AI agents on a hand-inked war map. Give them prompts, not clicks. Break the Monolith before it eats the world.”*
@@ -48,6 +48,8 @@ Erst wenn deine Agenten es erkunden, **zeichnet sich die Karte mit Tusche**. All
 | [`art/vorlagen/skizzenbogen_gebaeude_A4.svg`](art/vorlagen/skizzenbogen_gebaeude_A4.svg) | Druckvorlage A4 für Gebäude (Grundflächen 3×3, 2×2, 1×1 mit Höhenzugabe) |
 | [`art/vorlagen/kartenprobe_A4.svg`](art/vorlagen/kartenprobe_A4.svg) | Druckvorlage A4 für den Kartenausschnitt 100 × 100 mm (Batch 0, Maßstab K01) |
 | [`art/vorlagen/batch0_druckpaket.pdf`](art/vorlagen/batch0_druckpaket.pdf) | **Batch 0 zum Ausdrucken:** [Spickzettel](art/vorlagen/BATCH0_SPICKZETTEL.md) + alle drei Bögen, 4 Seiten A4 |
+| [`art/sonnet/`](art/sonnet/) | **Erste Hybrid-Figuren** (D-17): U01 CRAWLER, U02 EXECUTOR, U04 CRITIC als SVG, Frame A/B, Spielform unter `art/svg/spielform/`. Review-Seite `Cyborg Figuren.dc.html` |
+| [`prototypes/truppe/`](prototypes/truppe/) | **Truppen-Prototyp (Wegwerf):** die drei Figuren als steuerbare Truppe im RA2-Gefühl. `index.html` im Browser öffnen, Details im [README](prototypes/truppe/README.md) |
 | [`art/SKIZZEN_UEBERSICHT.html`](art/SKIZZEN_UEBERSICHT.html) | **Alle 120 Elemente als Karten mit Platzhalter** für deine Skizzen, Filter nach Priorität, Batch und Status. Neu erzeugen: `python3 art/uebersicht.py` |
 
 ---
@@ -61,7 +63,7 @@ Erst wenn deine Agenten es erkunden, **zeichnet sich die Karte mit Tusche**. All
 | **Neu daran** | Du gibst Squads **Prompts statt Klicks**; Agenten handeln autonom, **halluzinieren** ohne Critic, bilden **Pipelines** mit Synergien |
 | **Gegner** | THE MONOLITH – asymmetrischer, wachsender Boss-Gegner (0 % → 100 % = Singularität = Niederlage) |
 | **Perspektive** | Draufsicht-Lagekarte, Figuren und Gebäude in **Vogelschau/Aufriss** (wie auf alten Landkarten) |
-| **Art** | 100 % handgezeichnet (Tusche auf Papier) → gescannt → vektorisiert. Palette aus dem MZP-`analog`-Stil |
+| **Art** | **Hybrid** (D-17): Skizze von Hand → Tusche-SVG von Claude Design, Auswahl durch mzone. Was rein von Hand bleibt, steht im Asset-Register. Palette aus dem MZP-`analog`-Stil |
 | **Plattform** | Browser (HTML5) auf itch.io, Desktop, Maus + Tastatur |
 | **Sprache im Spiel** | Englisch (international bewertet), Dokumentation Deutsch |
 | **Engine (vorgeschlagen)** | Phaser 3 + TypeScript + Vite (siehe [Tech-Spec](docs/05_TECH_SPEC.md), Entscheidung D-01) |
@@ -97,7 +99,9 @@ wird das Spiel-Repo. Die Spec liegt unter `docs/`, Rohzeichnungen unter `art/`, 
 **Transparenz (Entscheidung D-14):** Vor dem Jam (Oktober 2026) entstehen nur Spec, Zeichnungen, Audio-Aufnahmen, das Leitmotiv und Asset-Werkzeuge.
 Dazu gehört auch die **Werkzeugkette `tools/4k/`** (Packer, Größen-Check, Vorschauseite) für die 4K-Sequenzen (D-16).
 **Wegwerf-Experimente zu Tusche-Shader und Synth** sind im Oktober **außerhalb dieses Repos** entstanden. Sie werden nicht eingereicht, und die Sequenzen
-werden im Jam neu geschrieben. Der **Spielcode** (inkl. `game/src/sequences/`) entsteht ausschließlich im Jam-Zeitraum ab dem 01.11.2026.
+werden im Jam neu geschrieben. Im Repo liegen zwei offen markierte Wegwerf-Stücke: der **Truppen-Prototyp** [`prototypes/truppe/`](prototypes/truppe/)
+(Vanilla-JS, testet die Hybrid-Figuren als Truppe, D-14 Ergänzung 04.10.) und die **Graphics-Probe** [`tools/graphics-probe/`](tools/graphics-probe/).
+Beide werden nicht eingereicht, kein Code daraus geht nach `game/`. Der **Spielcode** (inkl. `game/src/sequences/`) entsteht ausschließlich im Jam-Zeitraum ab dem 01.11.2026.
 
 ---
 

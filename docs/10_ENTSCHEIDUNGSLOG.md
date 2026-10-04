@@ -24,6 +24,7 @@
 | D-14 | Repository: **`maierzone/itchi`** ist das Spiel-Repo, Spielcode ab 01.11. unter `game/` | 🟡 | – |
 | D-15 | Audio: **eigene Stimme** als CONDUCTOR (EN), Schreibtisch-SFX, Musik von Menschen (CC0/CC-BY oder eigen) | 🟡 | G1, G2 |
 | D-16 | **4K-Sequenzen**: wenige Echtzeit-Sequenzen, je ≤ 4096 B JavaScript, die mzones Zeichnungen dirigieren | 🟢 03.10.2026 | N1–N3 |
+| D-17 | **Hybrid-Grafik**: mzone skizziert und entscheidet, KI tuscht die Figur als SVG. Offen als KI-Grafik deklariert | 🟢 04.10.2026 | E3, F5, G2 |
 
 ---
 
@@ -99,6 +100,7 @@
   - **Texte:** von mzone. Wenn Claude Formulierungen liefert, wird das deklariert.
   - **Sequenzen (D-16):** Die Sequenzen sind **Code (KI-unterstützt)**. Die Grafik darin sind **mzones Zeichnungen**, der Ton ist **mzones Stimme und Komposition** (Leitmotiv, gespielt von einem prozeduralen Synth, kein generatives Modell).
 - **Begründung:** itch.io-Pflicht, Community-Akzeptanz, Meta-Story.
+- **Ergänzung 04.10.2026 (D-17):** Der Punkt **Grafik** gilt nicht mehr in der Form „100 % von mzone gezeichnet“. Figuren entstehen hybrid: mzone skizziert von Hand und entscheidet, Claude Design setzt die Figur als Tusche-SVG um. → itch: **KI-Grafik ja, deklariert** (welche Assets, welcher Weg). Audio, Code und Texte bleiben wie oben. Wo Assets weiterhin rein von Hand entstehen, steht es im Asset-Register (Spalte `Quelle`).
 - **Status:** 🟡 · Bestätigt am: ______
 
 ## D-12 · Theme-Interpretation
@@ -113,6 +115,7 @@
 ## D-14 · Repository
 
 - **Entscheidung:** `maierzone/itchi` (öffentlich) ist das Spiel-Repo. Spec unter `docs/`, Zeichnungen unter `art/`, Werkzeuge unter `tools/`, Spielcode **ab 01.11.** unter `game/`. Das README legt offen, was vor dem Jam entstanden ist (Spec, Zeichnungen, Audio, Asset-Werkzeuge) und was im Jam (Spielcode).
+- **Ergänzung 04.10.2026 (Truppen-Prototyp):** Auf Wunsch von mzone liegt ein **Wegwerf-Prototyp** unter **`prototypes/truppe/`** (Cloud-Session). Er prüft die Hybrid-Figuren (D-17) als Truppe im RA2-Gefühl: Auswahl, Formation, Kampf, Heilung, Sammeln, Squads mit Prompts. Er ist Vanilla-JS ohne Engine und Build, **wird nicht eingereicht**, und kein Code daraus wandert nach `game/`. Der Spielcode entsteht wie geplant ab 01.11. neu (Phaser, D-01). Das README legt den Prototyp offen. Was er lehrt, fließt als Text in die Spec.
 - **Ergänzung 03.10.2026 (D-16):** Im Oktober entsteht zusätzlich die Werkzeugkette **`tools/4k/`** (Packer, Größen-Check, Vorschauseite) als Asset-Werkzeug der lokalen Claude-Code-Session. **Wegwerf-Experimente zu Tusche-Shader und Synth** entstehen außerhalb des Repos und werden im README offengelegt. Die Sequenzen selbst entstehen ab 01.11. neu in `game/src/sequences/`. In `docs/` schreibt nur die Cloud-Session.
 - **Status:** 🟡 · Bestätigt am: ______
 
@@ -137,6 +140,23 @@
   - Arbeitsteilung: Die lokale Session baut `tools/4k/` (Oktober) und `game/src/sequences/` (ab 01.11.). Die Cloud-Session pflegt `docs/`.
 - **Status:** 🟢 bestätigt am 03.10.2026 (mzone)
 
+## D-17 · Hybrid-Grafik
+
+- **Kontext:** mzone hat am 04.10. die ersten Handskizzen gezeichnet ([`art/vorlagen/FirstDraftSomeSketchesSTRIKE.jpeg`](../art/vorlagen/FirstDraftSomeSketchesSTRIKE.jpeg)). Das Ergebnis rein von Hand hat mzone nicht gefallen. Zwei Proben am selben Tag:
+  1. **Graphics-Probe** ([`tools/graphics-probe/`](../tools/graphics-probe/), Kontaktbogen [`art/probe/`](../art/probe/)): Foto → Tusche-Maske → vtracer → Stil als Parameter (`none` | `cyborg`). Die Handlinie bleibt, der Stil legt nur Zusatz darüber.
+  2. **Claude Design** ([`art/sonnet/`](../art/sonnet/)): aus der Skizze drei Cyborg-Figuren **U01 CRAWLER, U02 EXECUTOR, U04 CRITIC** als SVG, erzeugt von einer Code-Tusche-Engine (`tools/art/ink_gen.js`, `ink_figuren.js` im Ordner). Nur Tusche `#221d17` auf Papier `#efe8d6`, Frame A/B als Line-Boil, Gruppen `#base` (Spielform) und `#detail` (Nähte, Nieten, Kabel). Review-Seite: `Cyborg Figuren.dc.html`.
+- **Entscheidung:** Grafik entsteht **hybrid**. mzone liefert Idee, Skizze, Charakter und die Auswahl (Art Direction, letzte Entscheidung). Claude Design bzw. Claude Code setzt die Figur als Tusche-SVG im Stil der Art-Bibel um (Palette § 2, Strichregeln § 4, Namensschema, Frame A/B, `#base`/`#detail`). Welche Asset-Klassen hybrid entstehen und welche von Hand bleiben, entscheidet mzone je Batch und vermerkt es im Asset-Register.
+- **Offenlegung:** Ehrlich und konkret. itch: **„AI generated graphics: yes“** mit einem Satz, wie (Skizze von Hand, Tusche von KI). Die C2PA-Herkunftsdaten in den SVGs (`<metadata>`) bleiben in den Quelldateien erhalten. Formulierung für die itch-Seite: [`docs/itch/SEITENTEXT_EN.md`](itch/SEITENTEXT_EN.md) (Vorschlag, mzone entscheidet).
+- **Warum:** Der Stil trägt, ist konsistent über alle Figuren und bei 48 px lesbar. Er lässt sich schneller variieren als Tusche auf Papier. Das Spiel handelt vom Dirigieren von Agenten, und dazu passt die ehrliche Meta-Story: *sketched by hand, inked by agents*.
+- **Konsequenzen:**
+  - D-11 ist ergänzt (Grafik). Das Argument „100 % handgezeichnet“ entfällt in README, GDD (USP 4), Kontext § 1.5, itch-Text und Checkliste (Grill F5/G2 hatte das als Red Flag vorhergesagt, jetzt bewusst so entschieden).
+  - **Pitch-Wörter** wie *hand-inked* bleiben vorerst stehen, weil die Figuren in Tusche-Optik bleiben und die Skizzen von Hand sind. Ob „hand-inked“ im Pitch bleibt, entscheidet mzone (Texte kommen von mzone, D-11).
+  - D-16 (Sequenzen) bleibt gültig. Der Code erfindet weiterhin keine Linien, er dirigiert die Assets aus dem Pool, ob von Hand oder hybrid.
+  - Lizenz: Die rechtliche Schutzfähigkeit KI-erzeugter Bildanteile ist unsicher. `art/LICENSE` (CC BY-NC-ND 4.0) bleibt, deckt aber sicher nur mzones eigene Anteile ab. Bei Bedarf prüfen.
+  - Ablage: Die Lieferung von Claude Design bleibt vorerst unverändert in `art/sonnet/`. Der Prototyp liest `art/sonnet/art/svg/spielform/`. Ins kanonische `art/svg/` (Art-Bibel § 5) wandern die Figuren erst, wenn mzone sie freigibt.
+  - Erste Nutzung: Wegwerf-Prototyp `prototypes/truppe/` (D-14, Ergänzung 04.10.2026).
+- **Status:** 🟢 bestätigt am 04.10.2026 (mzone)
+
 ---
 
 ## Änderungsprotokoll
@@ -148,3 +168,6 @@
 | 03.10.2026 | D-09, D-11, D-14, D-15 | ergänzt (nicht überschrieben) | Folgen von D-16 |
 | 03.10.2026 | D-10 | ergänzt (nicht überschrieben) | Lizenzdateien vorbereitet |
 | 03.10.2026 | D-09 | ergänzt (nicht überschrieben) | Auftrag 2: Sequenzen kosten mzone nur Review, § 4a nachgerechnet |
+| 04.10.2026 | D-17 | neu, bestätigt | mzone: rein handgezeichnet gefiel nicht, Hybrid-Weg mit Claude Design |
+| 04.10.2026 | D-11 | ergänzt (nicht überschrieben) | Folge von D-17: KI-Grafik wird deklariert |
+| 04.10.2026 | D-14 | ergänzt (nicht überschrieben) | Wegwerf-Prototyp `prototypes/truppe/` auf Wunsch von mzone |

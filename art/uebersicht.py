@@ -46,7 +46,7 @@ GROUPS = [
     ("itch-Seite & Marketing", ["Marketing"]),
 ]
 STATUS = ["offen", "gezeichnet", "gescannt", "im Spiel"]
-HAND = {"Hand", "Scan"}
+HAND = {"Hand", "Scan", "Hybrid"}  # Hybrid (D-17): mzone skizziert, Claude Design tuscht
 
 
 def expand(ids, order):
@@ -62,7 +62,7 @@ def expand(ids, order):
 
 def find_image(aid):
     pat = re.compile(rf"^{re.escape(aid)}(_|\.)", re.I)
-    for sub, exts in (("svg", {".svg"}), ("cut", {".png", ".jpg", ".jpeg", ".webp"})):
+    for sub, exts in (("svg", {".svg"}), ("sonnet/art/svg", {".svg"}), ("cut", {".png", ".jpg", ".jpeg", ".webp"})):
         d = ART / sub
         if d.is_dir():
             for f in sorted(d.iterdir()):

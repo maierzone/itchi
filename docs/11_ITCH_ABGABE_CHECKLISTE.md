@@ -51,7 +51,8 @@
 - [ ] Tags (max. 10): `real-time-strategy`, `rts`, `strategy`, `hand-drawn`, `base-building`, `artificial-intelligence`, `singleplayer`, `short`, `game-off`, `ink`
 - [ ] Inputs: Keyboard, Mouse · Accessibility: *Pause anytime*, *Adjustable difficulty*, *Subtitles* (Ansager als Text)
 - [ ] Average session: *About 15 minutes*
-- [ ] **KI-Offenlegung** (Entscheidung D-11): **Code KI-unterstützt** · **Grafik: keine generative KI** · **Sound: keine generative KI** · Texte: nach Stand ausfüllen
+- [ ] **KI-Offenlegung** (Entscheidung D-11, ergänzt durch D-17): **Code KI-unterstützt** · **Grafik: KI-Grafik ja** (hybrid: Skizze mzone, Tusche-SVG Claude Design, Liste der betroffenen Assets aus dem Asset-Register) · **Sound: keine generative KI** · Texte: nach Stand ausfüllen
+- [ ] Tag `hand-drawn` nur behalten, wenn er nach D-17 noch stimmt (mzone entscheidet)
 - [ ] **Sequenzen (D-16) in der Offenlegung richtig einordnen:** Die Sequenzen sind **Code (KI-unterstützt)**. Die Grafik darin sind **mzones Zeichnungen**, der Ton ist **mzones Stimme und Komposition** (Leitmotiv, gespielt von einem prozeduralen Synth, kein generatives Modell)
 - [ ] Links: GitHub-Repo `https://github.com/maierzone/itchi`
 

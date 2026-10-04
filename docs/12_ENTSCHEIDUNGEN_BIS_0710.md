@@ -18,7 +18,7 @@
 | | D-08 | **Hybrid-Steuerung**: direkt klicken geht immer, Prompts geben FLOW-Bonus | Kern der Neuheit. Wer nur klickt, kann trotzdem gewinnen | [ ] | [ ] |
 | ⚠️ | D-09 | **Szenario B** (~92 h im November), Cut-Liste verbindlich | Gilt nur, wenn du im November wirklich **Mo–Fr 2 h, Sa/So 6 h** hast. Sonst: sag es jetzt (Grill B1) | [ ] | [ ] |
 | | D-10 | Code **MIT**, Kunst und Audio **CC BY-NC-ND 4.0** | Dateien liegen schon bereit (`LICENSE`, `art/LICENSE`, `audio/LICENSE`) | [ ] | [ ] |
-| ⚠️ | D-11 | **Handmade-Versprechen** + ehrliche KI-Offenlegung | Keine KI-Grafik, kein KI-Ton. Code KI-unterstützt. **Texte:** Liefert Claude Formulierungen (z. B. den itch-Text), wird das deklariert oder du schreibst sie um | [ ] | [ ] |
+| ⚠️ | D-11 | **Handmade-Versprechen** + ehrliche KI-Offenlegung | **Grafik seit D-17 (04.10.) hybrid und als KI-Grafik deklariert.** Kein KI-Ton. Code KI-unterstützt. **Texte:** Liefert Claude Formulierungen (z. B. den itch-Text), wird das deklariert oder du schreibst sie um | [ ] | [ ] |
 | | D-13 | **Schwarze Tusche** auf Papier, Farbe digital, Teamfarbe nur im Sockel | Du malst nichts aus. Vorzeichnen mit hellblauem Stift | [ ] | [ ] |
 | ✓ | D-14 | **`maierzone/itchi`** ist das Spiel-Repo, Spielcode erst ab 01.11. | Läuft bereits so | [ ] | [ ] |
 | | D-15 | **Deine Stimme** als CONDUCTOR, Schreibtisch-Geräusche, Musik von Menschen | Eine Aufnahme-Session im Oktober, keine TTS | [ ] | [ ] |

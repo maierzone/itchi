@@ -1,12 +1,12 @@
 ID,Kategorie,Name,Zeichen-Briefing,Prio,Bogen,Papiermass_mm,Bildschirm_1x_px,Zeichnungen,Quelle,Pipeline,Status
-U01,Einheit ORCHESTRA,CRAWLER (Frame A),"Käfer-/Spinnenmaschine mit 6 Beinen, Sammelschaufel vorn, Datentank-Röhre auf dem Rücken (Füllstand leer lassen – kommt per Code)",M,Einheiten,Feld ø40 (Figur max 30 hoch),56,1,Hand,Trace,offen
-U01b,Einheit ORCHESTRA,CRAWLER (Frame B / Line Boil),"Dieselbe Figur frei nachgezeichnet (nicht durchgepaust) – kleine Abweichungen sind gewollt",S,Einheiten,Feld ø40,56,1,Hand,Trace,offen
-U02,Einheit ORCHESTRA,EXECUTOR (Frame A),"Kleine aufrechte Figur, Kopf = Funken-Glyphe ✦, Werkzeugarm mit kurzem Blaster, Rucksack mit Antenne",M,Einheiten,Feld ø40,48,1,Hand,Trace,offen
-U02b,Einheit ORCHESTRA,EXECUTOR (Frame B),"Line-Boil-Variante",S,Einheiten,Feld ø40,48,1,Hand,Trace,offen
+U01,Einheit ORCHESTRA,CRAWLER (Frame A),"Käfer-/Spinnenmaschine mit 6 Beinen, Sammelschaufel vorn, Datentank-Röhre auf dem Rücken (Füllstand leer lassen – kommt per Code)",M,Einheiten,Feld ø40 (Figur max 30 hoch),56,1,Hybrid,Skizze → Claude Design SVG (art/sonnet),gezeichnet
+U01b,Einheit ORCHESTRA,CRAWLER (Frame B / Line Boil),"Dieselbe Figur frei nachgezeichnet (nicht durchgepaust) – kleine Abweichungen sind gewollt",S,Einheiten,Feld ø40,56,1,Hybrid,Skizze → Claude Design SVG (art/sonnet),gezeichnet
+U02,Einheit ORCHESTRA,EXECUTOR (Frame A),"Kleine aufrechte Figur, Kopf = Funken-Glyphe ✦, Werkzeugarm mit kurzem Blaster, Rucksack mit Antenne",M,Einheiten,Feld ø40,48,1,Hybrid,Skizze → Claude Design SVG (art/sonnet),gezeichnet
+U02b,Einheit ORCHESTRA,EXECUTOR (Frame B),"Line-Boil-Variante",S,Einheiten,Feld ø40,48,1,Hybrid,Skizze → Claude Design SVG (art/sonnet),gezeichnet
 U03,Einheit ORCHESTRA,SCOUT (Frame A),"Schlanke Figur mit übergroßem Fernrohr-Auge, lange Antenne, Schrittstellung (Tempo)",M,Einheiten,Feld ø40,48,1,Hand,Trace,offen
 U03b,Einheit ORCHESTRA,SCOUT (Frame B),"Line-Boil-Variante",S,Einheiten,Feld ø40,48,1,Hand,Trace,offen
-U04,Einheit ORCHESTRA,CRITIC (Frame A),"Figur mit runder Brille, großer Lupe in der Hand, Rotstift hinterm Ohr, Notizblock",M,Einheiten,Feld ø40,48,1,Hand,Trace,offen
-U04b,Einheit ORCHESTRA,CRITIC (Frame B),"Line-Boil-Variante",S,Einheiten,Feld ø40,48,1,Hand,Trace,offen
+U04,Einheit ORCHESTRA,CRITIC (Frame A),"Figur mit runder Brille, großer Lupe in der Hand, Rotstift hinterm Ohr, Notizblock",M,Einheiten,Feld ø40,48,1,Hybrid,Skizze → Claude Design SVG (art/sonnet),gezeichnet
+U04b,Einheit ORCHESTRA,CRITIC (Frame B),"Line-Boil-Variante",S,Einheiten,Feld ø40,48,1,Hybrid,Skizze → Claude Design SVG (art/sonnet),gezeichnet
 U05,Einheit ORCHESTRA,PLANNER (Frame A),"Figur mit Klemmbrett/Checkliste und Zirkel, Schirmmütze",S,Einheiten,Feld ø40,48,1,Hand,Trace,offen
 U05b,Einheit ORCHESTRA,PLANNER (Frame B),"Line-Boil-Variante",S,Einheiten,Feld ø40,48,1,Hand,Trace,offen
 U06,Einheit ORCHESTRA,TRANSFORMER (Frame A),"Kettenfahrzeug, auf dem Rumpf 3–4 kleine Köpfe/Türmchen (Multi-Head), Spulen statt Kanonenrohr",S,Einheiten,Feld ø40,72,1,Hand,Trace,offen

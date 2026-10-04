@@ -40,7 +40,7 @@ and they get better at it. Until they start to hallucinate.
 - **Flow.** Squads left to their prompt fight faster and harder than units you micro-manage.
 - **Hallucinations.** Autonomous squads without a **CRITIC** sometimes go rogue. Squad composition *is* prompt engineering.
 - **The map draws itself.** Unexplored land is blank paper. Your scouts ink it in as they go.
-- **100 % hand-drawn.** Every line on screen was drawn with a pen on paper.
+- **Sketched by hand, inked by agents.** mzone sketches every figure on paper; an AI agent inks it as a vector drawing; mzone picks what goes in.
 
 ## How to play
 
@@ -63,9 +63,11 @@ Mouse and keyboard required, no touch support.
 
 <1–2 sentences: how the theme shows up in the game.>
 
-## Hand-inked, hand-recorded
+## Sketched by hand, recorded by hand
 
-Every line you see was drawn by hand on paper by mzone – scanned and vectorized, **no image generators**.
+<!-- D-17: Vorschlag, mzone entscheidet die Formulierung. Muss zur itch-Angabe "AI generated graphics: yes" passen. -->
+Every figure starts as a pen sketch by mzone. The final ink drawings of the agents were made **with an AI design agent (Claude Design)**
+from those sketches – mzone directed, chose and rejected. We say so on the AI disclosure, too.
 The voice of the Conductor and most sound effects were recorded at a desk with a pen, a stamp and a microphone.
 Every cinematic is a **4096-byte score conducting hand-drawn ink** – the code moves, reveals and lights the drawings, it never invents a line.
 The main theme was composed by mzone; a tiny synth inside each score plays it.
