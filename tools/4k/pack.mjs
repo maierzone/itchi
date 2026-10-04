@@ -12,8 +12,8 @@
 // literal; the host must therefore turn the file into a string with one char per byte
 // (char code = byte, i.e. String.fromCharCode over the bytes; not UTF-8, not windows-1252).
 
-import { readFileSync, writeFileSync, statSync } from 'node:fs';
-import { basename } from 'node:path';
+import { readFileSync, writeFileSync, statSync, mkdirSync } from 'node:fs';
+import { basename, dirname } from 'node:path';
 import { minify } from 'terser';
 import zopfli from '@gfx/zopfli';
 
@@ -142,6 +142,7 @@ async function main(argv) {
     process.exit(2);
   }
   out ??= 'dist/' + basename(src);
+  mkdirSync(dirname(out), { recursive: true });
   const r = await pack(readFileSync(src, 'utf8'), { iter, terser });
   writeFileSync(out, r.file);
   writeFileSync(out.replace(/\.js$/, '') + '.min.txt', r.minified);
@@ -149,4 +150,10 @@ async function main(argv) {
   process.exit(r.stats.total > LIMIT ? 1 : 0);
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) main(process.argv.slice(2));
+// Report errors ourselves: @gfx/zopfli installs an unhandledRejection hook that would
+// otherwise dump its whole Emscripten module.
+if (import.meta.url === `file://${process.argv[1]}`)
+  main(process.argv.slice(2)).catch((e) => {
+    console.error('pack:', e.message ?? e);
+    process.exit(2);
+  });

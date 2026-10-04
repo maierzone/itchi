@@ -1,10 +1,11 @@
 """Wegwerf-Spike: Kontaktbogen (Original | Tusche-Trace | Cyborg | Cyborg @48px) als HTML + PNG via Edge headless."""
-import base64, io, subprocess, sys
+import base64, io, os, pathlib, subprocess, sys
 from PIL import Image
 from extract import SRC, BOXES, F
 from stylize import stylize
 
-EDGE = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+# Browser: $CHROMIUM (wie tools/4k), sonst Edge unter Windows, sonst `chromium` im PATH
+BROWSER = os.environ.get("CHROMIUM") or (r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" if os.name == "nt" else "chromium")
 
 def crop_uri(name):
     c = Image.open(SRC).crop(tuple(int(v * F) for v in BOXES[name]))
@@ -24,10 +25,10 @@ html = ("<!doctype html><meta charset=utf-8><style>body{background:#efe8d6;font:
         "<h3>Probe: gleiche Vektoren, Stil als Parameter</h3><table><tr><th></th><th>Foto</th><th>style=none (Trace)</th><th>style=cyborg</th><th>cyborg @ 48px</th></tr>"
         + rows + "</table>")
 open("art/probe/kontaktbogen.html", "w", encoding="utf-8").write(html)
-import os, time
+import time
 if os.path.exists("art/probe/kontaktbogen.png"): os.remove("art/probe/kontaktbogen.png")
-subprocess.run([EDGE, "--headless=new", "--disable-gpu", "--user-data-dir=" + __import__("tempfile").mkdtemp(), "--hide-scrollbars", f"--window-size=1750,{110 + 340 * len(names)}",
-                "--screenshot=" + __import__("os").path.abspath("art/probe/kontaktbogen.png"), "file:///" + __import__("os").path.abspath("art/probe/kontaktbogen.html").replace("\\", "/")],
+subprocess.run([BROWSER, "--headless=new", "--disable-gpu", "--user-data-dir=" + __import__("tempfile").mkdtemp(), "--hide-scrollbars", f"--window-size=1750,{110 + 340 * len(names)}",
+                "--screenshot=" + os.path.abspath("art/probe/kontaktbogen.png"), pathlib.Path("art/probe/kontaktbogen.html").resolve().as_uri()],
                check=True, capture_output=True)
 for _ in range(60):  # Edge kehrt vor dem Schreiben zurück
     if os.path.exists("art/probe/kontaktbogen.png"): break

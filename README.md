@@ -68,7 +68,7 @@ Erst wenn deine Agenten es erkunden, **zeichnet sich die Karte mit Tusche**. Die
 | **Sprache im Spiel** | Englisch (international bewertet), Dokumentation Deutsch |
 | **Engine (vorgeschlagen)** | Phaser 3 + TypeScript + Vite (siehe [Tech-Spec](docs/05_TECH_SPEC.md), Entscheidung D-01) |
 | **Session-Länge** | 10–15 Minuten pro Mission |
-| **Sequenzen** (D-16) | Wenige Echtzeit-Sequenzen (Intro, Sieg, Niederlage, Funkfenster), **jede ≤ 4096 Bytes JavaScript**. *“Every cinematic is a 4096-byte score conducting hand-drawn ink.”* Leitmotiv von mzone |
+| **Sequenzen** (D-16) | Wenige Echtzeit-Sequenzen (Intro, Sieg, Niederlage, Funkfenster), **jede ≤ 4096 Bytes JavaScript**. *“Every cinematic is a 4096-byte score conducting sketched ink.”* Leitmotiv von mzone |
 | **Team** | mzone (Vision, Art, Audio, Leitmotiv, Entscheidungen) + Claude Code in der Cloud (Code, Tests, `docs/`) + Claude Code lokal (`tools/4k/`, Sequenzen) + MZP + Claude Design |
 
 ---
