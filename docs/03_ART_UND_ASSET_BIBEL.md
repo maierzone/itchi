@@ -158,6 +158,20 @@ tools/art/                  ← Pipeline-Skripte (ab 01.11. im Spiel-Repo)
 game/public/assets/         ← Build-Output fürs Spiel
 ```
 
+### 5a Hybrid-Weg (D-17, seit 04.10.2026)
+
+Neben dem Papier-Weg oben gibt es den **Hybrid-Weg**: mzone skizziert (Papier, Foto reicht), Claude Design setzt die Figur als Tusche-SVG um, mzone wählt aus.
+
+| Regel | Inhalt |
+|-------|--------|
+| Stil | Palette § 2 (nur `--ink` auf `--sheet`, Teamfarbe im Sockel per Code), Strichregeln § 4.2 auf 48 px umgerechnet |
+| Datei | Eine SVG je Frame (`<ID>_<name>_a.svg`, `_b.svg` für Line-Boil), Gruppen `#base` (Spielform) und `#detail` (abschaltbar), Fußpunkt unten mittig |
+| Spielform | Eigene Datei nur mit `#base`, z. B. [`art/sonnet/art/svg/spielform/`](../art/sonnet/art/svg/spielform/) |
+| Herkunft | C2PA-`<metadata>` in den Quell-SVGs **nicht entfernen**. Im Asset-Register `Quelle = Hybrid` |
+| Erste Lieferung | U01, U02, U04 in [`art/sonnet/`](../art/sonnet/), erprobt im Truppen-Prototyp [`prototypes/truppe/`](../prototypes/truppe/) |
+
+Der Hybrid-Weg spart Scannen, Schneiden und Tracing (Schritte 3–5). `build_atlas` (Schritt 7) bleibt gleich.
+
 ---
 
 ## 6. Vollständige Asset-Liste

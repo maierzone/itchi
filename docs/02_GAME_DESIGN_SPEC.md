@@ -48,7 +48,7 @@
 | **Spieler** | 1 (gegen den Monolithen) |
 | **Plattform** | Browser (HTML5/WebGL), Desktop, Maus + Tastatur |
 | **Referenzen** | Alarmstufe Rot 2 (Gefühl, Sidebar, Ansager), Majesty (indirekte Steuerung), Northgard (Lesbarkeit), alte handgezeichnete Landkarten & Generalstabskarten (Optik) |
-| **USP** | (1) **Prompt-Direktiven** für Squads, (2) **Squad-Zusammensetzung = Prompt-Engineering** (Pipelines, Halluzinationen), (3) **die Karte zeichnet sich, wenn du sie erkundest**, (4) **100 % handgezeichnet** |
+| **USP** | (1) **Prompt-Direktiven** für Squads, (2) **Squad-Zusammensetzung = Prompt-Engineering** (Pipelines, Halluzinationen), (3) **die Karte zeichnet sich, wenn du sie erkundest**, (4) **Tusche-Optik aus Handskizzen**, hybrid umgesetzt und offen deklariert (D-17) |
 
 ---
 
@@ -635,6 +635,10 @@ Die Rückfall-Darstellung ist Must und wird immer gebaut. Sie greift, wenn eine 
 | Spieltempo | + / − | S |
 
 **Kein Touch-Support** (wird auf der itch-Seite angegeben).
+
+> **Befund aus dem Truppen-Prototyp (04.10.2026, [`prototypes/truppe/`](../prototypes/truppe/README.md#befunde-für-die-spec-stand-04102026)), Entscheidung offen für mzone:**
+> 1. **Strg + 1…5** schalten in Chrome und Firefox die Tabs um, die Seite bekommt die Taste oft nicht. Vorschlag: **Shift + 1…5** als Hauptbelegung, Strg zusätzlich.
+> 2. **WASD** für die Kamera kollidiert mit **A** (Angriffsbewegung), **S** (Stopp) und **W** (HOLD). Vorschlag: Kamera nur Pfeiltasten, Bildschirmrand und mittlere Maustaste.
 
 ---
 

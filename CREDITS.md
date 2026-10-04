@@ -8,6 +8,7 @@
 
 ```
 GAME DESIGN, ART & DIRECTION  mzone
+AGENT FIGURES ............... sketched by mzone, inked with Claude Design (AI)
 VOICE OF THE CONDUCTOR ...... mzone
 MAIN THEME .................. composed by mzone
 CINEMATICS .................. 4096-byte scores conducting hand-drawn ink
@@ -39,4 +40,4 @@ Die OFL-Lizenztexte liegen ab 01.11. bei den Font-Dateien unter `game/public/fon
 - Code: MIT ([`LICENSE`](LICENSE))
 - Zeichnungen: CC BY-NC-ND 4.0 ([`art/LICENSE`](art/LICENSE))
 - Stimme, Aufnahmen, Leitmotiv: CC BY-NC-ND 4.0 ([`audio/LICENSE`](audio/LICENSE))
-- KI-Offenlegung: Code KI-unterstützt (Claude Code). Grafik und Ton ohne generative KI ([D-11](docs/10_ENTSCHEIDUNGSLOG.md)).
+- KI-Offenlegung: Code KI-unterstützt (Claude Code). Grafik hybrid: Skizzen von mzone, Tusche-SVG von Claude Design ([D-17](docs/10_ENTSCHEIDUNGSLOG.md#d-17--hybrid-grafik)). Ton ohne generative KI ([D-11](docs/10_ENTSCHEIDUNGSLOG.md)).
